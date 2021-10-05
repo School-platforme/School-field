@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Admin from "./components/Admin/Admin.jsx"
 
 
 
@@ -8,7 +9,7 @@ import ReactDOM from "react-dom";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
+    this.state = { 
       view: 'MainPage'
     }
     this.changeView = this.changeView.bind(this);
@@ -42,8 +43,9 @@ class App extends React.Component {
             : 'nav-unselected'}
             onClick={() => this.changeView('MainPage')}>
           
-          </span>
+          </span> 
         </div>
+         
 
         <div className="main">
           {this.renderView()}

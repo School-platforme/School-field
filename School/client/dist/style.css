@@ -1,14 +1,5 @@
 /* TODO: Please feel free to write your own css classes here */
 
-
-
-
-
-
-
-
-
-
 /* Below is the initial style that was created for you. feel free to overwrite it. */
 
 /* 
@@ -65,6 +56,12 @@ button {
   padding: 5px 20px 5px 20px;
 }
 
+.adminButtons {
+  font-size: 1.9em ;
+  font-weight: bold;
+  color: #ffffff;
+}
+
 .logo {
   font-weight: bold;
   font-size: 1.9em;
@@ -80,7 +77,7 @@ button {
 }
 
 .nav {
-  background-color: red;
+  background-color: blue;
   margin: 0px;
   padding: 10px;
   display: flex;
