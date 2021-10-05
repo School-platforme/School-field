@@ -29,7 +29,7 @@ function Lecture() {
                   placeholder="Add your lecture here"
                   onChange={(e) => setLecture(e.target.value)}
                 />
-                <input type="submit" value="submit" />
+                <input className="btn" type="submit" value="submit" />
               </form>
             </div>
           </li>

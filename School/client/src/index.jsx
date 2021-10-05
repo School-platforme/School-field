@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import HomeTeacher from "./components/Teachers/HomeTeacher.jsx";
-
 class App extends React.Component {
   constructor() {
     super();
@@ -20,7 +18,7 @@ class App extends React.Component {
   renderView() {
     const { view } = this.state;
     if (view === "MainPage") {
-      return <HomeTeacher />;
+      return <Admin />;
     } else {
       return <Students />;
     }
@@ -30,10 +28,9 @@ class App extends React.Component {
     return (
       <div>
         <div className="nav">
-          <span
-            className="logo"
-            onClick={() => this.changeView("MainPage")}
-          ></span>
+          <span className="logo" onClick={() => this.changeView("MainPage")}>
+            {" "}
+          </span>
           <span
             className={
               this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"

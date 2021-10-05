@@ -16,34 +16,24 @@ body {
   font-size: 1.1em;
 } */
 
-/* h2 {
-  color: #2c3e50;
-}
-
-.pokemon-list-item {
-  min-height: 350px;
-  margin: 20px;
-  list-style: none;
-  border: 1px solid #77777769;
-  background-color: #fdfdfd;
-  border-radius: 4px;
-  padding: 30px 50px 0px 50px;
-  box-shadow: 0 0 1em #80808066;
-  width: 200px;
-}
-
-.pokemon-list {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
 button {
   cursor: pointer;
   border: none;
   border-radius: 3px;
   font-family: "PT Serif", sans-serif;
   color: #ecf0f1;
-  background-color: #e74c3c;
+  background-color: #538a51;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 1px;
+  font-family: "PT Serif", sans-serif;
+  color: #ecf0f1;
+  background-color: #94d170;
+  margin: -2px 10px;
+  padding: 11px;
+  border-bottom-style: groove;
 }
 
 .post {
@@ -89,14 +79,9 @@ button {
 }
 
 .nav-unselected {
-  padding: 5px;
-  margin-right: 5px;
+  padding: 9px;
+  margin-right: 8px;
   font-size: 1.1em;
-}
-
-.pokemon {
-  padding: 0px 10% 0px 10%;
-  display: flex;
 }
 
 body {
@@ -315,7 +300,8 @@ button {
 
 .nav {
   background-color: #77d1ab;
-  margin: 0px;
+  margin: -12px;
+  margin-top: 25px;
   padding: 10px;
   display: flex;
   justify-content: flex-end;
