@@ -55,24 +55,24 @@ class AddTeachers extends Component {
       <div className="create">
         <div className="create-editor">
           <h2>Create teacher</h2>
-          <form>
+          <div className="create-teacher-inputs">
             <input
               name="firstName"
-              className="create-input"
+              className="create-body-textarea"
               type="text"
               placeholder="First Name"
               onChange={this.handleChange}
             ></input>
             <input
               name="lastName"
-              className="create-input"
+              className="create-body-textarea"
               type="text"
               placeholder="Last Name"
               onChange={this.handleChange}
             ></input>
             <input
               name="imageUrl"
-              className="create-input"
+              className="create-body-textarea"
               type="text"
               placeholder="Teacher image"
               onChange={this.handleChange}
@@ -92,15 +92,17 @@ class AddTeachers extends Component {
               onChange={this.handleChange}
             ></input>
             <input
+              className="create-body-textarea"
               name="email"
               type="text"
               placeholder="Email"
               onChange={this.handleChange}
             />
             <input
+              className="create-body-textarea"
               name="password"
               type="password"
-              placeholder="Enter a new password"
+              placeholder="Enter password"
               onChange={this.handleChange}
             />
 
@@ -118,8 +120,11 @@ class AddTeachers extends Component {
             <br></br>
             <br></br>
 
-            <button onClick={this.props.handleChange}> back to feed </button>
-          </form>
+            <button onClick={() => this.props.changeView("adminFeed")}>
+              {" "}
+              back to feed{" "}
+            </button>
+          </div>
         </div>
       </div>
     );
