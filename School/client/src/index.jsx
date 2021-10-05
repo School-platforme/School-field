@@ -1,22 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import Students from "./components/Students/Students.jsx";
 
 
+
+
+import Admin from "./components/Admin/Admin.jsx";
 
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      view: 'MainPage'
-    }
+      view: "MainPage",
+    };
     this.changeView = this.changeView.bind(this);
   }
 
   changeView(option) {
     this.setState({
-      view: option
+      view: option,
     });
   }
 
@@ -33,6 +37,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="nav">
+
           <span className="logo"
             onClick={() => this.changeView('MainPage')}>
             teacher
@@ -43,11 +48,22 @@ class App extends React.Component {
             onClick={() => this.changeView('MainPage')}>
           Admin
           </span>
+
+          <span
+            className="logo"
+            onClick={() => this.changeView("MainPage")}
+          ></span>
+          NAVBAR
+          <span
+            className={
+              this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
+            }
+            onClick={() => this.changeView("MainPage")}
+          ></span>
+
         </div>
 
-        <div className="main">
-          {this.renderView()}
-        </div>
+        <div className="main">{this.renderView()}</div>
       </div>
     );
   }
