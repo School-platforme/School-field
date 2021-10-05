@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-
 import Students from "./components/Students/Students.jsx";
-
-
-
 import Admin from "./components/Admin/Admin.jsx";
+import 
 
 
 class App extends React.Component {
@@ -27,7 +23,16 @@ class App extends React.Component {
   renderView() {
     const { view } = this.state;
     if (view === "MainPage") {
-       return <Students/>
+       return (
+         <div>
+           <Students/>
+           <Admin/>
+
+         </div>
+          
+          
+          
+          )
     } else {
       
     }
@@ -62,7 +67,7 @@ class App extends React.Component {
           ></span>
 
         </div>
-
+            
         <div className="main">{this.renderView()}</div>
       </div>
     );
