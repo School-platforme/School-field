@@ -1,6 +1,6 @@
 import React from "react";
 
-function TeachersList({ teachersList }) {
+function TeachersList({ changeView, teachersList }) {
   return (
     <div className="teacher-container">
       <div className="teacher-card">
@@ -13,6 +13,8 @@ function TeachersList({ teachersList }) {
         </h4>
         <b>Imad El Ayoubi</b>
         <p>Web development</p>
+        <button>Promote</button>
+        <button>Kick out </button>
       </div>
       <div className="card">
         <h4>
@@ -24,6 +26,8 @@ function TeachersList({ teachersList }) {
         </h4>
         <b>Firas Debich</b>
         <p>Web development</p>
+        <button>Promote</button>
+        <button>Kick out </button>
       </div>
       <div className="card">
         <h4>
@@ -35,6 +39,8 @@ function TeachersList({ teachersList }) {
         </h4>
         <b>Ahmad Cheikh</b>
         <p>Web development</p>
+        <button>Promote</button>
+        <button>Kick out </button>
       </div>
       <div className="card">
         <h4>
@@ -44,8 +50,13 @@ function TeachersList({ teachersList }) {
             alt=""
           />
         </h4>
-        <b>Elyes Bou Khoud</b>
+        <b>Elyes Ben Khoud</b>
         <p>Web development</p>
+        <button>Promote</button>
+        <button>Kick out </button>
+      </div>
+      <div>
+        <button onClick={() => changeView("adminFeed")}>back to feed</button>
       </div>
     </div>
   );

@@ -30,7 +30,10 @@ class Admin extends Component {
     if (view === "teacherList") {
       return (
         <div className="teachers-list">
-          <TeachersList teachersList={this.props.data} />
+          <TeachersList
+            changeView={this.changeView}
+            teachersList={this.props.data}
+          />
         </div>
       );
     }

@@ -121,8 +121,7 @@ class AddTeachers extends Component {
             <br></br>
 
             <button onClick={() => this.props.changeView("adminFeed")}>
-              {" "}
-              back to feed{" "}
+              back to feed
             </button>
           </div>
         </div>
