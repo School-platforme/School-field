@@ -1,0 +1,88 @@
+/* TODO: Please feel free to write your own css classes here */
+
+/* Below is the initial style that was created for you. feel free to overwrite it. */
+
+/* 
+***********************************************************************************
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Francois+One|PT+Serif:400,400i,700,700i");
+
+body {
+  font-family: "PT Serif", sans-serif;
+  margin: 0px;
+  color: #2c3e50;
+  background-color: #ecf0f1;
+  font-size: 1.1em;
+}
+.create-teacher-inputs {
+  display: grid;
+}
+.create-body-textarea {
+  padding: 0.6rem;
+  margin: 0.5rem;
+}
+.teacher-container {
+  display: flex;
+  margin: 0.5rem;
+}
+
+h2 {
+  color: #2c3e50;
+}
+
+/* .pokemon-list-item {
+  min-height: 350px;
+  margin: 20px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 30px 50px 0px 50px;
+  box-shadow: 0 0 1em #80808066;
+  width: 200px;
+} */
+
+/* .pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-family: "PT Serif", sans-serif;
+  color: #ecf0f1;
+  background-color: #e74c3c;
+}
+
+/* .post {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background-color: white;
+  padding: 5px 20px 5px 20px;
+} */
+
+/* .adminButtons {
+  font-size: 1.9em;
+  font-weight: bold;
+  color: #ffffff;
+} */
+
+.logo {
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-right: auto;
+  margin-left: 10px;
+  font-family: "Francois One";
+  color: #ffffff;
+}
+
+.main {
+  margin-left: 33%;
+  margin-right: 33%;
+}
