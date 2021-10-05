@@ -1,6 +1,6 @@
 var teacherRoute = require('express').Router();
 var teacherController = require("../teacher/teacherController");
-
+//
 
 
 teacherRoute.route('/teacher')
