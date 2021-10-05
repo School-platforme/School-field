@@ -22,6 +22,11 @@ body {
   padding: 0.6rem;
   margin: 0.5rem;
 }
+.teacher-container {
+  display: flex;
+  margin: 0.5rem;
+}
+
 h2 {
   color: #2c3e50;
 }

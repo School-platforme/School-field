@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import AddTeachers from "./AddTeachers.jsx";
 import AdminFeed from "./AdminFeed.jsx";
 import SchoolStat from "./SchoolStat.jsx";
+import TeachersList from "./TeachersList.jsx";
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
       view: "adminFeed",
+      data: [],
     };
 
     this.changeView = this.changeView.bind(this);
@@ -24,6 +26,13 @@ class Admin extends Component {
 
     if (view === "adminFeed") {
       return <AdminFeed changeView={this.changeView} />;
+    }
+    if (view === "teacherList") {
+      return (
+        <div className="teachers-list">
+          <TeachersList teachersList={this.props.data} />
+        </div>
+      );
     }
     if (view === "createTeacher") {
       return <AddTeachers changeView={this.changeView} />;

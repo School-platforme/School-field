@@ -6,17 +6,25 @@ function AdminFeed({ changeView }) {
       <div className="main">
         <h2>Welcome Admin </h2>
         <button
-          className="adminButtonss"
+          className="adminButtons"
           onClick={() => changeView("createTeacher")}
         >
           Create Teacher
         </button>
         <br></br>
         <button
-          className="adminButtonss"
+          className="adminButtons"
           onClick={() => changeView("schoolstat")}
         >
           Statistics
+        </button>
+
+        <br></br>
+        <button
+          className="adminButtons"
+          onClick={() => changeView("teacherList")}
+        >
+          Teachers List
         </button>
       </div>
     </div>

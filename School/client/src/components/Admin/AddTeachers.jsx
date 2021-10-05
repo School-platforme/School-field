@@ -57,38 +57,38 @@ class AddTeachers extends Component {
           <h2>Create teacher</h2>
           <div className="create-teacher-inputs">
             <input
-              name="firstName"
               className="create-body-textarea"
+              name="firstName"
               type="text"
               placeholder="First Name"
               onChange={this.handleChange}
             ></input>
             <input
-              name="lastName"
               className="create-body-textarea"
+              name="lastName"
               type="text"
               placeholder="Last Name"
               onChange={this.handleChange}
             ></input>
             <input
-              name="imageUrl"
               className="create-body-textarea"
+              name="imageUrl"
               type="text"
               placeholder="Teacher image"
               onChange={this.handleChange}
             ></input>
             <input
-              name="field"
               className="create-body-textarea"
-              placeholder="Teacher field"
+              name="field"
               type="text"
+              placeholder="Teacher field"
               onChange={this.handleChange}
             ></input>
             <input
-              name="age"
               className="create-body-textarea"
-              placeholder="Teacher age"
+              name="age"
               type="text"
+              placeholder="Teacher age"
               onChange={this.handleChange}
             ></input>
             <input
