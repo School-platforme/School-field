@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import OwnStatistics from './OwnStatistics.jsx';
 import SchoolPlateform from './SchoolPlateform.jsx';
@@ -21,5 +22,6 @@ export default function Students() {
     else {
         return <OwnStatistics changeView={useViewS} />
     }
+
 }
 
