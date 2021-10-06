@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Students from "./components/Students/Students.jsx";
+import Admin from "./components/Admin/Admin.jsx";
+
+
+
 
 
 
@@ -23,7 +27,18 @@ class App extends React.Component {
   renderView() {
     const { view } = this.state;
     if (view === "MainPage") {
-      //  return <Students/>
+
+       return (
+         <div>
+           <Students/>
+           <Admin/>
+
+         </div>
+          
+          
+          
+          )
+
     } else {
       
     }
@@ -45,6 +60,9 @@ class App extends React.Component {
           Admin
 
           </span>
+
+            
+
           <span
             className={
               this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
@@ -52,6 +70,7 @@ class App extends React.Component {
             onClick={() => this.changeView("MainPage")}
           ></span>
         </div>
+
 
         <div className="main">{this.renderView()}</div>
       </div>

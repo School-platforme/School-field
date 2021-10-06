@@ -63,18 +63,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 12);
+>>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/* no static exports found */
-/* all exports used */
-/*!**************************!*\
-  !*** ./~/react/index.js ***!
-  \**************************/
-/***/ (function(module, exports, __webpack_require__) {
+/******/ ({
 
+<<<<<<< HEAD
+/***/ 44:
+=======
 "use strict";
 eval("/* WEBPACK VAR INJECTION */(function(process) {\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = __webpack_require__(/*! ./cjs/react.production.min.js */ 16);\n} else {\n  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ 15);\n}\n\n/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../process/browser.js */ 1)))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL34vcmVhY3QvaW5kZXguanM/NjFmNiJdLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIHN0cmljdCc7XG5cbmlmIChwcm9jZXNzLmVudi5OT0RFX0VOViA9PT0gJ3Byb2R1Y3Rpb24nKSB7XG4gIG1vZHVsZS5leHBvcnRzID0gcmVxdWlyZSgnLi9janMvcmVhY3QucHJvZHVjdGlvbi5taW4uanMnKTtcbn0gZWxzZSB7XG4gIG1vZHVsZS5leHBvcnRzID0gcmVxdWlyZSgnLi9janMvcmVhY3QuZGV2ZWxvcG1lbnQuanMnKTtcbn1cblxuXG5cbi8vLy8vLy8vLy8vLy8vLy8vL1xuLy8gV0VCUEFDSyBGT09URVJcbi8vIC4vfi9yZWFjdC9pbmRleC5qc1xuLy8gbW9kdWxlIGlkID0gMFxuLy8gbW9kdWxlIGNodW5rcyA9IDAiXSwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///0\n");
 
@@ -211,11 +211,17 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 /* 12 */
+>>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
 /* no static exports found */
 /* all exports used */
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
   \******************************/
+<<<<<<< HEAD
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed: SyntaxError: Unexpected token, expected { (8:0)\\n\\n\\u001b[0m \\u001b[90m  6 | \\u001b[39m\\n \\u001b[90m  7 | \\u001b[39m\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m  8 | \\u001b[39m\\u001b[36mclass\\u001b[39m \\u001b[33mApp\\u001b[39m \\u001b[36mextends\\u001b[39m \\u001b[33mReact\\u001b[39m\\u001b[33m.\\u001b[39m\\u001b[33mComponent\\u001b[39m {\\n \\u001b[90m    | \\u001b[39m\\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\n \\u001b[90m  9 | \\u001b[39m  constructor() {\\n \\u001b[90m 10 | \\u001b[39m    \\u001b[36msuper\\u001b[39m()\\u001b[33m;\\u001b[39m\\n \\u001b[90m 11 | \\u001b[39m    \\u001b[36mthis\\u001b[39m\\u001b[33m.\\u001b[39mstate \\u001b[33m=\\u001b[39m {\\u001b[0m\\n\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNDQuanMiLCJzb3VyY2VzIjpbXSwibWFwcGluZ3MiOiIiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///44\n");
+=======
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -328,6 +334,8 @@ eval("/** @license React v0.20.2\n * scheduler.production.min.js\n *\n * Copyrig
 
 "use strict";
 eval("/* WEBPACK VAR INJECTION */(function(process) {\n\nif (process.env.NODE_ENV === 'production') {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.production.min.js */ 18);\n} else {\n  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ 17);\n}\n\n/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../process/browser.js */ 1)))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMjEuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9+L3NjaGVkdWxlci90cmFjaW5nLmpzPzQ0ZmEiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5pZiAocHJvY2Vzcy5lbnYuTk9ERV9FTlYgPT09ICdwcm9kdWN0aW9uJykge1xuICBtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoJy4vY2pzL3NjaGVkdWxlci10cmFjaW5nLnByb2R1Y3Rpb24ubWluLmpzJyk7XG59IGVsc2Uge1xuICBtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoJy4vY2pzL3NjaGVkdWxlci10cmFjaW5nLmRldmVsb3BtZW50LmpzJyk7XG59XG5cblxuXG4vLy8vLy8vLy8vLy8vLy8vLy9cbi8vIFdFQlBBQ0sgRk9PVEVSXG4vLyAuL34vc2NoZWR1bGVyL3RyYWNpbmcuanNcbi8vIG1vZHVsZSBpZCA9IDIxXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///21\n");
+>>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
 
 /***/ })
-/******/ ]);
+
+/******/ });
