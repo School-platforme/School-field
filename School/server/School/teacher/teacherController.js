@@ -1,6 +1,6 @@
 
 var School = require("../School")
-
+//
 exports.createTeacher = function (req, res) {
     // taking the information for the teacher that comes from the client side 
     const teacherData = req.body   

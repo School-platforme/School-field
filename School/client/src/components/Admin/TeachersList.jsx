@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function TeachersList({ changeView, teachersList }) {
   return (
@@ -13,6 +14,8 @@ function TeachersList({ changeView, teachersList }) {
         </h4>
         <b>Imad El Ayoubi</b>
         <p>Web development</p>
+        <p>Experience </p>
+
         <button>Promote</button>
         <button>Kick out </button>
       </div>
@@ -26,6 +29,8 @@ function TeachersList({ changeView, teachersList }) {
         </h4>
         <b>Firas Debich</b>
         <p>Web development</p>
+        <p>Experience </p>
+
         <button>Promote</button>
         <button>Kick out </button>
       </div>
@@ -39,6 +44,8 @@ function TeachersList({ changeView, teachersList }) {
         </h4>
         <b>Ahmad Cheikh</b>
         <p>Web development</p>
+        <p>Experience </p>
+
         <button>Promote</button>
         <button>Kick out </button>
       </div>
@@ -52,6 +59,8 @@ function TeachersList({ changeView, teachersList }) {
         </h4>
         <b>Elyes Ben Khoud</b>
         <p>Web development</p>
+        <p>Experience </p>
+
         <button>Promote</button>
         <button>Kick out </button>
       </div>

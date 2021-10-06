@@ -1,5 +1,5 @@
 var School = require("../School")
-
+//
 exports.addResult = function (req, res) {
     // taking the result that come from the client     
     var result = req.body
