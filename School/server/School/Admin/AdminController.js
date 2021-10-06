@@ -1,4 +1,4 @@
-var Auth = require("./AuthAdmin")
+var Auth = require("../Athuentication/Auth")
 var School = require("../School")
 //
 exports.createAdmin = (req, res) => {
