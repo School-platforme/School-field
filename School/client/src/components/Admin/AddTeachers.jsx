@@ -13,17 +13,14 @@ class AddTeachers extends Component {
       ImageUrl: "",
       Field: "",
       Phone: "",
-      Experience: "Beginner",
+      Experience: "Entry-level",
       teacher: {},
-      teachers:[],//array of all teacher,
-      students:[]//array of all students
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-   
     const nam = event.target.name;
     const value = event.target.value;
 
@@ -43,52 +40,47 @@ class AddTeachers extends Component {
   }
 
   selectExp(e) {
-   
     this.setState({
       Experience: e.target.value,
     });
   }
-// to create teacher 
+  // to create teacher
   createTeacher() {
-    console.log(this.state.teacher)
+    console.log(this.state.teacher);
     axios
       .post("http://localhost:3000/teacher", this.state.teacher)
       .then((teacher) => {
-     this.setState({
-      teachers:teacher.data, /// here after submitting the data to the data base delete mak all variable as empty string 
-      TeacherName: "",
-      TeacherLastName: "",
-      Email: "",
-      Password: "",
-      ImageUrl: "",
-      Field: "",
-      Phone: "",
-      Experience: "Beginner"
-
-      
-     })
+        this.setState({
+          teachers: teacher.data, /// here after submitting the data to the data base delete mak all variable as empty string
+          TeacherName: "",
+          TeacherLastName: "",
+          Email: "",
+          Password: "",
+          ImageUrl: "",
+          Field: "",
+          Phone: "",
+          Experience: "Beginner",
+        });
       })
       .catch((err) => {
-        // here do somthing else if there is an error 
-        // the error is beacause the user submit the data and there is an input empty 
-        // do somthing for this 
-        alert("fill in all your information ")
+        // here do somthing else if there is an error
+        // the error is beacause the user submit the data and there is an input empty
+        // do somthing for this
+        alert("fill in all your information ");
       });
   }
-  // to get the data which is all the student and teacher 
-componentDidMount(){
-  axios.get("http://localhost:3000/teacher")
-  .then(data=>{
-    this.setState({
-      teachers:data.data[0] ,//set the state here for all the teacher 
-      students:data.data[1],//set the state for all the student 
-    })
-  })
+  // to get the data which is all the student and teacher
+  // componentDidMount(){
+  //   axios.get("http://localhost:3000/teacher")
+  //   .then(data=>{
+  //     this.setState({
+  //       teachers:data.data[0] ,//set the state here for all the teacher
+  //       students:data.data[1],//set the state for all the student
+  //     })
+  //   })
 
-
-}
+  // }
   render() {
-    
     return (
       <div className="create">
         <div className="create-editor">
@@ -96,7 +88,7 @@ componentDidMount(){
           <div className="create-teacher-inputs">
             <label htmlFor="TeacherName"> First Name </label>
             <input
-             value={this.state.TeacherName}
+              value={this.state.TeacherName}
               name="TeacherName"
               type="text"
               placeholder="First Name"
@@ -106,7 +98,7 @@ componentDidMount(){
             <label htmlFor="TeacherLastName"> Last Name </label>
 
             <input
-            value={this.state.TeacherLastName}
+              value={this.state.TeacherLastName}
               // className="create-body-textarea"
               name="TeacherLastName"
               type="text"
@@ -116,7 +108,7 @@ componentDidMount(){
             <label htmlFor="ImageUrl"> Teacher image </label>
 
             <input
-            value={this.state.ImageUrl}
+              value={this.state.ImageUrl}
               // className="create-body-textarea"
               name="ImageUrl"
               type="text"
@@ -126,7 +118,7 @@ componentDidMount(){
             <label htmlFor="Field"> Teacher Field </label>
 
             <input
-            value={this.state.Field}
+              value={this.state.Field}
               // className="create-body-textarea"
               name="Field"
               type="text"
@@ -136,7 +128,7 @@ componentDidMount(){
             <label htmlFor="Phone"> Phone Number </label>
 
             <input
-            value={this.state.Phone}
+              value={this.state.Phone}
               // className="create-body-textarea"
               name="Phone"
               type="text"
@@ -146,7 +138,7 @@ componentDidMount(){
             <label htmlFor="Email"> Email</label>
 
             <input
-            value={this.state.Email}
+              value={this.state.Email}
               // className="create-body-textarea"
               name="Email"
               type="text"
@@ -155,8 +147,7 @@ componentDidMount(){
             />
             <label htmlFor="password"> Password</label>
             <input
-            value={this.state.Password}
-              
+              value={this.state.Password}
               name="Password"
               type="password"
               placeholder="Enter password"
@@ -164,9 +155,12 @@ componentDidMount(){
             />
             <label> Years of experience</label>
             <select name="Experience" onChange={this.selectExp.bind(this)}>
-              <option value="beginner">0 - 2 years</option>
-              <option value="experienced">2 - 4 years</option>
-              <option value="advanced ">More than 4 years</option>
+              <option value="Entry-level">0 - 1 year</option>
+              <option value="Intermediate">2 - 3 years</option>
+              <option value="Mid-level ">4 - 6 years</option>
+              <option value="Mid-Senior or executive-level ">
+                More than 7 years
+              </option>
             </select>
 
             <br></br>
@@ -184,7 +178,7 @@ componentDidMount(){
             <br></br>
 
             <button onClick={() => this.props.changeView("adminFeed")}>
-              back to feed !
+              back to feed
             </button>
           </div>
         </div>
