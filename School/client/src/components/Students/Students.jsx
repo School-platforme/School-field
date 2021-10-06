@@ -4,8 +4,12 @@ import OwnStatistics from './OwnStatistics.jsx';
 import SchoolPlateform from './SchoolPlateform.jsx';
 
 
-export default function Students() {
+export default function Students(props) {
     const [viewsStudent,useViewS] = useState('main')
+    const deconnection = ()=>{
+    
+        props.setMain('main')
+    }
    
     useEffect(() => {
       
@@ -25,6 +29,7 @@ export default function Students() {
             <div>
                 <div><button onClick={()=> useViewS('lecture')  }>Lectures</button></div>
                 <div><button onClick={()=> useViewS('stat') }  >Notes</button></div>
+                <div><button onClick={deconnection}  >deconnection</button></div>
             </div>
         )
     }

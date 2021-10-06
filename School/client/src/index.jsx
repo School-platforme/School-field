@@ -87,13 +87,13 @@ export default function App() {
   }
   const renderView = ()=>{
     if(mainView === "admin" ){
-      return <Admin/>
+      return <Admin  setMain={setMainView} />
     }
     else if (mainView === "teacher"){
       return <HomeTeacher setMain={setMainView} />
     }
     else if(mainView === 'student'){
-      return <Students/>
+      return <Students  setMain={setMainView} />
     }
     else {
       return <Main changeView={changeView}  />
