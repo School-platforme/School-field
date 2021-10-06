@@ -1,6 +1,6 @@
 import React from "react";
 
-function AdminFeed({ changeView }) {
+function AdminFeed({ changeView,setMain }) {
   return (
     <div>
       <div className="main">
@@ -25,6 +25,13 @@ function AdminFeed({ changeView }) {
           onClick={() => changeView("teacherList")}
         >
           Teachers List
+        </button>
+        <br></br>
+        <button
+          className="adminButtons"
+          onClick={() => setMain('main')}
+        >
+          deconnection
         </button>
       </div>
     </div>

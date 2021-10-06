@@ -5,13 +5,14 @@ const db = require('../db/index.js');
 mongoose.Promise = global.Promise;
 
 
-
+//
 //this the admin to create his account
 var adminSchema = mongoose.Schema({
   User: { type: String, unique: true, required: true },
   Password: { type: String, required: true },
   Email: { type: String, unique: true, required: true },
   ImageUrl: { type: String, required: true },
+  
 })
 
 
