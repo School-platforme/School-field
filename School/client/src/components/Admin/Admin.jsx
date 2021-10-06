@@ -10,18 +10,12 @@ export default function Admin(props) {
   const [DataStudent, setDataStudent] = useState([]);
   const [DataTeacher, setDataTeacher] = useState([]);
 
-
   useEffect(() => {
     axios.get("http://localhost:3000/teacher").then((data) => {
       setDataTeacher(data.data[0]); //set the state here for all the teacher
       setDataStudent(data.data[1]); //set the state for all the student
     });
   }, []);
-
-
-  console.log("students", DataStudent);
-  console.log("teachers", DataTeacher);
-
 
   const changeView = (option) => {
     setAdminView(option);
