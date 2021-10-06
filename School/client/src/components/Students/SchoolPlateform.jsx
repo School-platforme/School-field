@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LecturePlateform from './LecturePlateform.jsx';
 import Lecture from './Lecture.jsx';
 import Exercice from './Exercice.jsx';
@@ -8,6 +8,19 @@ import Quiz from './Quiz.jsx';
 export default function SchoolPlateform(props) {
     const [lecture, useLecture]= useState(['you','him','all'])
     const [lectureView,useLectureV] = useState('main')
+
+      useEffect(() => {
+       
+        const sView = localStorage.getItem('lectureView')
+        
+       useLectureV(sView)
+      }, [])
+       
+      useEffect(() => {
+       
+        localStorage.setItem('lectureView',lectureView)
+      }, [lectureView])
+
     if(lectureView === 'lecture'){
         return (
             <div>
