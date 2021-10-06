@@ -40,7 +40,7 @@ class AddTeachers extends Component {
 
   createTeacher() {
     axios
-      .post("", this.state.teacher)
+      .post("http", this.state.teacher)
       .then((teacher) => {
         console.log(teacher);
         console.log("teacher created");
