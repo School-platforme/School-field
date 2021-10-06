@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import AddTeachers from "./AddTeachers.jsx";
 import AdminFeed from "./AdminFeed.jsx";
@@ -55,3 +56,4 @@ class Admin extends Component {
 }
 
 export default Admin;
+
