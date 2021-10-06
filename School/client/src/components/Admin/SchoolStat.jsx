@@ -22,43 +22,45 @@ import {
   Legend,
 } from "recharts";
 
-const data = [
+// const statsD = this.props.data;
+
+const statsData = [
   {
-    name: "Teacher A",
+    TeacherName: "Teacher A",
     lecture: 4,
     exercise: 5,
-    quiz: 3,
-    // length 
+    Students: 3,
+    // length
   },
   {
-    name: "Teacher B",
+    TeacherName: "Teacher B",
     lecture: 10,
     exercise: 7,
-    quiz: 3,
+    Students: 3,
   },
   {
-    name: "Teacher C",
+    TeacherName: "Teacher C",
     lecture: 4,
     exercise: 8,
-    quiz: 3,
+    Students: 3,
   },
   {
-    name: "Teacher D",
+    TeacherName: "Teacher D",
     lecture: 4,
     exercise: 3,
-    quiz: 3,
+    Students: 3,
   },
   {
-    name: "Teacher E",
+    TeacherName: "Teacher E",
     lecture: 4,
     exercise: 12,
-    quiz: 3,
+    Students: 3,
   },
   {
-    name: "Teacher F",
+    TeacherName: "Teacher F",
     lecture: 4,
     exercise: 3,
-    quiz: 3,
+    Students: 3,
   },
 ];
 
@@ -70,12 +72,13 @@ export default class SchoolStat extends PureComponent {
   }
 
   render() {
+    console.log("stats data", this.props.data);
     return (
       <div>
         <BarChart
           width={700}
           height={300}
-          data={data}
+          data={statsData}
           margin={{
             top: 5,
             right: 30,
@@ -84,19 +87,20 @@ export default class SchoolStat extends PureComponent {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="TeacherName" />
           <YAxis />
           <Tooltip />
           <Legend />
           <Bar dataKey="lecture" fill="#8884d8" />
           <Bar dataKey="exercise" fill="#82ca9d" />
-          <Bar dataKey="quiz" fill="#CAB81E" />
+          <Bar dataKey="Students" fill="#CAB81E" />
         </BarChart>
         <div>
-          <h5> Stats here </h5>
-
           <button onClick={() => this.props.changeView("adminFeed")}>
             back to feed{" "}
+          </button>
+          <button onClick={() => this.props.changeView("adminFeed")}>
+            Get Stats
           </button>
         </div>
       </div>
