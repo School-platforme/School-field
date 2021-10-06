@@ -8,10 +8,14 @@ exports.createTeacher = (req, res) => {
     // save the information into the data base 
     School.TeacherModel.create(teacherData)
         //if the data is saved without problem 
-        .then(() => {
-            console.log("techer created ")
+        .then((data) => {
+          School.TeacherModel.find({},(err,result)=>{
+              res.status(201).send(result)
+        })
+
             // if there is an error
-        }).catch((err) => {
+        })
+        .catch((err) => {
             console.log(err)
         })
 
@@ -35,4 +39,37 @@ exports.getAllStudent = (req, res) => {
 
 
 }
+exports.getAllTeachersAndStudent = (req,res)=>{
+   
+    School.TeacherModel.find({},(err,result)=>{
+       
+        School.StudentModel.find({},(err,result1)=>{
+ if(err){
+            res.status(404).send(err)
+        }
+        res.status(200).send([[...result],[...result1]])
 
+        })
+    })
+    
+
+}
+exports.deleteTeacher=(req,res)=>{
+let teacherId = req.params.id
+School.TeacherModel.findByIdAndRemove(teacherId , (err,result)=>{
+    if(err)res.status(404).send(err)
+    res.status(201).send("teacher delted")
+   
+
+})    
+}
+
+exports.updateTeacher = (req,res)=>{
+let teacherId = req.params.id
+let dataToUpdate=req.body
+School.TeacherModel.findByIdAndUpdate(teacherId,dataToUpdate,(err,result)=>{
+    if(err)res.status(404).send(err)
+    res.status(201).send("teacher updated")
+    
+})
+}

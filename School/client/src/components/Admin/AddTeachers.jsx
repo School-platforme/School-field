@@ -9,19 +9,21 @@ class AddTeachers extends Component {
       TeacherName: "",
       TeacherLastName: "",
       Email: "",
-      password: "",
+      Password: "",
       ImageUrl: "",
       Field: "",
       Phone: "",
       Experience: "Beginner",
       teacher: {},
+      teachers:[],//array of all teacher,
+      students:[]//array of all students
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    console.log(this.state);
+   
     const nam = event.target.name;
     const value = event.target.value;
 
@@ -31,7 +33,7 @@ class AddTeachers extends Component {
         TeacherName: this.state.TeacherName,
         TeacherLastName: this.state.TeacherLastName,
         Email: this.state.Email,
-        password: this.state.password,
+        Password: this.state.Password,
         ImageUrl: this.state.ImageUrl,
         Field: this.state.Field,
         Phone: Number(this.state.Phone),
@@ -41,26 +43,52 @@ class AddTeachers extends Component {
   }
 
   selectExp(e) {
-    console.log("hh", e.target.value);
+   
     this.setState({
       Experience: e.target.value,
     });
   }
-
+// to create teacher 
   createTeacher() {
+    console.log(this.state.teacher)
     axios
-      .post("", this.state.teacher)
+      .post("http://localhost:3000/teacher", this.state.teacher)
       .then((teacher) => {
-        console.log(teacher);
-        console.log("teacher created");
+     this.setState({
+      teachers:teacher.data, /// here after submitting the data to the data base delete mak all variable as empty string 
+      TeacherName: "",
+      TeacherLastName: "",
+      Email: "",
+      Password: "",
+      ImageUrl: "",
+      Field: "",
+      Phone: "",
+      Experience: "Beginner"
+
+      
+     })
       })
       .catch((err) => {
-        console.log(err);
+        // here do somthing else if there is an error 
+        // the error is beacause the user submit the data and there is an input empty 
+        // do somthing for this 
+        alert("fill in all your information ")
       });
   }
+  // to get the data which is all the student and teacher 
+componentDidMount(){
+  axios.get("http://localhost:3000/teacher")
+  .then(data=>{
+    this.setState({
+      teachers:data.data[0] ,//set the state here for all the teacher 
+      students:data.data[1],//set the state for all the student 
+    })
+  })
 
+
+}
   render() {
-    console.log("experience", this.state.Experience);
+    
     return (
       <div className="create">
         <div className="create-editor">
@@ -68,7 +96,7 @@ class AddTeachers extends Component {
           <div className="create-teacher-inputs">
             <label htmlFor="TeacherName"> First Name </label>
             <input
-              // className="create-body-textarea"
+             value={this.state.TeacherName}
               name="TeacherName"
               type="text"
               placeholder="First Name"
@@ -78,6 +106,7 @@ class AddTeachers extends Component {
             <label htmlFor="TeacherLastName"> Last Name </label>
 
             <input
+            value={this.state.TeacherLastName}
               // className="create-body-textarea"
               name="TeacherLastName"
               type="text"
@@ -87,6 +116,7 @@ class AddTeachers extends Component {
             <label htmlFor="ImageUrl"> Teacher image </label>
 
             <input
+            value={this.state.ImageUrl}
               // className="create-body-textarea"
               name="ImageUrl"
               type="text"
@@ -96,6 +126,7 @@ class AddTeachers extends Component {
             <label htmlFor="Field"> Teacher Field </label>
 
             <input
+            value={this.state.Field}
               // className="create-body-textarea"
               name="Field"
               type="text"
@@ -105,6 +136,7 @@ class AddTeachers extends Component {
             <label htmlFor="Phone"> Phone Number </label>
 
             <input
+            value={this.state.Phone}
               // className="create-body-textarea"
               name="Phone"
               type="text"
@@ -114,6 +146,7 @@ class AddTeachers extends Component {
             <label htmlFor="Email"> Email</label>
 
             <input
+            value={this.state.Email}
               // className="create-body-textarea"
               name="Email"
               type="text"
@@ -122,8 +155,9 @@ class AddTeachers extends Component {
             />
             <label htmlFor="password"> Password</label>
             <input
-              // className="create-body-textarea"
-              name="password"
+            value={this.state.Password}
+              
+              name="Password"
               type="password"
               placeholder="Enter password"
               onChange={this.handleChange}

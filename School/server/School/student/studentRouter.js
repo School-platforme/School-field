@@ -7,7 +7,4 @@ studentRouter.route("/student/:id")
     .post(studentController.createStudent)
     
     
-
-
-
 module.exports = studentRouter;

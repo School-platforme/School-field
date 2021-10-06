@@ -12,6 +12,7 @@ var adminSchema = mongoose.Schema({
   Password: { type: String, required: true },
   Email: { type: String, unique: true, required: true },
   ImageUrl: { type: String, required: true },
+  
 })
 
 
