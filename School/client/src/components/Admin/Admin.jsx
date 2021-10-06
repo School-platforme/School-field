@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { Component } from "react";
 import AddTeachers from "./AddTeachers.jsx";
 import AdminFeed from "./AdminFeed.jsx";
@@ -14,6 +15,15 @@ class Admin extends Component {
 
     this.changeView = this.changeView.bind(this);
   }
+
+  // componentDidMount() {
+  //   axios.get("").then((data) => {
+  //     console.log(data.data);
+  //     this.setState({
+  //       data: data.data,
+  //     });
+  //   });
+  // }
 
   changeView(option) {
     this.setState({

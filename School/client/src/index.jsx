@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
+import Students from "./components/Students/Students.jsx";
 import Admin from "./components/Admin/Admin.jsx";
+import HomeTeacher from "./components/Teachers/HomeTeacher.jsx"
+
+
+
+
+
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      view: "MainPage",
+      view: "main",
     };
     this.changeView = this.changeView.bind(this);
   }
@@ -19,33 +27,54 @@ class App extends React.Component {
 
   renderView() {
     const { view } = this.state;
-    if (view === "MainPage") {
-      return <Admin />;
-    } else {
-      return <Students />;
+    if (view === "admin") {
+
+       return <Admin/>
+
+    } else if(view === 'teacher') {
+      return <HomeTeacher/>
     }
+      else if(view === 'student'){
+        return <Students/>
+      }
+
   }
 
   render() {
+    if(this.state.view === 'main'){
     return (
       <div>
         <div className="nav">
-          <span
-            className="logo"
-            onClick={() => this.changeView("MainPage")}
-          ></span>
-          NAVBAR
+
+          <span className="logo"
+            onClick={() => this.changeView('teacher')}>
+            teacher
+          </span>
+          <span className={this.state.view === 'MainPage'
+            ? 'nav-selected'
+            : 'nav-unselected'}
+            onClick={() => this.changeView('admin')}>
+          Admin
+
+          </span>
+
+            
+
           <span
             className={
               this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
             }
-            onClick={() => this.changeView("MainPage")}
-          ></span>
+            onClick={() => this.changeView("student")}
+          >student</span>
         </div>
+        </div>
+        )
+        }
+         else{ 
 
-        <div className="main">{this.renderView()}</div>
-      </div>
-    );
+          return   <div className="main">{this.renderView()}</div>
+      
+         }
   }
 }
 
