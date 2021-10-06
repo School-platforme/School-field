@@ -28,6 +28,7 @@ const data = [
     lecture: 4,
     exercise: 5,
     quiz: 3,
+    // length 
   },
   {
     name: "Teacher B",

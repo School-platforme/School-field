@@ -5,82 +5,23 @@ import AdminFeed from "./AdminFeed.jsx";
 import SchoolStat from "./SchoolStat.jsx";
 import TeachersList from "./TeachersList.jsx";
 
-// class Admin extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       view: "adminFeed",
-//       data: [],
-//     };
-
-//     this.changeView = this.changeView.bind(this);
-//   }
-
-//   // componentDidMount() {
-//   //   axios.get("").then((data) => {
-//   //     console.log(data.data);
-//   //     this.setState({
-//   //       data: data.data,
-//   //     });
-//   //   });
-//   // }
-
-//   changeView(option) {
-//     this.setState({
-//       view: option,
-//     });
-//   }
-
-//   renderView() {
-//     const { view } = this.state;
-
-//     if (view === "adminFeed") {
-//       return <AdminFeed changeView={this.changeView} />;
-//     }
-//     if (view === "teacherList") {
-//       return (
-//         <div className="teachers-list">
-//           <TeachersList
-//             changeView={this.changeView}
-//             teachersList={this.props.data}
-//           />
-//         </div>
-//       );
-//     }
-//     if (view === "createTeacher") {
-//       return <AddTeachers changeView={this.changeView} />;
-//     }
-//     if (view === "schoolstat") {
-//       return <SchoolStat changeView={this.changeView} />;
-//     }
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         <div className="">{this.renderView()}</div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Admin;
-
 export default function Admin(props) {
   const [adminView, setAdminView] = useState("adminFeed");
-  // const [Data, setData] = useState([]);
+  const [DataStudent, setDataStudent] = useState([]);
+  const [DataTeacher, setDataTeacher] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("/")
-  //     .then((data) => {
-  //       console.log(data);
-  //       setData(data.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // });
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/teacher").then((data) => {
+      setDataTeacher(data.data[0]); //set the state here for all the teacher
+      setDataStudent(data.data[1]); //set the state for all the student
+    });
+  }, []);
+
+
+  console.log("students", DataStudent);
+  console.log("teachers", DataTeacher);
+
 
   const changeView = (option) => {
     setAdminView(option);
@@ -112,7 +53,7 @@ export default function Admin(props) {
       return <AddTeachers changeView={changeView} />;
     }
     if (adminView === "schoolstat") {
-      return <SchoolStat changeView={changeView} />;
+      return <SchoolStat data={DataTeacher} changeView={changeView} />;
     }
   };
 
