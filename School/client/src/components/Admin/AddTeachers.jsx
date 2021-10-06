@@ -14,7 +14,6 @@ class AddTeachers extends Component {
       field: "",
       age: 0,
       teacher: {},
-      hello: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
