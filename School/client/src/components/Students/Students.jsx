@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import OwnStatistics from './OwnStatistics.jsx';
 import SchoolPlateform from './SchoolPlateform.jsx';
 
@@ -7,6 +7,18 @@ import SchoolPlateform from './SchoolPlateform.jsx';
 export default function Students() {
     const [viewsStudent,useViewS] = useState('main')
    
+    useEffect(() => {
+      
+      const sView = localStorage.getItem('viewsStudent')
+        
+       useViewS(sView)
+      }, [])
+       
+      useEffect(() => {
+        
+        localStorage.setItem('viewsStudent',viewsStudent)
+      }, [viewsStudent])
+
 
     if(viewsStudent === 'main'){
         return (  
