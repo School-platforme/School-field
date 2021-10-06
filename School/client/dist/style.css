@@ -6,86 +6,11 @@
 ***********************************************************************************
 */
 
-@import url("https://fonts.googleapis.com/css?family=Francois+One|PT+Serif:400,400i,700,700i");
-<<<<<<< HEAD
-=======
-/* 
-body {
-  font-family: "PT Serif", sans-serif;
-  margin: 0px;
-  color: #2c3e50;
-  background-color: #ecf0f1;
-  font-size: 1.1em;
-} */
-
-button {
-  cursor: pointer;
-  border: none;
-  border-radius: 3px;
-  font-family: "PT Serif", sans-serif;
-  color: #ecf0f1;
-  background-color: #538a51;
-}
-.btn {
-  cursor: pointer;
-  border: none;
-  border-radius: 1px;
-  font-family: "PT Serif", sans-serif;
-  color: #ecf0f1;
-  background-color: #94d170;
-  margin: -2px 10px;
-  padding: 11px;
-  border-bottom-style: groove;
-}
-
-.post {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 800px;
-  font-size: 1.3em;
-  line-height: 1.5em;
-  background-color: white;
-  padding: 5px 20px 5px 20px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.9em;
-  margin-right: auto;
-  margin-left: 10px;
-  font-family: "Francois One";
-  color: #ffffff;
-}
-
-.main {
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-/* .nav {
+.nav{
   background-color: red;
-  margin: 5px;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-family: "lato";
-} */
-
-.nav-selected {
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  margin-right: 5px;
-  font-size: 1.1em;
 }
 
-.nav-unselected {
-  padding: 9px;
-  margin-right: 8px;
-  font-size: 1.1em;
-}
->>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
+
 
 body {
   font-family: "PT Serif", sans-serif;
@@ -110,22 +35,15 @@ h2 {
   color: #2c3e50;
 }
 
-<<<<<<< HEAD
 /* .pokemon-list-item {
   min-height: 350px;
   margin: 20px;
-=======
-.feed-list-item {
-  min-height: 150px;
-  margin-top: 10%;
->>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
   list-style: none;
   border: 1px solid #77777769;
   background-color: #fdfdfd;
   border-radius: 4px;
   padding: 30px 50px 0px 50px;
   box-shadow: 0 0 1em #80808066;
-<<<<<<< HEAD
   width: 200px;
 } */
 
@@ -133,38 +51,6 @@ h2 {
   display: flex;
   flex-wrap: wrap;
 } */
-=======
-}
-
-.feed-list-item-image {
-  float: left;
-  width: 100%;
-  max-width: 350px;
-  margin-right: 20px;
-  margin-bottom: 5%;
-}
-
-.feed-list-item-title {
-  font-size: 1.8em;
-  font-family: "Francois One";
-  margin-bottom: 10px;
-}
-
-.feed-list-item-lede {
-  display: block;
-  margin-bottom: 50px;
-}
-
-.feed-list-item-byline {
-  font-size: 0.8em;
-  margin-bottom: 15px;
-  color: #777777;
-}
-
-.feed-list-item-byline-author {
-  font-weight: bolder;
-}
->>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
 
 button {
   cursor: pointer;
@@ -330,49 +216,6 @@ button {
 }
 
 .main {
-<<<<<<< HEAD
   margin-left: 33%;
   margin-right: 33%;
-=======
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.nav {
-  background-color: #77d1ab;
-  margin: -12px;
-  margin-top: 25px;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-family: "Francois One";
-}
-
-.nav-selected {
-  padding: 5px;
-  color: white;
-  font-weight: bold;
-  margin-right: 5px;
-  font-size: 1.1em;
-}
-
-.nav-unselected {
-  padding: 5px;
-  margin-right: 5px;
-  font-size: 1.1em;
-}
-
-.feed {
-  padding: 0px 10% 0px 10%;
-}
-
-.inputLecure {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid rgb(119, 201, 109);
->>>>>>> 51aa5dce2e44a2cb756e661bc1298db5192b4507
 }

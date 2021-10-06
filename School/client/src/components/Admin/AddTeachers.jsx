@@ -6,13 +6,13 @@ class AddTeachers extends Component {
     super(props);
 
     this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
+      TeacherName: "",
+      TeacherLastName: "",
+      Email: "",
       password: "",
       imageUrl: "",
-      field: "",
-      age: 0,
+      Field: "",
+      Phone: 0,
       teacher: {},
     };
 
@@ -27,13 +27,13 @@ class AddTeachers extends Component {
     this.setState({
       [nam]: value,
       teacher: {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
+        TeacherName: this.state.TeacherName,
+        TeacherLastName: this.state.TeacherLastName,
+        Email: this.state.Email,
         password: this.state.password,
         imageUrl: this.state.imageUrl,
-        field: this.state.field,
-        age: Number(this.state.age),
+        Field: this.state.Field,
+        Phone: Number(this.state.Phone),
       },
     });
   }
@@ -58,14 +58,14 @@ class AddTeachers extends Component {
           <div className="create-teacher-inputs">
             <input
               className="create-body-textarea"
-              name="firstName"
+              name="TeacherName"
               type="text"
               placeholder="First Name"
               onChange={this.handleChange}
             ></input>
             <input
               className="create-body-textarea"
-              name="lastName"
+              name="TeacherLastName"
               type="text"
               placeholder="Last Name"
               onChange={this.handleChange}
@@ -79,9 +79,9 @@ class AddTeachers extends Component {
             ></input>
             <input
               className="create-body-textarea"
-              name="field"
+              name="Field"
               type="text"
-              placeholder="Teacher field"
+              placeholder="Teacher Field"
               onChange={this.handleChange}
             ></input>
             <input
@@ -93,7 +93,7 @@ class AddTeachers extends Component {
             ></input>
             <input
               className="create-body-textarea"
-              name="email"
+              name="Email"
               type="text"
               placeholder="Email"
               onChange={this.handleChange}
