@@ -1,5 +1,5 @@
 var School = require("../School")
-
+//
 ////after creation the course we need to update the teacher schema with that id  
 exports.createCourse = function (req, res) {
     ///taking the array that have the  course from the client     
