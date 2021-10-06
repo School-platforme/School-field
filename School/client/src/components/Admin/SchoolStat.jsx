@@ -68,7 +68,7 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Cours" fill="#82ca9d" />
+          <Bar dataKey="Cours"  fill="#82ca9d" />
           <Bar dataKey="Students" fill="#CAB81E" />
         </BarChart>
         <div>
