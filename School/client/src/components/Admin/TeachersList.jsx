@@ -16,9 +16,10 @@ function TeachersList({ changeView, teachers }) {
             </b>
             <p>{teacher.Field}</p>
             <p>{teacher.Experience}</p>
+            <p> Number of Students : {teacher.Students.length}</p>
 
-            <button>Promote</button>
-            <button>Kick out </button>
+            <button className="promote-btn">Promote</button>
+            <button className="fire-btn">Kick out </button>
           </div>
         );
       })}
