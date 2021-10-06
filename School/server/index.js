@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
-
+//
 
 app.use("/", teacher)
 app.use("/", student)
@@ -22,7 +22,7 @@ app.use("/", admin)
 app.use("/", cours)
 app.use("/", result)
 
-
+//
 app.get('/', function (req, res) {
   res.json({ message: 'Welcome to the School RESTful API!' });
 });

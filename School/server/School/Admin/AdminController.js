@@ -1,6 +1,6 @@
 
 var School = require("../School")
-
+//
 exports.createAdmin = function (req, res) {
     // taking the information of the admin 
     let AdminData = req.body
