@@ -68,11 +68,11 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Cours"  fill="#82ca9d" />
+          <Bar dataKey="Cours" fill="#82ca9d" />
           <Bar dataKey="Students" fill="#CAB81E" />
         </BarChart>
         <div>
-          <button onClick={() => this.props.changeView("adminFeed")}>
+          <button  onClick={() => this.props.changeView("adminFeed")}>
             back to feed{" "}
           </button>
           <button onClick={() => this.props.changeView("adminFeed")}>
@@ -85,7 +85,7 @@ export default class SchoolStat extends PureComponent {
 }
 
 // i need an array of object of teachers filtered with needed element(cours and students numbers)
-// i want to 
+// i want to
 
 // const statsData = [
 //   {

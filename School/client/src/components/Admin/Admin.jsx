@@ -38,6 +38,7 @@ export default function Admin(props) {
         <div className="teachers-list">
           <TeachersList
             changeView={changeView}
+            teachers={DataTeacher}
             //  data={data}
           />
         </div>
