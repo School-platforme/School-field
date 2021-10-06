@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 
 import Students from "./components/Students/Students.jsx";
 import Admin from "./components/Admin/Admin.jsx";
+import HomeTeacher from "./components/Teachers/HomeTeacher.jsx";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      view: "MainPage",
+      view: "main",
     };
     this.changeView = this.changeView.bind(this);
   }
@@ -21,44 +22,50 @@ class App extends React.Component {
 
   renderView() {
     const { view } = this.state;
-    if (view === "MainPage") {
-      return (
-        <div>
-          <Students />
-          <Admin />
-        </div>
-      );
-    } else {
+    if (view === "admin") {
+      return <Admin />;
+    } else if (view === "teacher") {
+      return <HomeTeacher />;
+    } else if (view === "student") {
+      return <Students />;
     }
   }
 
   render() {
-    return (
-      <div>
-        <div className="nav">
-          <span className="logo" onClick={() => this.changeView("MainPage")}>
-            teacher
-          </span>
-          <span
-            className={
-              this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
-            }
-            onClick={() => this.changeView("MainPage")}
-          >
-            Admin
-          </span>
+    if (this.state.view === "main") {
+      return (
+        <div>
+          <div className="nav">
+            <span className="logo" onClick={() => this.changeView("teacher")}>
+              teacher
+            </span>
+            <span
+              className={
+                this.state.view === "MainPage"
+                  ? "nav-selected"
+                  : "nav-unselected"
+              }
+              onClick={() => this.changeView("admin")}
+            >
+              Admin
+            </span>
 
-          <span
-            className={
-              this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
-            }
-            onClick={() => this.changeView("MainPage")}
-          ></span>
+            <span
+              className={
+                this.state.view === "MainPage"
+                  ? "nav-selected"
+                  : "nav-unselected"
+              }
+              onClick={() => this.changeView("student")}
+            >
+              student
+            </span>
+          </div>
         </div>
-
-        <div className="main">{this.renderView()}</div>
-      </div>
-    );
+      );
+    } else {
+      return <div className="main">{this.renderView()}</div>;
+    }
   }
 }
 
