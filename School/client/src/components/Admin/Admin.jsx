@@ -18,7 +18,7 @@ export default function Admin(props) {
   const deleteTeacher = (event) => {
     console.log(event.target.id);
     axios
-      .delete(`/admin/${event.target.id}`)
+      .delete(`/teacher/${event.target.id}`) 
       .then(() => {
         console.log("Teacher deleted from database");
       })
@@ -36,7 +36,6 @@ export default function Admin(props) {
   // request should be hidden as a helper function
 
   const changeView = (option) => {
-    console.log(target);
     setAdminView(option);
   };
   useEffect(() => {

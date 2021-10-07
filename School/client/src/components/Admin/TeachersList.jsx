@@ -21,7 +21,7 @@ function TeachersList({ changeView, teachers, deleteTeacher }) {
 
             <button className="promote-btn">Edit</button>
             <button
-              id={teacher.Email}
+              id={teacher._id}
               onClick={deleteTeacher}
               className="fire-btn"
             >
