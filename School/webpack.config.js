@@ -1,6 +1,6 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
-var DIST_DIR = path.join(__dirname, '/client/dist');
+var path = require("path");
+var SRC_DIR = path.join(__dirname, "/client/src");
+var DIST_DIR = path.join(__dirname, "/client/dist");
 
 module.exports = {
   // `entry` gives a path to the file that is the "root" of the dependency
@@ -14,12 +14,11 @@ module.exports = {
   // `output` is an object with options for the bundle that Webpack creates
   // out of your source files.
   output: {
-
     // `filename` tells Webpack what to call the file/files it outputs.
-    filename: 'bundle.js',
+    filename: "bundle.js",
 
     // `path` is a path to the directory where your bundle will be written.
-    path: DIST_DIR
+    path: DIST_DIR,
   },
 
   // `module` is an object with options for how Webpack processes the files it loads
@@ -28,7 +27,6 @@ module.exports = {
   module: {
     loaders: [
       {
-
         // `test` is a test condition that causes the rule to be applied when a
         // filename passes. In this case, when any filename contains either `.js` or `.jsx`
         // as its terminating characters, this rule will be applied.
@@ -43,17 +41,17 @@ module.exports = {
         // this object requires 'babel-loader' to do the transformation.
         // We could actually apply multiple loaders here by using the property `loaders`
         // instead of `loader`, which takes an array of loader names.
-        // 
+        //
         // When you're declaring loaders in this field, you can leave off the `-loader` part
         // of the package name. Webpack will interpret `babel` as `babel-loader` here,
         // `coffee` as `coffee-loader`, etc. But you can also just write out `babel-loader`,
         // if you prefer.
-        loader: 'babel-loader',
-        
+        loader: "babel-loader",
+
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
-  }
+          presets: ["react", "es2015"],
+        },
+      },
+    ],
+  },
 };
