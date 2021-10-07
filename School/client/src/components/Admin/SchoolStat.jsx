@@ -72,25 +72,12 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Cours.length`}
-            name="Cours"
-            fill="#82ca9d"
-          />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Students.length`}
-            name="Students"
-            fill="#CAB81E"
-          />
+          <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
+          <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
         </BarChart>
         <div>
           <button onClick={() => this.props.changeView("adminFeed")}>
             back to feed{" "}
-          </button>
-          <button onClick={() => this.props.changeView("adminFeed")}>
-            Get Stats
           </button>
         </div>
       </div>

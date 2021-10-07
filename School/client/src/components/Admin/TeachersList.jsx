@@ -5,9 +5,9 @@ function TeachersList({ changeView, teachers }) {
   console.log("lisssssssst", teachers);
   return (
     <div className="teacher-container">
-      {teachers.map((teacher) => {
+      {teachers.map((teacher, key) => {
         return (
-          <div className="teacher-card">
+          <div key={key} className="teacher-card">
             <h4>
               <img src={teacher.ImageUrl} style={{ width: 100 }} alt="" />
             </h4>
@@ -18,7 +18,7 @@ function TeachersList({ changeView, teachers }) {
             <p>{teacher.Experience}</p>
             <p> Number of Students : {teacher.Students.length}</p>
 
-            <button className="promote-btn">Promote</button>
+            <button className="promote-btn">Edit</button>
             <button className="fire-btn">Kick out </button>
           </div>
         );
