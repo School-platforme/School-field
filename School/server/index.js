@@ -8,7 +8,8 @@ var admin = require("./School/Admin/AdminRouter")
 var cours = require("./School/Course/CourseRouter")
 var result = require("./School/Result/ResultRouter")
 var app = express();
-
+const cors = require("cors")
+app.use(cors())
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
