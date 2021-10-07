@@ -5,12 +5,81 @@
 /* 
 ***********************************************************************************
 */
-
-.nav{
-  background-color: red;
+.inputLecure {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(119, 201, 109);
+  font-family: "Francois One";
+}
+.feed {
+  padding: 10px 10% 10px 10%;
+  font-family: "Francois One";
+}
+.feed-list-item {
+  min-height: 150px;
+  margin-top: 10%;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 30px 50px 0px 50px;
+  box-shadow: 0 0 1em #80808066;
 }
 
+.feed-list-item-image {
+  float: left;
+  width: 100%;
+  max-width: 350px;
+  margin-right: 20px;
+  margin-bottom: 5%;
+}
 
+.feed-list-item-title {
+  font-size: 1.8em;
+  font-family: "Francois One";
+  margin-bottom: 10px;
+}
+
+.feed-list-item-lede {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.feed-list-item-byline {
+  font-size: 0.8em;
+  margin-bottom: 15px;
+  color: #777777;
+}
+
+.feed-list-item-byline-author {
+  font-weight: bolder;
+}
+
+.nav {
+  background-color: #77d1ab;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Francois One";
+}
+.nav-teacher {
+  background-color: #77d1ab;
+  margin: 0px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Francois One";
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-right: auto;
+  color: #ffffff;
+}
 
 body {
   font-family: "PT Serif", sans-serif;
@@ -35,23 +104,6 @@ h2 {
   color: #2c3e50;
 }
 
-/* .pokemon-list-item {
-  min-height: 350px;
-  margin: 20px;
-  list-style: none;
-  border: 1px solid #77777769;
-  background-color: #fdfdfd;
-  border-radius: 4px;
-  padding: 30px 50px 0px 50px;
-  box-shadow: 0 0 1em #80808066;
-  width: 200px;
-} */
-
-/* .pokemon-list {
-  display: flex;
-  flex-wrap: wrap;
-} */
-
 button {
   cursor: pointer;
   border: none;
@@ -60,22 +112,6 @@ button {
   color: #ecf0f1;
   background-color: #0e7c3c;
 }
-
-/* .post {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 800px;
-  font-size: 1.3em;
-  line-height: 1.5em;
-  background-color: white;
-  padding: 5px 20px 5px 20px;
-} */
-
-/* .adminButtons {
-  font-size: 1.9em;
-  font-weight: bold;
-  color: #ffffff;
-} */
 
 .post-title {
   font-family: "Francois One";
@@ -211,6 +247,22 @@ button {
   font-size: 1.9em;
   margin-right: auto;
   margin-left: 10px;
+  font-family: "Francois One";
+  color: #ffffff;
+}
+.logo1 {
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-right: auto;
+  margin-left: 65%;
+  font-family: "Francois One";
+  color: #ffffff;
+}
+.logo2 {
+  font-weight: bold;
+  font-size: 1.9em;
+  margin-right: auto;
+  margin-left: 68%;
   font-family: "Francois One";
   color: #ffffff;
 }

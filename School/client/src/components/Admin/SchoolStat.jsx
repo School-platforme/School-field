@@ -1,16 +1,3 @@
-// // import React from "react";
-
-// // function SchoolStat({ changeView }) {
-// //   return (
-// // <div>
-// //   <h5> Stats here </h5>
-
-// //   <button onClick={() => changeView("adminFeed")}> back to feed </button>
-// // </div>
-// //   );
-// // }
-
-// export default SchoolStat;
 import axios from "axios";
 import React, { PureComponent } from "react";
 import {
@@ -22,6 +9,23 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+// // import React from "react";
+
+// function SchoolStat({ changeView }) {
+//   return (
+//     <div>
+//       <div className="nav-teacher">
+//         <span>`General statistics`</span>
+//         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//       </div>
+//       <h5> Stats here </h5>
+
+// // //   <button onClick={() => changeView("adminFeed")}> back to feed </button>
+// // // </div>
+// //   );
+// // }
+
+// export default SchoolStat;
 
 // const statsD = this.props.data;
 
@@ -34,8 +38,6 @@ export default class SchoolStat extends PureComponent {
     this.state = {
       teachers: [],
       students: [],
-      studentsCount: 0,
-      teachersCount: 0,
     };
   }
 
@@ -51,7 +53,6 @@ export default class SchoolStat extends PureComponent {
   render() {
     // const studentLength = this.state.students.length;
     console.log("stats teachers", this.state.teachers);
-    console.log("stats students", this.state.students);
 
     return (
       <div>
@@ -71,23 +72,12 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Cours.length`}
-            fill="#82ca9d"
-          />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Students.length`}
-            fill="#CAB81E"
-          />
+          <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
+          <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
         </BarChart>
         <div>
           <button onClick={() => this.props.changeView("adminFeed")}>
             back to feed{" "}
-          </button>
-          <button onClick={() => this.props.changeView("adminFeed")}>
-            Get Stats
           </button>
         </div>
       </div>
