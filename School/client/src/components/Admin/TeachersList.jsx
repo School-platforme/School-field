@@ -1,19 +1,13 @@
 import React from "react";
+import axios from "axios";
 
-function Teachers() {
+function TeachersList({ changeView, teachersList }) {
   return (
-    <div className="feed">
-      {/* <div>
-        <ul>
-          <li className="feed-list-item">
-            <div className="feed-list-item-title">Teachers</div>
-            <div> Classes</div>
-            <div className="feed-list-item-byline">
-              <span className="feed-list-item-byline-author"> Material</span>
-            </div>
-          </li>
-        </ul>
-      </div> */}
+    <div>
+      <div className="nav-teacher">
+        <span>`List of your teachers`</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
       <div className="teacher-container">
         <div className="teacher-card">
           <h4>
@@ -75,9 +69,12 @@ function Teachers() {
           <button>Promote</button>
           <button>Kick out </button>
         </div>
+        <div>
+          <button onClick={() => changeView("adminFeed")}>back to feed</button>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Teachers;
+export default TeachersList;
