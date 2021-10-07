@@ -12,7 +12,7 @@ var adminSchema = mongoose.Schema({
   Password: { type: String, required: true },
   Email: { type: String, unique: true, required: true },
   ImageUrl: { type: String, required: true },
-  
+
 })
 
 
@@ -40,7 +40,8 @@ var createTeacherSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Course"
 
-  }]
+  }],
+
 });
 //// teacher model 
 var TeacherModel = mongoose.model("teacher", createTeacherSchema)

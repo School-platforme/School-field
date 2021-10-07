@@ -34,6 +34,8 @@ export default class SchoolStat extends PureComponent {
     this.state = {
       teachers: [],
       students: [],
+      studentsCount: 0,
+      teachersCount: 0,
     };
   }
 
@@ -47,6 +49,7 @@ export default class SchoolStat extends PureComponent {
   }
 
   render() {
+    // const studentLength = this.state.students.length;
     console.log("stats teachers", this.state.teachers);
     console.log("stats students", this.state.students);
 
@@ -68,8 +71,16 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="Cours"  fill="#82ca9d" />
-          <Bar dataKey="Students" fill="#CAB81E" />
+          <Bar
+            isAnimationActive={false}
+            dataKey={`Cours.length`}
+            fill="#82ca9d"
+          />
+          <Bar
+            isAnimationActive={false}
+            dataKey={`Students.length`}
+            fill="#CAB81E"
+          />
         </BarChart>
         <div>
           <button onClick={() => this.props.changeView("adminFeed")}>
@@ -85,7 +96,7 @@ export default class SchoolStat extends PureComponent {
 }
 
 // i need an array of object of teachers filtered with needed element(cours and students numbers)
-// i want to 
+// i want to
 
 // const statsData = [
 //   {
