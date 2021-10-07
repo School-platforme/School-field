@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 
-function TeachersList({ changeView, teachers }) {
+function TeachersList({ changeView, teachers, deleteTeacher }) {
   console.log("lisssssssst", teachers);
+
   return (
     <div className="teacher-container">
       {teachers.map((teacher, key) => {
@@ -19,7 +20,13 @@ function TeachersList({ changeView, teachers }) {
             <p> Number of Students : {teacher.Students.length}</p>
 
             <button className="promote-btn">Edit</button>
-            <button className="fire-btn">Kick out </button>
+            <button
+              id={teacher.Email}
+              onClick={deleteTeacher}
+              className="fire-btn"
+            >
+              Kick out{" "}
+            </button>
           </div>
         );
       })}

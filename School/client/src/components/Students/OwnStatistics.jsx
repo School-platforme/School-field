@@ -59,14 +59,10 @@ export default class OwnStatistics extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar
-            dataKey={`Cours.length`}
-            name="Cours"
-            fill="#82ca9d"
-          />
+          <Bar dataKey={`Cours.length`} name="Quiz done" fill="#82ca9d" />
           <Bar
             dataKey={`Students.length`}
-            name="Students"
+            name="Quiz succeded"
             fill="#CAB81E"
           />
         </BarChart>
@@ -122,6 +118,9 @@ export default class OwnStatistics extends PureComponent {
 //     Students: 3,
 //   },
 // ];
+
+// how many qiuz done
+// how many quiz succeded
 
 // exercise
 // quiz

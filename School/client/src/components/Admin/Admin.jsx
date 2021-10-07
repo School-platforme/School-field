@@ -13,7 +13,19 @@ export default function Admin(props) {
   const state = { DataTeacher, DataStudent, adminView };
   console.log("my state", state);
 
-  // useReference check it out 
+  // useReference check it out
+
+  const deleteTeacher = (event) => {
+    console.log(event.target.id);
+    axios
+      .delete(`/admin/${event.target.id}`)
+      .then(() => {
+        console.log("Teacher deleted from database");
+      })
+      .catch((err) => {
+        console.log(`Couldn't delete`, err);
+      });
+  };
 
   useEffect(() => {
     axios.get("http://localhost:3000/teacher").then((data) => {
@@ -21,10 +33,10 @@ export default function Admin(props) {
       setDataStudent(data.data[1]); //set the state for all the student
     });
   }, []);
-  // request should be hidden as a helper function 
-  
+  // request should be hidden as a helper function
 
   const changeView = (option) => {
+    console.log(target);
     setAdminView(option);
   };
   useEffect(() => {
@@ -44,6 +56,7 @@ export default function Admin(props) {
       return (
         <div className="teachers-list">
           <TeachersList
+            deleteTeacher={deleteTeacher}
             changeView={changeView}
             teachers={DataTeacher}
             //  data={data}
