@@ -7,7 +7,7 @@ import SchoolPlateform from './SchoolPlateform.jsx';
 export default function Students(props) {
     const [viewsStudent,useViewS] = useState('main')
     const deconnection = ()=>{
-    
+        localStorage.clear()
         props.setMain('main')
     }
    

@@ -29,7 +29,7 @@ function AdminFeed({ changeView,setMain }) {
         <br></br>
         <button
           className="adminButtons"
-          onClick={() => setMain('main')}
+          onClick={() => {setMain('main')  }  }
         >
           deconnection
         </button>
