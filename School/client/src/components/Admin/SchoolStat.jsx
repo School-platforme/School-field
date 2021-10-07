@@ -34,8 +34,6 @@ export default class SchoolStat extends PureComponent {
     this.state = {
       teachers: [],
       students: [],
-      studentsCount: 0,
-      teachersCount: 0,
     };
   }
 
@@ -51,8 +49,7 @@ export default class SchoolStat extends PureComponent {
   render() {
     // const studentLength = this.state.students.length;
     console.log("stats teachers", this.state.teachers);
-    console.log("stats students", this.state.students);
-
+    
     return (
       <div>
         <BarChart
