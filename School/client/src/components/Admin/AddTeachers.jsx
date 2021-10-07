@@ -82,104 +82,102 @@ class AddTeachers extends Component {
   // }
   render() {
     return (
-      <div className="create">
-        <div className="create-editor">
-          <h2>Create teacher</h2>
-          <div className="create-teacher-inputs">
-            <label htmlFor="TeacherName"> First Name </label>
-            <input
-              value={this.state.TeacherName}
-              name="TeacherName"
-              type="text"
-              placeholder="First Name"
-              onChange={this.handleChange}
-            ></input>
+      <div>
+        <div className="nav-teacher">
+          <span>`Add teacher to your database`</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div className="create">
+          <div className="create-editor">
+            <h2>Create teacher</h2>
+            <div className="create-teacher-inputs">
+              <label htmlFor="TeacherName"> First Name </label>
+              <input
+                // className="create-body-textarea"
+                name="TeacherName"
+                type="text"
+                placeholder="First Name"
+                onChange={this.handleChange}
+              ></input>
 
-            <label htmlFor="TeacherLastName"> Last Name </label>
+              <label htmlFor="TeacherLastName"> Last Name </label>
 
-            <input
-              value={this.state.TeacherLastName}
-              // className="create-body-textarea"
-              name="TeacherLastName"
-              type="text"
-              placeholder="Last Name"
-              onChange={this.handleChange}
-            ></input>
-            <label htmlFor="ImageUrl"> Teacher image </label>
+              <input
+                // className="create-body-textarea"
+                name="TeacherLastName"
+                type="text"
+                placeholder="Last Name"
+                onChange={this.handleChange}
+              ></input>
+              <label htmlFor="ImageUrl"> Teacher image </label>
 
-            <input
-              value={this.state.ImageUrl}
-              // className="create-body-textarea"
-              name="ImageUrl"
-              type="text"
-              placeholder="Teacher image"
-              onChange={this.handleChange}
-            ></input>
-            <label htmlFor="Field"> Teacher Field </label>
+              <input
+                // className="create-body-textarea"
+                name="ImageUrl"
+                type="text"
+                placeholder="Teacher image"
+                onChange={this.handleChange}
+              ></input>
+              <label htmlFor="Field"> Teacher Field </label>
 
-            <input
-              value={this.state.Field}
-              // className="create-body-textarea"
-              name="Field"
-              type="text"
-              placeholder="Teacher Field"
-              onChange={this.handleChange}
-            ></input>
-            <label htmlFor="Phone"> Phone Number </label>
+              <input
+                // className="create-body-textarea"
+                name="Field"
+                type="text"
+                placeholder="Teacher Field"
+                onChange={this.handleChange}
+              ></input>
+              <label htmlFor="Phone"> Phone Number </label>
 
-            <input
-              value={this.state.Phone}
-              // className="create-body-textarea"
-              name="Phone"
-              type="text"
-              placeholder="Phone number"
-              onChange={this.handleChange}
-            ></input>
-            <label htmlFor="Email"> Email</label>
+              <input
+                // className="create-body-textarea"
+                name="Phone"
+                type="text"
+                placeholder="Phone number"
+                onChange={this.handleChange}
+              ></input>
+              <label htmlFor="Email"> Email</label>
 
-            <input
-              value={this.state.Email}
-              // className="create-body-textarea"
-              name="Email"
-              type="text"
-              placeholder="Email"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="password"> Password</label>
-            <input
-              value={this.state.Password}
-              name="Password"
-              type="password"
-              placeholder="Enter password"
-              onChange={this.handleChange}
-            />
-            <label> Years of experience</label>
-            <select name="Experience" onChange={this.selectExp.bind(this)}>
-              <option value="Entry-level">0 - 1 year</option>
-              <option value="Intermediate">2 - 3 years</option>
-              <option value="Mid-level ">4 - 6 years</option>
-              <option value="Mid-Senior or executive-level ">
-                More than 7 years
-              </option>
-            </select>
+              <input
+                // className="create-body-textarea"
+                name="Email"
+                type="text"
+                placeholder="Email"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="password"> Password</label>
+              <input
+                // className="create-body-textarea"
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                onChange={this.handleChange}
+              />
+              <label> Years of experience</label>
+              <select name="Experience" onChange={this.selectExp.bind(this)}>
+                <option value="beginner">0 - 2 years</option>
+                <option value="experienced">2 - 4 years</option>
+                <option value="advanced ">More than 4 years</option>
+              </select>
 
-            <br></br>
-            <br></br>
+              <br></br>
+              <br></br>
 
-            <button
-              onClick={this.createTeacher.bind(this)}
-              className="create-submit-button-add-teacher"
-              type="submit"
-            >
-              Save teacher
-            </button>
+              <button
+                onClick={this.createTeacher.bind(this)}
+                className="create-submit-button-add-teacher"
+                type="submit"
+              >
+                Save teacher
+              </button>
 
-            <br></br>
-            <br></br>
+              <br></br>
+              <br></br>
 
-            <button onClick={() => this.props.changeView("adminFeed")}>
-              back to feed
-            </button>
+              <button onClick={() => this.props.changeView("adminFeed")}>
+                back to feed !
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,13 @@
 import React from "react";
 
-function AdminFeed({ changeView,setMain }) {
+function AdminFeed({ changeView, setMain }) {
   return (
     <div>
+      <div className="nav-teacher">
+        <span>Welcome to the success School</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+
       <div className="main">
         <h2>Welcome Admin </h2>
         <button
@@ -27,11 +32,8 @@ function AdminFeed({ changeView,setMain }) {
           Teachers List
         </button>
         <br></br>
-        <button
-          className="adminButtons"
-          onClick={() => {setMain('main')  }  }
-        >
-          deconnection
+        <button className="adminButtons" onClick={() => setMain("main")}>
+          Home page
         </button>
       </div>
     </div>
