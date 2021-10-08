@@ -63,7 +63,16 @@ return (
 			SchoolFiled
 		</h1>
 	
-		
+		<Link 
+		 to="/teacher/singin" style={{width:"250px",textDecoration: 'none'}}>
+        <h1
+			style={{ textAlign: "center",
+					marginLeft: "900px",
+					color: "green" }}
+		>
+			Sing&nbsp;Out
+		</h1>
+		</Link>
 		</Nav>
 		<SidebarNav sidebar={sidebar}>
 		<SidebarWrap>

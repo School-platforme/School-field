@@ -10,17 +10,17 @@ import Stack from '@mui/material/Stack';
 
 
 export const SingInTeacher = () => {
-    const [User, setUser] = useState("")
+    const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
-    const [path, setPath] = useState("/Admin/singin")
+    const [path, setPath] = useState("/teacher/singin")
     const [bool, setError] = useState(false)
     const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
 
     let check = () => {
         axios.post("", {
-            User, Password
+            Email, Password
         }).then(() => {
-            setPath("/Admin")
+            setPath("/teacher")
             setError(false)
         }).catch(() => {
             setError(true)
@@ -37,7 +37,7 @@ export const SingInTeacher = () => {
                     <br />
                     <br />
                     <TextField
-                        onChange={e => setUser(e.target.value)}
+                        onChange={e => setEmail(e.target.value)}
                         style={{ width: "300px" }}
                         required
                         label="Email "
@@ -67,7 +67,16 @@ export const SingInTeacher = () => {
             {bool?error:""}
             <div className="butn">
 
-                <Button style={{ width: "300px" }}
+                <Button style={{ width: "150px" }}
+                    variant="contained"
+                >
+                    <Link
+                        className="lnk"
+                        to="/home">
+                        BACK HOME
+                    </Link>
+                </Button>
+                <Button style={{ width: "150px" }}
                     variant="contained"
                 >
                     <Link

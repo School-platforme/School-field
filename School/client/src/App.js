@@ -1,12 +1,12 @@
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { HOME, OurAim, OurVision } from "./pages/Home/HOME";
+import { HOME} from "./pages/Home/HOME";
 import {Chekpoint} from "./pages/Students/Checkpoint"
 import {Exercice} from "./pages/Students/Exercice"
 import {Lecture} from "./pages/Students/Lecture"
 import Students from "./pages/Students/Student"
-import { Events, EventsOne, EventsTwo } from "./pages/Teacher/Events";
+import { Events } from "./pages/Teacher/Events";
 import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
@@ -35,19 +35,16 @@ return (
 
 	<Switch>
 		<Route path="/home" exact component={HOME} />
-		<Route path="/about-us/aim" exact component={OurAim} />
-		<Route path="/about-us/vision" exact component={OurVision} />
+		
 		<Route path="/students" exact component={Students} />
 		<Route path="/students/lecture" exact component={Lecture} />
 		<Route path="/students/exercice" exact component={Exercice} />
 		<Route path="/students/chekpoint" exact component={Chekpoint} />
 		<Route path="/contact" exact component={Contact} />
 		<Route path="/teacher" exact component={Events} />
-		<Route path="/events/events1" exact component={EventsOne} />
-		<Route path="/events/events2" exact component={EventsTwo} />
+	
 		<Route path="/Admin/register" exact component={Register} />
 		<Route path="/Admin/singin" exact component={SingIn} />
-		{/* <Route path="/Admin" exact component={AdminPage} /> */}
 
 		<Route path="/teacher/checkpoint" exact component={Quiz} />
 		<Route path="/teacher/exercice" exact component={Exercice1} />

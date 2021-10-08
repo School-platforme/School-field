@@ -83,3 +83,14 @@ flex-direction: center;
 justify-content: center;
   
 }
+.link1{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: xx-large;
+}
+.link1:hover{
+  text-decoration: none;
+  color:white;
+  font-size: large;
+  font-weight: bold;
+}

@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 export const SingInStudent = () => {
     const [User, setUser] = useState("")
     const [Password, setPassword] = useState("")
-    const [path, setPath] = useState("/Admin/singin")
+    const [path, setPath] = useState("/student/singin")
     const [bool, setError] = useState(false)
     const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
 
@@ -20,7 +20,7 @@ export const SingInStudent = () => {
         axios.post("", {
             User, Password
         }).then(() => {
-            setPath("/Admin")
+            setPath("/students")
             setError(false)
         }).catch(() => {
             setError(true)
@@ -67,7 +67,16 @@ export const SingInStudent = () => {
             {bool?error:""}
             <div className="butn">
 
-                <Button style={{ width: "300px" }}
+                <Button style={{ width: "150px" }}
+                    variant="contained"
+                >
+                    <Link
+                         className="lnk"
+                        to="/home">
+                        BACK HOME
+                    </Link>
+                </Button>
+                <Button style={{ width: "150px" }}
                     variant="contained"
                 >
                     <Link

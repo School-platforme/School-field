@@ -6,24 +6,10 @@ return (
 	<>
 	<Sidebar/>
 	<div className="events">
-	<h1>GeeksForGeeks Events</h1>
+	<h1>teacher space</h1>
 	</div>
 	</>
 );
 };
 
-export const EventsOne = () => {
-return (
-	<div className="events">
-	<h1>GeeksforGeeks Event1</h1>
-	</div>
-);
-};
 
-export const EventsTwo = () => {
-return (
-	<div className="events">
-	<h1>GeeksforGeeks Event2</h1>
-	</div>
-);
-};
