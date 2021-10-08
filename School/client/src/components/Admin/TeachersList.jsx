@@ -1,13 +1,14 @@
 import React from "react";
 import axios from "axios";
 
-function TeachersList({ changeView, teachers }) {
+function TeachersList({ changeView, teachers, deleteTeacher }) {
   console.log("lisssssssst", teachers);
+
   return (
     <div className="teacher-container">
-      {teachers.map((teacher) => {
+      {teachers.map((teacher, key) => {
         return (
-          <div className="teacher-card">
+          <div key={key} className="teacher-card">
             <h4>
               <img src={teacher.ImageUrl} style={{ width: 100 }} alt="" />
             </h4>
@@ -18,8 +19,14 @@ function TeachersList({ changeView, teachers }) {
             <p>{teacher.Experience}</p>
             <p> Number of Students : {teacher.Students.length}</p>
 
-            <button className="promote-btn">Promote</button>
-            <button className="fire-btn">Kick out </button>
+            <button className="promote-btn">Edit</button>
+            <button
+              id={teacher._id}
+              onClick={deleteTeacher}
+              className="fire-btn"
+            >
+              Kick out{" "}
+            </button>
           </div>
         );
       })}

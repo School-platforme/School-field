@@ -59,7 +59,7 @@ class AddTeachers extends Component {
           ImageUrl: "",
           Field: "",
           Phone: "",
-          Experience: "Beginner",
+          Experience: "",
         });
       })
       .catch((err) => {
@@ -81,10 +81,11 @@ class AddTeachers extends Component {
 
   // }
   render() {
+    console.log("sssssssssssssssssssss", this.state);
     return (
       <div>
         <div className="nav-teacher">
-          <span>`Add teacher to your database`</span>
+          <span>Add teacher to your database</span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
         <div className="create">
@@ -155,9 +156,12 @@ class AddTeachers extends Component {
               />
               <label> Years of experience</label>
               <select name="Experience" onChange={this.selectExp.bind(this)}>
-                <option value="beginner">0 - 2 years</option>
-                <option value="experienced">2 - 4 years</option>
-                <option value="advanced ">More than 4 years</option>
+                <option value="" selected hidden>
+                  Choose here
+                </option>
+                <option value="Entry-level">0 - 2 years</option>
+                <option value="Intermediate">2 - 4 years</option>
+                <option value="Senior">More than 4 years</option>
               </select>
 
               <br></br>
@@ -175,7 +179,7 @@ class AddTeachers extends Component {
               <br></br>
 
               <button onClick={() => this.props.changeView("adminFeed")}>
-                back to feed !
+                back to feed
               </button>
             </div>
           </div>

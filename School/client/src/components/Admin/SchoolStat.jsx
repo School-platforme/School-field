@@ -38,8 +38,6 @@ export default class SchoolStat extends PureComponent {
     this.state = {
       teachers: [],
       students: [],
-      studentsCount: 0,
-      teachersCount: 0,
     };
   }
 
@@ -55,7 +53,6 @@ export default class SchoolStat extends PureComponent {
   render() {
     // const studentLength = this.state.students.length;
     console.log("stats teachers", this.state.teachers);
-    console.log("stats students", this.state.students);
 
     return (
       <div>
@@ -75,23 +72,12 @@ export default class SchoolStat extends PureComponent {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Cours.length`}
-            fill="#82ca9d"
-          />
-          <Bar
-            isAnimationActive={false}
-            dataKey={`Students.length`}
-            fill="#CAB81E"
-          />
+          <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
+          <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
         </BarChart>
         <div>
           <button onClick={() => this.props.changeView("adminFeed")}>
             back to feed{" "}
-          </button>
-          <button onClick={() => this.props.changeView("adminFeed")}>
-            Get Stats
           </button>
         </div>
       </div>
