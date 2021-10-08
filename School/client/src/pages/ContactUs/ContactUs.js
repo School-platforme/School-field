@@ -14,7 +14,7 @@ const Contact = () => {
 	const alertModel = <Stack sx={{ width: '58%', marginLeft: "340px" }} ><Alert severity="success">Your feedback is already sended</Alert></Stack>
 	const sendFeedBack = () => {
 
-		axios.post("fix it tommorrow", {
+		axios.post("http://localhost:3002/contactus", {
 			Name,
 			Email,
 			Subject,
@@ -24,7 +24,7 @@ const Contact = () => {
 				setAlert(true)
 			})
 			.catch(() => {
-
+			console.log("error")	
 			})
 	}
 	return (

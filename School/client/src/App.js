@@ -10,7 +10,6 @@ import { Events } from "./pages/Teacher/Events";
 import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
-// import {AdminPage} from "./pages/ADMIN/Admin"
 import Footer from "./pages/Footer/Footer"
 
 import Quiz from "./pages/Teacher/AddCheckpoint"
@@ -30,6 +29,8 @@ import {SingInStudent} from "./pages/Students/SingInStudent"
 
 function App() {
 return (
+	<>
+	
 	<Router>
 	
 
@@ -66,7 +67,7 @@ return (
 	</Switch>
 	{/* <Footer/> */}
 	</Router>
-	
+	</>
 );
 }
 

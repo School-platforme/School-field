@@ -32,7 +32,7 @@ export const SingIn = () => {
         <>
         {/* <admin data ={data}/> && false */}
             <div className="Register">
-                <h1>SING IN FOR ADMIN </h1>
+                <h1>Sing In For Admin </h1>
                 <div className="item">
                     <br />
                     <br />

@@ -15,12 +15,20 @@ var adminSchema = mongoose.Schema({
 
 })
 
-
-///admin model 
 var AdminModel = mongoose.model("ADMIN", adminSchema)
 
+///admin model 
+var contactUsSchema = mongoose.Schema({
+  Name: { type: String  },
+  Email: { type: String  },
+  Subject: { type: String  },
+  Message: { type: String  },
 
+})
 
+/// contact us model 
+
+var contactUsModel = mongoose.model("contactUs",contactUsSchema)
 // this for the admin after he create his account know he can add a teacher 
 var createTeacherSchema = mongoose.Schema({
   TeacherName: { type: String, required: true },
@@ -99,6 +107,7 @@ var ResultModel = mongoose.model("Result", resultSchema)
 
 module.exports = {
   AdminModel,
+  contactUsModel,
   TeacherModel,
   StudentModel,
   CourseModel,

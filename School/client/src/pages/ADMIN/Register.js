@@ -31,7 +31,7 @@ export const Register = () => {
             <br />
 
             <div className="Register">
-                <h1> Regitser </h1>
+                <h1> Regitser For Admin </h1>
 
                 <div className="item">
                     <br />
@@ -86,7 +86,11 @@ export const Register = () => {
 
 
                 <Button
-                    style={{ width: "300px" }}
+                    style={{ width: "150px" }}
+                    variant="contained"
+                ><Link  className="lnk" to="/home"> BACK HOME</Link> </Button>
+                  <Button
+                    style={{ width: "150px" }}
                     variant="contained"
                 ><Link onClick={post} className="lnk" to={path}> REGISTER</Link> </Button>
             </div>
