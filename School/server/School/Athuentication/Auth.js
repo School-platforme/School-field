@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt')
+
 // for hashing the password
 // first argument is the password that come from the client 
 // second argument is the salt round which means the cost factor 
@@ -13,7 +14,5 @@ exports.comparePass = (passwordFromClient , passwordHashed)=>{
    // return true if the password come from client match the password stored in the data base
    // else it return false  
    return  bcrypt.compare(passwordFromClient,passwordHashed)
-
- 
 
 }
