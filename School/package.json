@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "nodemon server",
-    "dev:react": "webpack -d --watch",
+   
     "seed:db": "node server/db/seed",
     "test": "mocha test"
   },
@@ -28,16 +28,13 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
+  
     "chai": "^3.5.0",
     "chai-things": "^0.2.0",
     "eslint": "^3.3.1",
     "mocha": "^9.1.2",
     "nodemon": "^2.0.7",
-    "supertest": "^6.1.6",
-    "webpack": "^2.2.1"
+    "supertest": "^6.1.6"
+   
   }
 }

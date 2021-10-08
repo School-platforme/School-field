@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 exports.createTeacher = (req, res) => {
     // taking the information for the teacher that comes from the client side 
     const teacherData = req.body
+    
     // save the information into the data base 
     School.TeacherModel.create(teacherData)
         //if the data is saved without problem 
@@ -73,3 +74,17 @@ School.TeacherModel.findByIdAndUpdate(teacherId,dataToUpdate,(err,result)=>{
     
 })
 }
+
+
+exports.findTeacher=(req,res)=>{
+    condition = req.body 
+    
+    School.TeacherModel.findOne(condition,(err,rst)=>{
+        if(err) res.status(403).send(err)
+        res.status(200).send(rst)
+    })
+}
+
+
+
+
