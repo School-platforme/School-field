@@ -18,7 +18,7 @@ export default function Admin(props) {
   const deleteTeacher = (event) => {
     console.log(event.target.id);
     axios
-      .delete(`/teacher/${event.target.id}`) 
+      .delete(`/teacher/${event.target.id}`)
       .then(() => {
         console.log("Teacher deleted from database");
       })
