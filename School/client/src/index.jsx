@@ -3,85 +3,20 @@ import ReactDOM from "react-dom";
 
 import Students from "./components/Students/Students.jsx";
 import Admin from "./components/Admin/Admin.jsx";
-import HomeTeacher from "./components/Teachers/HomeTeacher.jsx"
+import SigninTeacher from './components/Teachers/SigninTeacher.jsx';
 import Main from './Main.jsx';
+import HomeTeacher from './components/Teachers/HomeTeacher.jsx';
+import SigninStudent from './components/Students/SigninStudent.jsx';
 
 
 
-
-
-// class App extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       view: "main",
-//     };
-//     this.changeView = this.changeView.bind(this);
-//   }
-
-//   changeView(option) {
-//     this.setState({
-//       view: option,
-//     });
-//   }
-
-//   renderView() {
-//     const { view } = this.state;
-//     if (view === "admin") {
-
-//        return <Admin/>
-
-//     } else if(view === 'teacher') {
-//       return <HomeTeacher/>
-//     }
-//       else if(view === 'student'){
-//         return <Students/>
-//       }
-
-//   }
-
-//   render() {
-//     if(this.state.view === 'main'){
-//     return (
-//       <div>
-//         <div className="nav">
-
-//           <span className="logo"
-//             onClick={() => this.changeView('teacher')}>
-//             teacher
-//           </span>
-//           <span className={this.state.view === 'MainPage'
-//             ? 'nav-selected'
-//             : 'nav-unselected'}
-//             onClick={() => this.changeView('admin')}>
-//           Admin
-
-//           </span>
-
-            
-
-//           <span
-//             className={
-//               this.state.view === "MainPage" ? "nav-selected" : "nav-unselected"
-//             }
-//             onClick={() => this.changeView("student")}
-//           >student</span>
-//         </div>
-//         </div>
-//         )
-//         }
-//          else{ 
-
-//           return   <div className="main">{this.renderView()}</div>
-      
-//          }
-//   }
-// }
 
 
 
 export default function App() {
   const [mainView, setMainView] = useState('main')
+  const [teacher, setteacher] = useState({})
+  const [student, setstudent] = useState({})
   const changeView = (option) => {
            setMainView(option)
   }
@@ -90,21 +25,28 @@ export default function App() {
       return <Admin  setMain={setMainView} />
     }
     else if (mainView === "teacher"){
-      return <HomeTeacher setMain={setMainView} />
+      return <SigninTeacher setMain={setMainView} setteacher={setteacher} />
+    }  else if (mainView === "student"){
+      return <SigninStudent setMain={setMainView} setstudent={setstudent} />
     }
-    else if(mainView === 'student'){
-      return <Students  setMain={setMainView} />
+    else if (mainView === "accessteacher"){
+      return <HomeTeacher setMain={setMainView} setteacher={setteacher}  teacher={teacher} />
+    }
+    else if(mainView === 'accessstudent'){
+      return <Students  setMain={setMainView} setstudent={setstudent}  student={student} />
     }
     else {
       return <Main changeView={changeView}  />
     }
   }
   useEffect(() => {
+   
     const mView = localStorage.getItem('mainView')
     setMainView(mView)
   }, [])
    
   useEffect(() => {
+   
      localStorage.setItem('mainView',mainView)
   }, [mainView])
   

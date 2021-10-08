@@ -10,8 +10,14 @@ teacherRoute.route('/teacher')
     
     teacherRoute.route('/teacher/:id')
     .get(teacherController.getAllStudent)
-    .delete(teacherController.deleteTeacher)
     .put(teacherController.updateTeacher)
+    .delete(teacherController.deleteTeacher)
+
+teacherRoute.route('/find')
+   .post(teacherController.findTeacher)
+
+
+  
 
 
 module.exports = teacherRoute;
