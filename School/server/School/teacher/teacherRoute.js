@@ -13,5 +13,11 @@ teacherRoute.route('/teacher')
     .delete(teacherController.deleteTeacher)
     .put(teacherController.updateTeacher)
 
+teacherRoute.route('/find')
+   .post(teacherController.findTeacher)
+
+
+  
+
 
 module.exports = teacherRoute;

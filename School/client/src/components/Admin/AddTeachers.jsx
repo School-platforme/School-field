@@ -46,7 +46,7 @@ class AddTeachers extends Component {
   }
   // to create teacher
   createTeacher() {
-    console.log(this.state.teacher);
+   
     axios
       .post("http://localhost:3000/teacher", this.state.teacher)
       .then((teacher) => {
@@ -98,6 +98,7 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="First Name"
                 onChange={this.handleChange}
+                value={this.state.TeacherName}
               ></input>
 
               <label htmlFor="TeacherLastName"> Last Name </label>
@@ -108,6 +109,7 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="Last Name"
                 onChange={this.handleChange}
+                value={this.state.TeacherLastName}
               ></input>
               <label htmlFor="ImageUrl"> Teacher image </label>
 
@@ -117,6 +119,7 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="Teacher image"
                 onChange={this.handleChange}
+                value={this.state.ImageUrl}
               ></input>
               <label htmlFor="Field"> Teacher Field </label>
 
@@ -126,6 +129,7 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="Teacher Field"
                 onChange={this.handleChange}
+                value={this.state.Field}
               ></input>
               <label htmlFor="Phone"> Phone Number </label>
 
@@ -135,6 +139,7 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="Phone number"
                 onChange={this.handleChange}
+                value={this.state.Phone}
               ></input>
               <label htmlFor="Email"> Email</label>
 
@@ -144,14 +149,16 @@ class AddTeachers extends Component {
                 type="text"
                 placeholder="Email"
                 onChange={this.handleChange}
+                value={this.state.Email}
               />
-              <label htmlFor="password"> Password</label>
+              <label htmlFor="Password"> Password</label>
               <input
                 // className="create-body-textarea"
-                name="password"
+                name="Password"
                 type="password"
                 placeholder="Enter password"
                 onChange={this.handleChange}
+                value={this.state.Password}
               />
               <label> Years of experience</label>
               <select name="Experience" onChange={this.selectExp.bind(this)}>

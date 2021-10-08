@@ -53,9 +53,10 @@ var TeacherModel = mongoose.model("teacher", createTeacherSchema)
 var createStudentSchema = mongoose.Schema({
   ImageUrl: { type: String, required: true },
   StudentName: { type: String, required: true },
-  Class: { type: String, required: true },
+  StudentLastName: { type: String, required: true },
   Age: { type: Number, required: true },
-  Level: { type: String, required: true },
+  Phone: { type: Number, required: true },
+  Password: { type: String, required: true },
   Teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
