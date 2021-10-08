@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
   res.json({ message: 'Welcome to the School RESTful API!' });
 });
 
-var PORT = 3000;
+var PORT = 3002;
 
 app.listen(PORT, function () {
   console.log('School-MongoDB RESTful API listening on http://localhost:' + PORT);

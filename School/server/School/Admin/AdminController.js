@@ -11,11 +11,11 @@ exports.createAdmin = (req, res) => {
         //save it into the data base  with the hashed password 
         School.AdminModel.create({ User, Password: Hashed, Email,ImageUrl })
             .then(() => {
-                res.status(201).send("admin Created")
+                res.sendStatus(201)
             })
             //if there is an error 
             .catch((err) => {
-                res.send(404).send(err)
+               res.sendStatus(404)
             })
     })
 
