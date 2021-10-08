@@ -94,3 +94,7 @@ justify-content: center;
   font-size: large;
   font-weight: bold;
 }
+.contactLink{
+text-decoration: none;
+color: black;
+}

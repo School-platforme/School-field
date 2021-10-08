@@ -4,7 +4,7 @@ import axios from "axios"
 import { TextField, Button } from '@material-ui/core'
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-
+import { Link } from "react-router-dom";
 const Contact = () => {
 	const [Name, setName] = useState('')
 	const [Email, setEmail] = useState('')
@@ -80,9 +80,21 @@ const Contact = () => {
 			<br />
 
 			<Button
+				
+				variant="contained"
+				style={{ marginLeft: "340px", width: "210px" }}
+			>
+				<Link
+				className="contactLink"
+				to="/home"	
+				>
+				BACK HOME
+				</Link>
+			</Button>
+			<Button
 				onClick={sendFeedBack}
 				variant="contained"
-				style={{ marginLeft: "340px", width: "250px" }}
+				style={{ marginLeft: "20px", width: "210px" }}
 			>
 				Send
 			</Button>
