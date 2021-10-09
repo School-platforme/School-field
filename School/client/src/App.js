@@ -6,7 +6,7 @@ import {Chekpoint} from "./pages/Students/Checkpoint"
 import {Exercice} from "./pages/Students/Exercice"
 import {Lecture} from "./pages/Students/Lecture"
 import Students from "./pages/Students/Student"
-import { Events } from "./pages/Teacher/Events";
+import { Teacher } from "./pages/Teacher/teacherSpace";
 import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
@@ -40,7 +40,7 @@ return (
 		<Route path="/students/exercice" exact component={Exercice} />
 		<Route path="/students/chekpoint" exact component={Chekpoint} />
 		<Route path="/contact" exact component={Contact} />
-		<Route path="/teacher" exact component={Events} />
+		<Route path="/teacher" exact component={Teacher} />
 	
 		<Route path="/Admin/register" exact component={Register} />
 		<Route path="/Admin/singin" exact component={SingIn} />

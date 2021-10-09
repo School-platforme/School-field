@@ -4,7 +4,7 @@ var checkPointController = require("../checkPoint/checkPointController")
 //
 checkPointRouter.route('/checkpoint/:id')
     .post(checkPointController.createCheckPoint)
-
+    .get(checkPointController.getCheckponit)
 
 
 

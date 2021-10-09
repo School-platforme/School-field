@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar"
 import { TextField, Button } from '@material-ui/core'
 
@@ -17,15 +17,15 @@ function Quiz() {
   const [A2, setA2] = useState('')
   const [A3, setA3] = useState('')
   const [rightA, setrightA] = useState('')
-  const [teacher,setteacher] = useState({})
+  const [teacher, setteacher] = useState({})
 
 
-   useEffect(() => {
-      
-      var teacher = localStorage.getItem('teacherId')
-      setteacher(JSON.parse(teacher))
+  useEffect(() => {
 
-   }, [])
+    var teacher = localStorage.getItem('teacherId')
+    setteacher(JSON.parse(teacher))
+
+  }, [])
 
 
   console.log(Q, A1, A2, A3, rightA)
@@ -56,8 +56,8 @@ function Quiz() {
 
 
   const Submit = () => {
-
-    axios.post("", {
+    // here juste for test you need  to provide it  with dynamic id 
+    axios.post(`http://localhost:3002/checkpoint/${"6161f87dfb961838b3552ae1"}`, {
       quizArray,
       name: nameQuiz
     })
