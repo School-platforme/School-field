@@ -21,7 +21,6 @@ exports.createStudent = function (req, res) {
                     Students: data,
                 }
             })
-
         })
         // if there is an error
         .catch((err) => {
