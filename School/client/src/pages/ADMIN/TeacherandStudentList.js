@@ -1,9 +1,23 @@
-import React from "react";
+import React ,{ useState,useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
 
-function TeachersList({ changeView, teachers, deleteTeacher }) {
-  console.log("lisssssssst", teachers);
+
+
+
+function TeachersList() {
+   const [teachers,setTeachers] = useState([])
+   const [student,setStudent] = useState([])
+
+  useEffect(()=> {
+      axios.get('http://localhost:3002/teacher')
+         .then(rst => {
+           setTeachers(rst.data[0])
+           setStudent(rst.data[1])
+         })
+  },[])
+ 
+
 
   return (
       <>
@@ -25,7 +39,7 @@ function TeachersList({ changeView, teachers, deleteTeacher }) {
             <button className="promote-btn">Edit</button>
             <button
               id={teacher._id}
-              onClick={deleteTeacher}
+             
               className="fire-btn"
             >
               Kick out{" "}
@@ -35,10 +49,11 @@ function TeachersList({ changeView, teachers, deleteTeacher }) {
       })}
 
       <div>
-        <button onClick={() => changeView("adminFeed")}>back to feed</button>
+     
       </div>
     </div>
     </>
+
   );
 }
 

@@ -47,9 +47,9 @@ class AddTeachers extends Component {
   }
   // to create teacher
   createTeacher() {
-   
+  
     axios
-      .post("http://localhost:3000/teacher", this.state.teacher)
+      .post("http://localhost:3002/teacher", this.state.teacher)
       .then((teacher) => {
         this.setState({
           teachers: teacher.data, /// here after submitting the data to the data base delete mak all variable as empty string
@@ -70,19 +70,9 @@ class AddTeachers extends Component {
         alert("fill in all your information ");
       });
   }
-  // to get the data which is all the student and teacher
-  // componentDidMount(){
-  //   axios.get("http://localhost:3000/teacher")
-  //   .then(data=>{
-  //     this.setState({
-  //       teachers:data.data[0] ,//set the state here for all the teacher
-  //       students:data.data[1],//set the state for all the student
-  //     })
-  //   })
-
-  // }
+ 
   render() {
-    console.log("sssssssssssssssssssss", this.state);
+  
     return (
         <>
         <Sidebar/>
