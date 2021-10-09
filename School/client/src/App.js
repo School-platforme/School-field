@@ -11,13 +11,11 @@ import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
 import Footer from "./pages/Footer/Footer"
-
 import Quiz from "./pages/Teacher/AddCheckpoint"
 import Exercice1 from "./pages/Teacher/AddExercice"
 import Lecture1 from "./pages/Teacher/AddLecture"
 import AddStudent from "./pages/Teacher/AddStudent"
 import {StudentStastic} from "./pages/Teacher/StatisticsStudent.js"
-
 import AddTeachers from "./pages/ADMIN/AddTeacher"
 import {FeedBack} from "./pages/ADMIN/FeedBack"
 import SchoolStat from "./pages/ADMIN/SchoolState"
