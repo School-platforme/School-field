@@ -5,7 +5,7 @@ var db = require('./db');
 var teacher = require("./School/teacher/teacherRoute")
 var student = require("./School/student/studentRouter")
 var admin = require("./School/Admin/AdminRouter")
-var cours = require("./School/Course/CourseRouter")
+var checkPoint = require("./School/checkPoint/checkpoinRouter")
 var result = require("./School/Result/ResultRouter")
 var contactUs = require("./School/ContactUs/ContactUsRouter")
 var app = express();
@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use("/", teacher)
 app.use("/", student)
 app.use("/", admin)
-app.use("/", cours)
+app.use("/", checkPoint)
 app.use("/", result)
 app.use("/",contactUs)
 

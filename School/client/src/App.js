@@ -21,7 +21,7 @@ import {StudentStastic} from "./pages/Teacher/StatisticsStudent.js"
 import AddTeachers from "./pages/ADMIN/AddTeacher"
 import {FeedBack} from "./pages/ADMIN/FeedBack"
 import SchoolStat from "./pages/ADMIN/SchoolState"
-import TeachersList from "./pages/ADMIN/TeacherList"
+import TeachersList from "./pages/ADMIN/TeacherandStudentList"
 import {AdminPage} from "./pages/ADMIN/Admin"
 
 import {SingInTeacher} from './pages/Teacher/SingIn'
@@ -35,7 +35,7 @@ return (
 	
 	
 	<Switch>
-		<Route path="/home" exact component={HOME} />
+		<Route path="/" exact component={HOME} />
 		
 		<Route path="/students" exact component={Students} />
 		<Route path="/students/lecture" exact component={Lecture} />

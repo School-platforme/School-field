@@ -29,7 +29,7 @@ export const SidebarData = [
 				cName: "sub-nav",
 			},
 			{
-				title: "Teacher List",
+				title: "Lists",
 				path: "/admin/teacherlist",
 				icon: <IoIcons.IoIosPaper />,
 				cName: "sub-nav",
