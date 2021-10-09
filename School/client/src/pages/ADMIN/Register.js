@@ -15,6 +15,7 @@ export const Register = () => {
     const error = <Stack sx={{ width: '300px', marginLeft: "615px" }} ><Alert severity="error">Please fill in all the requirment data </Alert></Stack>
 
     let post = () => {
+        console.log({User, Password, Email, ImageUrl})
         axios.post("http://localhost:3002/admin", {
             User, Password, Email, ImageUrl
         }).then(() => {

@@ -44,49 +44,54 @@ width: 100%;
 `;
 
 const Sidebar = () => {
-const [sidebar, setSidebar] = useState(false);
-const [Admin , setAdmin] =useState(false)
-const showSidebar = () => setSidebar(!sidebar);
+	const [sidebar, setSidebar] = useState(false);
+	const [Admin, setAdmin] = useState(false)
+	const showSidebar = () => setSidebar(!sidebar);
 
-return (
-	<>
-	<IconContext.Provider value={{ color: "#fff" }}>
-		<Nav>
-		<NavIcon to="#">
-			<FaIcons.FaBars onClick={showSidebar} />
-		</NavIcon>
-		<h1
-			style={{ textAlign: "center",
-					marginLeft: "200px",
-					color: "green" }}
-		>
-			SchoolFiled
-		</h1>
-		<Link 
-		 to="/Admin/singin" style={{width:"250px",textDecoration: 'none'}}>
-        <h1
-			style={{ textAlign: "center",
-					marginLeft: "900px",
-					color: "green" }}
-		>
-			Sing&nbsp;Out
-		</h1>
-		</Link>
-		
-		</Nav>
-		<SidebarNav sidebar={sidebar}>
-		<SidebarWrap>
-			<NavIcon to="#">
-			<AiIcons.AiOutlineClose onClick={showSidebar} />
-			</NavIcon>
-			{SidebarData.map((item, index) => {
-			return <SubMenu item={item} key={index} />;
-			})}
-		</SidebarWrap>
-		</SidebarNav>
-	</IconContext.Provider>
-	</>
-);
+	return (
+		<>
+			<IconContext.Provider value={{ color: "#fff" }}>
+				<Nav>
+					<NavIcon to="#">
+						<FaIcons.FaBars onClick={showSidebar} />
+					</NavIcon>
+					<h1
+						style={{
+							textAlign: "center",
+							marginLeft: "200px",
+							color: "green"
+						}}
+					>
+						SchoolFiled
+					</h1>
+					<Link
+						to="/Admin/singin" style={{ width: "250px", textDecoration: 'none' }}>
+						<h1
+							style={{
+								textAlign: "center",
+								marginLeft: "900px",
+								color: "green"
+							}}
+						>
+							Sing&nbsp;Out
+						</h1>
+					</Link>
+
+				</Nav>
+				<SidebarNav sidebar={sidebar}>
+					<SidebarWrap>
+						<NavIcon to="#">
+							<AiIcons.AiOutlineClose onClick={showSidebar} />
+						</NavIcon>
+						{SidebarData.map((item, index) => {
+							console.log('item', item)
+							return <SubMenu item={item} key={index} />;
+						})}
+					</SidebarWrap>
+				</SidebarNav>
+			</IconContext.Provider>
+		</>
+	);
 };
 
 export default Sidebar;

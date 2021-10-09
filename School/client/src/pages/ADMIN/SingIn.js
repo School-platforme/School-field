@@ -30,7 +30,7 @@ export const SingIn = () => {
 
     return (
         <>
-        {/* <admin data ={data}/> && false */}
+            {/* <admin data ={data}/> && false */}
             <div className="Register">
                 <h1>Sing In For Admin </h1>
                 <div className="item">
@@ -70,23 +70,24 @@ export const SingIn = () => {
 
 
             </div>
-            {bool?error:""}
+            {bool ? error : ""}
             <div className="butn">
 
                 <Button style={{ width: "150px" }}
                     variant="contained"
                 >
                     <Link
-                         className="lnk"
+                        className="lnk"
                         to="/home">
                         Back Home
                     </Link>
                 </Button>
                 <Button style={{ width: "150px" }}
                     variant="contained"
+                    onClick={check}
                 >
                     <Link
-                        onClick={check} className="lnk"
+                        className="lnk"
                         to={path}>
                         SING IN
                     </Link>
