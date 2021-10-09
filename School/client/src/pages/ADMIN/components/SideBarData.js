@@ -7,7 +7,7 @@ import * as RiIcons from "react-icons/ri";
 export const SidebarData = [
 	{
 		title: "HOME",
-		path: "/home",
+		path: "/",
 		icon: <AiIcons.AiFillHome />,
 		iconClosed: <RiIcons.RiArrowDownSFill />,
 		iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -29,7 +29,7 @@ export const SidebarData = [
 				cName: "sub-nav",
 			},
 			{
-				title: "Teacher List",
+				title: "Lists",
 				path: "/admin/teacherlist",
 				icon: <IoIcons.IoIosPaper />,
 				cName: "sub-nav",

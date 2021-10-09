@@ -19,7 +19,8 @@ export const SingInTeacher = () => {
     let check = () => {
         axios.post("", {
             Email, Password
-        }).then(() => {
+        }).then(rst => {
+            localStorage.setItem('teacherId',JSON.stringify(rst))
             setPath("/teacher")
             setError(false)
         }).catch(() => {
@@ -72,7 +73,7 @@ export const SingInTeacher = () => {
                 >
                     <Link
                         className="lnk"
-                        to="/home">
+                        to="/">
                         BACK HOME
                     </Link>
                 </Button>
