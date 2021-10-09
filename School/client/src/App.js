@@ -16,7 +16,7 @@ import Quiz from "./pages/Teacher/AddCheckpoint"
 import Exercice1 from "./pages/Teacher/AddExercice"
 import Lecture1 from "./pages/Teacher/AddLecture"
 import AddStudent from "./pages/Teacher/AddStudent"
-import {StudentStastic} from "./pages/Teacher/StatisticsStudent"
+import {StudentStastic} from "./pages/Teacher/StatisticsStudent.js"
 
 import AddTeachers from "./pages/ADMIN/AddTeacher"
 import {FeedBack} from "./pages/ADMIN/FeedBack"
@@ -33,7 +33,7 @@ return (
 	
 	<Router>
 	
-
+	
 	<Switch>
 		<Route path="/home" exact component={HOME} />
 		
@@ -46,7 +46,6 @@ return (
 	
 		<Route path="/Admin/register" exact component={Register} />
 		<Route path="/Admin/singin" exact component={SingIn} />
-
 		<Route path="/teacher/checkpoint" exact component={Quiz} />
 		<Route path="/teacher/exercice" exact component={Exercice1} />
 		<Route path="/teacher/lecture" exact component={Lecture1} />

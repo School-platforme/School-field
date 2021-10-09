@@ -17,6 +17,10 @@ export const SingIn = () => {
     const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
 
     let check = () => {
+        if(User ==undefined|| Password == undefined){
+            setError(true)
+            return 
+        }
         axios.post("http://localhost:3002/admin/check", {
             User, Password
         }).then(() => {

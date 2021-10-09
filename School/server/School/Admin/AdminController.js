@@ -24,6 +24,7 @@ exports.createAdmin = (req, res) => {
 exports.CheckIfThePassRight = (req, res) => {
    
     let { User, Password } = req.body
+    
     School.AdminModel.findOne({User:User}, (err, result) => {
         let hashedPass = result.Password
         let UserNameFromDataBase = result.User
@@ -33,13 +34,13 @@ exports.CheckIfThePassRight = (req, res) => {
                 
                 if (bool) {
                    
-                    res.status(201).send("welcome your data is match the data from data base ")
+                    res.status(201).send()
                 } else {
-                    res.status(404).send("check your password ")
+                    res.status(404).send(err)
                 }
             })
-        } else {
-            res.status(404).send("NOT FOUND")
+        } else if (err) {
+            res.status(500).send(err)
         }
 
     })
