@@ -35,7 +35,7 @@ return (
 	
 
 	<Switch>
-		<Route path="/home" exact component={HOME} />
+		<Route path="/" exact component={HOME} />
 		
 		<Route path="/students" exact component={Students} />
 		<Route path="/students/lecture" exact component={Lecture} />
