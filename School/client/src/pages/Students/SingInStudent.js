@@ -72,7 +72,7 @@ export const SingInStudent = () => {
                 >
                     <Link
                          className="lnk"
-                        to="/home">
+                        to="/">
                         BACK HOME
                     </Link>
                 </Button>
