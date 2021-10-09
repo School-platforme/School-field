@@ -86,7 +86,7 @@ const Contact = () => {
 			>
 				<Link
 				className="contactLink"
-				to="/home"	
+				to="/"	
 				>
 				BACK HOME
 				</Link>

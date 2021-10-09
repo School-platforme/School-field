@@ -82,7 +82,7 @@ export const SingIn = () => {
                 >
                     <Link
                          className="lnk"
-                        to="/home">
+                        to="/">
                         Back Home
                     </Link>
                 </Button>
