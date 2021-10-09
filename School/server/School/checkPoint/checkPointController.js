@@ -54,3 +54,19 @@ exports.getCheckponit = (req, res) => {
 
 }
 
+// still it's finished yet 
+exports.updateCheckpoint = (req,res)=>{
+    let name = req.body.name
+    let quizArray = req.body.quizArray
+    let teacherId = req.params.id 
+    School.TeacherModel.findById(teacherId,(err,{Quiz})=>{
+    let quizId =  JSON.parse(JSON.stringify(Quiz))
+   console.log(quizId)       
+    })
+
+
+}
+
+exports.deleteCheckpoint = (req,res)=>{
+
+}
