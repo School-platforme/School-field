@@ -5,11 +5,12 @@ import App from './App';
 import { StyledEngineProvider } from '@mui/material/styles';
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
      <StyledEngineProvider injectFirst>
     <App />
     </StyledEngineProvider>    
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

@@ -139,7 +139,7 @@ class AddStudent extends Component {
           </div>
         </div>
       </>
-    );
-  }
+    ); 
+  } 
 }
 export default AddStudent;
