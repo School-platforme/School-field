@@ -17,7 +17,7 @@ class AddStudent extends Component {
       Phone: "",
       Email:"",
       student: {},
-      teacher_id: localStorage.getItem('teacherId')
+      teacherId: localStorage.getItem('teacherId')
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,7 @@ class AddStudent extends Component {
         ImageUrl: this.state.ImageUrl,
         Phone: Number(this.state.Phone),
         Age: Number(this.state.Age),
-        teacher_id: this.state.teacher_id
+        teacherId: this.state.teacherId
       },
     });
   }
@@ -49,11 +49,11 @@ class AddStudent extends Component {
   }
   // to create teacher
   createStudent() {
-  
+ console.log(this.state.student)
     axios
-      .post(`http://localhost:3002/student/${this.state.teacher_id} `
-      , this.state.student)
+      .post(`http://localhost:3002/student/${this.state.teacherId}`, this.state.student)
       .then((student) => {
+        console.log(student)
         this.setState({
           students: student.data, /// here after submitting the data to the data base delete mak all variable as empty string
           studentName: "",
@@ -62,7 +62,6 @@ class AddStudent extends Component {
           Password: "",
           ImageUrl: "",
           Phone: "",
-
         });
       })
       .catch((err) => {
@@ -70,7 +69,7 @@ class AddStudent extends Component {
       });
   }
  
-  render() {console.log(this.props)
+  render() {
     return (
         <>
         <Sidebar/>

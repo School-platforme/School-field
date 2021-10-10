@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
+import { json } from "body-parser";
 
 
 export const SingInStudent = () => {
@@ -17,12 +18,19 @@ export const SingInStudent = () => {
     const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
 
     let check = () => {
-        axios.post("", {
+        axios.post("http://localhost:3002/findstudent", {
             User, Password
-        }).then(() => {
+        }).then(rst => {  
+              
             setPath("/students")
             setError(false)
+            setPassword('')
+            setUser('')
+            console.log(rst.data)
+            var student = JSON.stringify(rst.data)
+            localStorage.setItem('student',student)
         }).catch(() => {
+            console.log('err')
             setError(true)
         })
 
@@ -41,6 +49,7 @@ export const SingInStudent = () => {
                         style={{ width: "300px" }}
                         required
                         label="Email "
+                        value={User}
                     />
 
 
@@ -50,7 +59,7 @@ export const SingInStudent = () => {
                     <TextField
                         onChange={e => setPassword(e.target.value)}
                         style={{ width: "300px" }}
-
+                         value={Password}
                         required
                         label="password"
                         type="password"
@@ -72,7 +81,7 @@ export const SingInStudent = () => {
                 >
                     <Link
                          className="lnk"
-                        to="/">
+                        to={path}>
                         BACK HOME
                     </Link>
                 </Button>

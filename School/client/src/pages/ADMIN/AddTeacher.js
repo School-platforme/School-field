@@ -10,8 +10,9 @@ import {
   Box,
   FormControl,
 } from "@material-ui/core";
-import { Link } from "react-router-dom";
 
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 class AddTeachers extends Component {
   constructor(props) {
     super(props);
@@ -25,6 +26,7 @@ class AddTeachers extends Component {
       Field: "",
       Phone: "",
       Experience: "Entry-level",
+      bool: false,
       teacher: {},
     };
 
@@ -70,17 +72,29 @@ class AddTeachers extends Component {
           Field: "",
           Phone: "",
           Experience: "",
+          bool: true,
         });
       })
       .catch((err) => {
         // here do somthing else if there is an error
-        // the error is beacause the user submit the data and there is an input empty
+        // the error is beacause the user submit the data and there is an TextField empty
         // do somthing for this
         console.log(err);
       });
   }
 
   render() {
+    const alertModel = (
+      <Stack>
+        <Alert
+          style={{ color: "white", backgroundColor: "#87d593" }}
+          severity="success"
+        >
+          Teacher is already creaded
+        </Alert>
+      </Stack>
+    );
+
     return (
       <>
         <Sidebar />
@@ -92,6 +106,8 @@ class AddTeachers extends Component {
                   textAlign: "center",
                   marginTop: "30px",
                   marginBottom: "50px",
+                  fontSize: "50px",
+                  fontFamily: "Francois One",
                 }}
               >
                 Create teacher
@@ -183,27 +199,15 @@ class AddTeachers extends Component {
                     </Select>
                   </FormControl>
                 </Box>
-
-                <br></br>
-                <br></br>
-
+                <br />
+                {this.state.bool ? alertModel : ""}
+                <br />
                 <Button
                   onClick={this.createTeacher.bind(this)}
-                  className="create-submit-button-add-teacher"
+                  className="teacherLink"
                   type="submit"
                 >
                   Save teacher
-                </Button>
-
-                <br></br>
-                <br></br>
-
-                <Button>
-                  <Link
-                  className="teacherLink"
-                  to="/admin">
-                     Back
-                     </Link>
                 </Button>
               </div>
             </div>
