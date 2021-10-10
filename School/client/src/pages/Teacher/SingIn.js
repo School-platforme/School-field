@@ -20,12 +20,13 @@ export const SingInTeacher = () => {
         axios.post("http://localhost:3002/find", {
             Email, Password
         }).then(rst => {
-            
+           if( rst.data){
             localStorage.setItem('teacherId',JSON.stringify(rst.data._id))
             setPath("/teacher")
-            setError(false)
+            setError(false)}
         }).catch(() => {
             setError(true)
+        
         })
 
     }

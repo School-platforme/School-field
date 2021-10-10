@@ -19,12 +19,12 @@ export const SingInStudent = () => {
         axios.post("http://localhost:3002/findstudent", {
             User, Password
         }).then(rst => {  
-        
+        if(rst.data){
     
             localStorage.setItem('student', JSON.stringify(rst.data))
             setPath("/students")
             setError(false)
-        
+        }
            
         }).catch(() => {
             console.log('err')
@@ -71,7 +71,7 @@ export const SingInStudent = () => {
       {bool ? error : ""}
       <div className="butn">
         <Button style={{ width: "150px" }} variant="contained">
-          <Link className="lnk" to={path}>
+          <Link className="lnk" to='/'>
             BACK HOME
           </Link>
         </Button>
