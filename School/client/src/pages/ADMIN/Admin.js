@@ -22,7 +22,7 @@ export const AdminPage = () => {
   return (
     <>
       <Sidebar />
-      <div></div>
+      <div>admo</div>
     </>
   );
 };
