@@ -60,7 +60,7 @@ return (
 					marginLeft: "200px",
 					color: "green" }}
 		>
-			SchoolFiled
+			SchoolField
 		</h1>
 		<Link 
 		 to="/Admin/singin" style={{width:"50px",textDecoration: 'none'}}>
