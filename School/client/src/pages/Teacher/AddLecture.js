@@ -18,7 +18,17 @@ function Lecture() {
     setteacherId(JSON.parse(teacher))
 
  }, [])
-
+  
+   const Submit = ()=> {
+     axios.post(`http://localhost:3002/addLecture/${teacherId}`,{
+       Lecture,
+       LectureName
+     })
+       .then(rst => {
+         setLecture('')
+         setLectureName('')
+       })
+   }
 
 
   return (
@@ -37,14 +47,13 @@ function Lecture() {
               <br/>
               <TextField
                   value={LectureName}
-                  onChange={e => setLecture(e.target.value)}
+                  onChange={e => setLectureName(e.target.value)}
                   name='LectureName'
                   label="lectureName"
                   multiline
                   style={{ width: "200px" }}
                   rows={1}
                 />
-                <Button  >Put</Button>
                 <br/>
                 <br/>
               <TextField
@@ -58,7 +67,7 @@ function Lecture() {
                 />
                 <br/>
                 <br/>
-                <Button  >Submit</Button>
+                <Button onClick={Submit} >Submit</Button>
             </div>
           </li>
         </ul>

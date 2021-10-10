@@ -3,15 +3,23 @@ var mongoose = require('mongoose')
 
 
 exports.createExercice = (req,res) => {
-    const Exercice = req.body
-    const teacherId = req.params.teacherId
-    School.ExerciceModel.create(Exercice)
+    const Exercice = req.body.Exercice
+    const name = req.body.name 
+    const teacherId = req.params.id 
+    console.log({Exercice,name,teacherId})
+    School.exerciceModel.create({Exercice,name,teacherId})
            .then(rst => {
                return School.TeacherModel.findByIdAndUpdate(teacherId,{
                    $push:{
                        Exercice: rst
                    }
                })
+           })
+           .then(()=> {
+               res.status(201).send()
+           })
+           .catch(err=> {
+               res.status(404).send(err)
            })
 }
 

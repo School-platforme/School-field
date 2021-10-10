@@ -15,6 +15,11 @@ teacherRoute.route('/teacher/:id')
 
 teacherRoute.route('/find')
     .post(teacherController.findTeacher)
+    
+
+
+teacherRoute.route('/find/:id')
+    .get(teacherController.findAllWork)    
 
 
 

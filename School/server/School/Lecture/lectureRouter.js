@@ -3,12 +3,12 @@ var lectureController = require('./lectureController')
 
 
 
-lectureRoute.route('addLecture/:id')
+lectureRoute.route('/addLecture/:id')
         .post(lectureController.createLecture)
 
 
 
-lectureRoute.route('Lecture')
+lectureRoute.route('/Lecture')
             .get(lectureController.allLecture)        
 
 
