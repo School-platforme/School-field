@@ -100,24 +100,42 @@
 
 .create-teacher-inputs {
   display: grid;
-  width: 25%;
+  width: 30%;
   text-align: right;
-  padding-left: 10%;
-  margin-left: 250px;
+  margin-left: 200px;
+  position: relative;
+  min-height: 300px;
+  margin-top: 3%;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 50px;
+  box-shadow: 0 0 2em #80808066;
+  font-family: "Francois One";
 }
 .create-teacher-inputs2 {
   display: grid;
   width: 30%;
   text-align: left;
-  padding-right: 30%;
-  margin-left: 1073px;
-  margin-top: -138px;
+  /* padding-right: 30%; */
+  margin-left: 800px;
+  margin-top: -300px;
+  position: relative;
+  min-height: 450px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 50px 50px 20px 50px;
+  box-shadow: 0 0 2em #80808066;
+  font-family: "Francois One";
 }
 
-.teacherLink{
+.teacherLink {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
-.teacherLink:hover{
+.teacherLink:hover {
   text-decoration: underline;
 }
