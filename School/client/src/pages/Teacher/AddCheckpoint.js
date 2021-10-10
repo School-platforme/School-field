@@ -59,9 +59,10 @@ function Quiz() {
 
   const Submit = () => {
     // here juste for test you need  to provide it  with dynamic id 
-    axios.post(`http://localhost:3002/checkpoint/${"6161f87dfb961838b3552ae1"}`, {
+    axios.post(`http://localhost:3002/checkpoint/${teacherId}`, {
       quizArray,
       name: nameQuiz
+    
     })
       .then(() => {
         setBool(false)

@@ -7,10 +7,12 @@ exports.createCheckPoint = (req, res) => {
     let teacherId = req.params.id
     //taking the quiz data 
     let quizArray = req.body.quizArray
+
+
     // taking the quiz Name 
     let name = req.body.name
     // svae all of them into the data base 
-    School.checkPointModel.create({ quizArray, name })
+    School.checkPointModel.create({ quizArray, name , teacherId })
         .then(data => {
             //then use the id for that teacher and look for that teacher to update the array of quizez with id of the quiz that saved in data base 
             return School.TeacherModel.findByIdAndUpdate(teacherId, {
@@ -23,7 +25,7 @@ exports.createCheckPoint = (req, res) => {
             res.status(201).send()
         }).catch((err) => {
             // else send an error 
-            console.log('eror')
+        
             res.status(404).send(err)
         })
 }

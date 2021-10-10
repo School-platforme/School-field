@@ -87,4 +87,21 @@ exports.findTeacher = (req, res) => {
 
 
 
+exports.findAllWork = (req,res) => {
+    condition = req.params.id 
+    
+    School.LectureModel.find({teacherId:condition},(err,lecture)=>{
+        School.exerciceModel.find({teacherId:condition},(err,exercice)=>{
+              School.checkPointModel.find({teacherId:condition},(err,checkPoint)=>{
+                     if(err) res.status(500).send(err)
+                     res.status(200).send([[...lecture],[...exercice],[...checkPoint]])
+              })
+        })
+    })
+
+
+}
+
+
+
 
