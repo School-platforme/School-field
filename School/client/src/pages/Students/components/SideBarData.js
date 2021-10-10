@@ -19,8 +19,8 @@ export const SidebarData = [
 		icon: <IoIcons.IoIosPaper />,
 		iconClosed: <RiIcons.RiArrowDownSFill />,
 		iconOpened: <RiIcons.RiArrowUpSFill />,
-
-		subNav: [
+	},	
+	
 			{
 				title: "Lecture",
 				path: "/students/lecture",
@@ -39,8 +39,8 @@ export const SidebarData = [
 				icon: <IoIcons.IoIosPaper />,
 			},
 
-		],
-	},
+	
+	
 	{
 		title: "Contact",
 		path: "/contact",

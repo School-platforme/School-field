@@ -7,15 +7,23 @@ export const Chekpoint = () => {
     const [checkPoint , setChekpoint] = useState([])
  
 
-    useEffect(()=>{
-     // here you need to provide this path with spesific id for now juste test try to render the quiz in this page                            
-        axios.get(`http://localhost:3002/checkpoint/${"6161f87dfb961838b3552ae1"}`)
-        .then(({data})=>{
-            setChekpoint(data)
-        })
+    
 
+
+    useEffect(()=>{
+       var student = JSON.parse(localStorage.getItem('student'))
+       
+       axios.get(`http://localhost:3002/checkpoint/${student.teacherId}`)
+            .then(rst => {
+                setChekpoint(rst.data)
+            })
+            .catch(err => {
+               console.log(err)
+            })
     },[])
-    console.log(checkPoint)
+     console.log(checkPoint)
+
+
     // render chekpoint data  here 
     return (
         <>

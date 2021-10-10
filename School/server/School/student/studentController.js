@@ -4,9 +4,9 @@ var School = require("../School")
 exports.createStudent = function (req, res) {
     // taking the information of the student thatt comes from the client side 
     const studentData = req.body
-    console.log(req.body)
+   
     // taking the id of that specific teacher 
-  console.log(studentData)
+ 
     const teacherId = req.params.id
     //save the information of the student into the data base 
     School.StudentModel.create(studentData)
