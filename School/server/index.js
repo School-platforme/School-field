@@ -8,6 +8,8 @@ var admin = require("./School/Admin/AdminRouter")
 var checkPoint = require("./School/checkPoint/checkpoinRouter")
 var result = require("./School/Result/ResultRouter")
 var contactUs = require("./School/ContactUs/ContactUsRouter")
+var Lecture = require("./School/Lecture/lectureRouter")
+var Exercice = require("./School/exercice/exerciceRouter")
 var app = express();
 const cors = require("cors")
 app.use(cors())
@@ -23,7 +25,8 @@ app.use("/", student)
 app.use("/", admin)
 app.use("/", checkPoint)
 app.use("/", result)
-app.use("/",contactUs)
+app.use("/", contactUs)
+app.use("/", Lecture)
 
 //
 app.get('/', function (req, res) {

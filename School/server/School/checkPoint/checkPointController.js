@@ -9,7 +9,7 @@ exports.createCheckPoint = (req,res)=>{
 
     School.checkPointModel.create({quizArray,name})
     .then(data=>{
-        console.log(data)
+        
         return  School.TeacherModel.findByIdAndUpdate(teacherId,{
             $push:{
                 Quiz:data 
@@ -23,5 +23,15 @@ exports.createCheckPoint = (req,res)=>{
     }).catch((err)=>{
         console.log('eror')
         res.status(404).send(err)
+    })
+}
+
+
+
+exports.allCheckpoint = (req,res) => {
+    School.checkPointModel.find({}, (err,rst)=>{
+           if(err) res.status(500).send(err)
+           res.status(200).send(rst)
+
     })
 }

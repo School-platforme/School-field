@@ -17,10 +17,11 @@ export const SingInTeacher = () => {
     const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
 
     let check = () => {
-        axios.post("", {
+        axios.post("http://localhost:3002/find", {
             Email, Password
         }).then(rst => {
-            localStorage.setItem('teacherId',JSON.stringify(rst))
+            
+            localStorage.setItem('teacherId',JSON.stringify(rst.data._id))
             setPath("/teacher")
             setError(false)
         }).catch(() => {

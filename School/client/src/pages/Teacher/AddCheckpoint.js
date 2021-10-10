@@ -17,18 +17,18 @@ function Quiz() {
   const [A2, setA2] = useState('')
   const [A3, setA3] = useState('')
   const [rightA, setrightA] = useState('')
-  const [teacher,setteacher] = useState({})
+  const [teacherId,setteacherId] = useState('')
 
 
    useEffect(() => {
       
       var teacher = localStorage.getItem('teacherId')
-      setteacher(JSON.parse(teacher))
+      setteacherId(JSON.parse(teacher))
 
    }, [])
 
 
-  console.log(Q, A1, A2, A3, rightA)
+  
 
   const add = () => {
     var obj = {
@@ -47,7 +47,7 @@ function Quiz() {
     setA3('')
     setrightA('')
   }
-  console.log(quizArray)
+  
 
   const QuizFinish = () => {
     setBool(true)
