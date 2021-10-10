@@ -21,17 +21,17 @@ export const SingIn = () => {
   );
 
   let check = () => {
-    if (User == undefined || Password == undefined) {
-      setError(true);
-      return;
-    }
+    // if (User == undefined || Password == undefined) {
+    //   setError(true);
+    //   return;
+    // }
     axios
       .post("http://localhost:3002/admin/check", {
         User,
         Password,
       })
       .then(() => {
-        setPath("/Admin");
+        setPath("/admin");
         setError(false);
       })
       .catch(() => {

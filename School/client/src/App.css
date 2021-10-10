@@ -43,7 +43,8 @@ body {
   justify-content: row;
   display: flex;
   flex-direction: center;
-}.LINK {
+}
+.LINK {
   display: flex;
   flex-direction: center;
   justify-content: center;
@@ -72,9 +73,6 @@ body {
   justify-content: center;
 }
 
-.block {
-  margin-left: 340px;
-}
 .stat {
   margin-top: 50px;
   display: flex;
@@ -144,7 +142,7 @@ body {
   width: 75%;
   text-align: left;
   margin-left: 200px;
-  margin-top: 80px; 
+  margin-top: 80px;
   position: relative;
   min-height: 200px;
   border: 1px solid #77777769;
@@ -153,4 +151,94 @@ body {
   padding: 20px;
   box-shadow: 0 0 2em #80808066;
   font-family: "Francois One";
+
+  /* .teacher-container {
+  /* display: grid; */
+  /* display: flex; */
+  /* align-items: center; */
+  margin-left: 28%;
+  width: 50%;
+  position: relative;
+  min-height: 450px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  /* padding: 10px 10px 10px 60px; */
+  box-shadow: 0 0 10em #80808066;
+  font-family: "Francois One";
+}
+.teacher-card {
+  margin-left: 26%;
+  width: 50%;
+  position: relative;
+  min-height: 150px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 10px 10px 10px 60px;
+  box-shadow: 0 0 4em #80808066;
+  font-family: "Francois One";
+}
+
+.feed {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  /* padding-right: 30%; */
+  margin-left: 33%;
+  position: relative;
+  height: 500px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 10px 50px 20px 50px;
+  box-shadow: 0 0 20em #80808066;
+  font-family: "Francois One";
+  margin-top: 4%;
+}
+
+.butn {
+  margin-left: 40%;
+}
+
+.feed1 {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  /* padding-right: 30%; */
+  margin-left: 33%;
+  position: relative;
+  height: 360px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 50px 20px 50px;
+  box-shadow: 0 0 20em #80808066;
+  font-family: "Francois One";
+  margin-top: 4%;
+}
+
+.container1 {
+  display: grid;
+  width: 70%;
+  text-align: left;
+  /* padding-right: 30%; */
+  margin-left: 17%;
+  position: relative;
+  height: 560px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 0px 20px 50px;
+  box-shadow: 0 0 20em #80808066;
+  font-family: "Francois One";
+  margin-top: 4%;
+}
+.block {
+  margin-left: 10px;
 }

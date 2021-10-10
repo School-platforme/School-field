@@ -9,31 +9,38 @@ import Stack from "@mui/material/Stack";
 import { json } from "body-parser";
 
 export const SingInStudent = () => {
-    const [User, setUser] = useState("")
-    const [Password, setPassword] = useState("")
-    const [path, setPath] = useState("/student/singin")
-    const [bool, setError] = useState(false)
-    const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
+  const [User, setUser] = useState("");
+  const [Password, setPassword] = useState("");
+  const [path, setPath] = useState("/student/singin");
+  const [bool, setError] = useState(false);
+  const error = (
+    <div>
+      <Stack sx={{ width: "300px", marginLeft: "615px" }}>
+        <Alert severity="error">Check your password or user name </Alert>
+      </Stack>
+    </div>
+  );
 
-    let check = () => {
-        axios.post("http://localhost:3002/findstudent", {
-            User, Password
-        }).then(rst => {  
-        if(rst.data){
-    
-            localStorage.setItem('student', JSON.stringify(rst.data))
-            setPath("/students")
-            setError(false)
-        }
-           
-        }).catch(() => {
-            console.log('err')
-            setError(true)
-        })
-
-    }
-
-  
+  let check = () => {
+    axios
+      .post("http://localhost:3002/findstudent", {
+        User,
+        Password,
+      })
+      .then((rst) => {
+        setPath("/students");
+        setError(false);
+        setPassword("");
+        setUser("");
+        console.log(rst.data);
+        var student = JSON.stringify(rst.data);
+        localStorage.setItem("student", student);
+      })
+      .catch(() => {
+        console.log("err");
+        setError(true);
+      });
+  };
 
   return (
     <>
@@ -71,7 +78,7 @@ export const SingInStudent = () => {
       {bool ? error : ""}
       <div className="butn">
         <Button style={{ width: "150px" }} variant="contained">
-          <Link className="lnk" to='/'>
+          <Link className="lnk" to={"/"}>
             BACK HOME
           </Link>
         </Button>
