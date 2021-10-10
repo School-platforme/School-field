@@ -18,7 +18,7 @@ export const FeedBack=()=>{
 return (
  <>
  <Sidebar/>
- <div>here render the feedbacks</div>
+ <div>     </div>
 
  </>
 )
