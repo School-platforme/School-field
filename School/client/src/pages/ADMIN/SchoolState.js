@@ -10,27 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-// // import React from "react";
-
-// function SchoolStat({ changeView }) {
-//   return (
-//     <div>
-//       <div className="nav-teacher">
-//         <span>`General statistics`</span>
-//         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-//       </div>
-//       <h5> Stats here </h5>
-
-// // //   <button onClick={() => changeView("adminFeed")}> back to feed </button>
-// // // </div>
-// //   );
-// // }
-
-// export default SchoolStat;
-
-// const statsD = this.props.data;
-
-// const statsdata1 = this.state.teachers;
+import Card from '@material-ui/core/Card';
 
 export default class SchoolStat extends PureComponent {
   // static jsfiddleUrl = "https://jsfiddle.net/alidingling/30763kr7/";
@@ -43,7 +23,7 @@ export default class SchoolStat extends PureComponent {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3000/teacher").then((data) => {
+    axios.get("http://localhost:3002/teacher").then((data) => {
       this.setState({
         teachers: data.data[0], //set the state here for all the teacher
         students: data.data[1], //set the state for all the student
@@ -53,80 +33,60 @@ export default class SchoolStat extends PureComponent {
 
   render() {
     // const studentLength = this.state.students.length;
-    console.log("stats teachers", this.state.teachers);
+    console.log("stats teachers", this.state);
 
     return (
-        <>
-        <Sidebar/>
-      <div>
-        <BarChart
-          width={700}
-          height={300}
-          data={this.state.teachers}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="TeacherName" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
-          <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
-        </BarChart>
-        <div>
-          <button onClick={() => this.props.changeView("adminFeed")}>
-            back to feed{" "}
-          </button>
+      <>
+        <Sidebar />
+        <div className='schoolstat'>
+
+          <BarChart
+            className='teacher-stat'
+            width={700}
+            height={300}
+            data={this.state.teachers}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis allowReorder='yes'
+              dataKey="TeacherName" />
+            <YAxis allowDecimals='' />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
+            <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
+          </BarChart>
+          <BarChart
+            width={700}
+            height={300}
+            data={this.state.students}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis
+              allowReorder='yes'
+               dataKey="StudentName" />
+            <YAxis allowDecimals='' />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey={`Result`} name="Result" fill="#82ca9d" />
+            <Bar dataKey={`Teacher.TeacherName`} name="Teacher" fill="#CAB81E" />
+          </BarChart>
+
         </div>
-      </div>
+
       </>
     );
   }
 }
 
-// i need an array of object of teachers filtered with needed element(cours and students numbers)
-// i want to
-
-// const statsData = [
-//   {
-//     TeacherName: "Teacher A",
-//     Cours: 5,
-//     Students: 3,
-//   }
-// ]
-//   {
-//     TeacherName: "Teacher B",
-//     lecture: 10,
-//     exercise: 7,
-//     Students: 3,
-//   },
-//   {
-//     TeacherName: "Teacher C",
-//     lecture: 4,
-//     exercise: 8,
-//     Students: 3,
-//   },
-//   {
-//     TeacherName: "Teacher D",
-//     lecture: 4,
-//     exercise: 3,
-//     Students: 3,
-//   },
-//   {
-//     TeacherName: "Teacher E",
-//     lecture: 4,
-//     exercise: 12,
-//     Students: 3,
-//   },
-//   {
-//     TeacherName: "Teacher F",
-//     lecture: 4,
-//     exercise: 3,
-//     Students: 3,
-//   },
-// ];

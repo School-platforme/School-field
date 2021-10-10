@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import { json } from "body-parser";
 
 export const SingInStudent = () => {
+<<<<<<< HEAD
   const [User, setUser] = useState("");
   const [Password, setPassword] = useState("");
   const [path, setPath] = useState("/student/singin");
@@ -20,6 +21,66 @@ export const SingInStudent = () => {
       </Stack>
     </div>
   );
+=======
+    const [User, setUser] = useState("")
+    const [Password, setPassword] = useState("")
+    const [path, setPath] = useState("/student/singin")
+    const [bool, setError] = useState(false)
+    const error = <div><Stack sx={{ width: '300px', marginLeft: "615px" }}><Alert severity="error">Check your password or user name </Alert></Stack></div>
+
+    let check = () => {
+        axios.post("http://localhost:3002/findstudent", {
+            User, Password
+        }).then(rst => {  
+        
+    
+            localStorage.setItem('student', JSON.stringify(rst.data))
+            setPath("/students")
+            setError(false)
+        
+           
+        }).catch(() => {
+            console.log('err')
+            setError(true)
+        })
+
+    }
+
+    return (
+        <>
+            <div className="Register">
+                <h1>SING IN FOR STUDENT</h1>
+                <div className="item">
+                    <br />
+                    <br />
+                    <br />
+                    <TextField
+                        onChange={e => setUser(e.target.value)}
+                        style={{ width: "300px" }}
+                        required
+                        label="Email "
+                        value={User}
+                    />
+
+
+                    <br />
+                    <br />
+                    <br />
+                    <TextField
+                        onChange={e => setPassword(e.target.value)}
+                        style={{ width: "300px" }}
+                         value={Password}
+                        required
+                        label="password"
+                        type="password"
+                    />
+                    <br />
+                    <br />
+                    <br />
+                
+                </div>
+                <br />
+>>>>>>> 27b130d7c3138e98e4f9fc65592f00ad67447e75
 
   let check = () => {
     axios
