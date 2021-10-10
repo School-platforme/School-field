@@ -56,7 +56,7 @@ const Sidebar = () => {
           <h1
             style={{ textAlign: "center", marginLeft: "200px", color: "green" }}
           >
-            School
+            School Field
           </h1>
           <Link
             to="/Admin/singin"
