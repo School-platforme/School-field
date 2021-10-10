@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar"
 
+
+
 class AddStudent extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,7 @@ class AddStudent extends Component {
       ImageUrl: "",
       Phone: "",
       student: {},
-      teacher_id: this.props.teacher._id
+      teacher_id: localStorage.getItem('teacherId')
     };
 
     this.handleChange = this.handleChange.bind(this);

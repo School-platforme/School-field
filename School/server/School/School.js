@@ -125,9 +125,9 @@ var checkPointModel = mongoose.model("Quiz", createCheckPoint)
 // lecture schema
 var createLecture = mongoose.Schema({
 
-  Lecture: { type: Array, "default": [] },
-  LectureName: String,
-  teacher: {
+  Lecture: String,
+  LectureName:String,
+  teacherId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
   }

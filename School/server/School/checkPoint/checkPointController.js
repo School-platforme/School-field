@@ -67,6 +67,12 @@ exports.updateCheckpoint = (req,res)=>{
 
 }
 
-exports.deleteCheckpoint = (req,res)=>{
 
+
+exports.allCheckpoint = (req,res) => {
+    School.checkPointModel.find({}, (err,rst)=>{
+           if(err) res.status(500).send(err)
+           res.status(200).send(rst)
+
+    })
 }

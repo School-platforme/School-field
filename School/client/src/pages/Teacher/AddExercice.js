@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Sidebar from "./components/Sidebar"
+import { TextField, Button } from '@material-ui/core'
 
 function Exercice() {
   const [Exercice, setExercice] = useState("");
+  const [teacherId,setteacherId] = useState('')
+  const [ExerciceName, setName] = useState('')
+  const [bool, setBool] = useState(false)
 
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    console.log(Exercice);
-    setExercice("");
-  };
+
+
+  useEffect(() => {
+      
+    var teacher = localStorage.getItem('teacherId')
+    setteacherId(JSON.parse(teacher))
+
+ }, [])
+
+  const add = () => {
+
+  }
+   
+  
+  const Submit = () => {
+
+  }
+
+  const ExerciceFinish = () => {
+
+  }
+
+
+  const exerciceTitle = <><TextField onChange={e => setName(e.target.value)} label="Quiz Title" multiline style={{ width: "500px" }} rows={2} /><br /><br /><Button onClick={Submit}> Submit</Button></>
+
   return (
       <>
       <Sidebar/>
@@ -22,17 +46,31 @@ function Exercice() {
                 {" "}
                 Add The Exercice
               </span>
-              <form onSubmit={HandleSubmit}>
-                <label>Ex:</label>
-                <input
-                  className="inputLecure"
-                  type="text"
+              <TextField
+                  onChange={e => setExercice(e.target.value)}
+                  name='Exercice'
+                  label="Exercice"
+                  multiline
+                  style={{ width: "500px" }}
+                  rows={2}
                   value={Exercice}
-                  placeholder="Add your exercice here"
-                  onChange={(e) => setExercice(e.target.value)}
-                />
-                <input className="btn" type="submit" value="submit" />
-              </form>
+                /><br />
+                <br />
+                <Button
+                  onClick={add}
+                >
+                  Add
+                </Button>
+                <Button
+                  onClick={ExerciceFinish}
+                >
+                  Exercice finish
+                </Button>
+                <br />
+                <br />
+                {bool ? exerciceTitle : ""}
+               
+              
             </div>
           </li>
         </ul>
