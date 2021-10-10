@@ -139,7 +139,7 @@ body {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
+
 .feedback {
   display: grid;
   width: 75%;
@@ -154,8 +154,8 @@ body {
   padding: 20px;
   box-shadow: 0 0 2em #80808066;
   font-family: "Francois One";
-=======
-.teacher-container {
+
+/* .teacher-container {
   /* display: grid; */
   /* display: flex; */
   /* align-items: center; */
@@ -170,7 +170,7 @@ body {
   /* padding: 10px 10px 10px 60px; */
   box-shadow: 0 0 10em #80808066;
   font-family: "Francois One";
-}
+} */
 
 .teacher-card {
   margin-left: 26%;
@@ -202,5 +202,5 @@ body {
   box-shadow: 0 0 20em #80808066;
   font-family: "Francois One";
   margin-top: 4%;
->>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
+
 }
