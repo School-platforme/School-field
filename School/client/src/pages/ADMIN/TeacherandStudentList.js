@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,7 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
-import moment from 'moment'
+ import moment from 'moment'
 
 import { CardHeader } from '@mui/material';
 
@@ -31,14 +30,16 @@ function TeachersList() {
   }, [])
 
 
-
+console.log(students)
   return (
     <>
       <Sidebar />
-      <Card>
-        <TableContainer component={Paper}>
+    <h1 style={{textAlign:"center" ,marginBottom:"100px",marginTop:"30px"}} > Lists Of Students && Teacher </h1>
+      <Card style={{margin:"20px",padding:"5px"}}>
+        <h3 style={{margin:"50px"}}>Teacher Data : </h3>
+        <TableContainer component={Paper} >
           <Box sx={{ p: 5 }}>
-            <Table className='teacher-table' aria-label="simple table">
+            <Table className='teacher-table' aria-label="simple table" >
               <TableHead>
                 <TableRow >
                   <TableCell style={{ fontSize: '1.3rem' }}>Full Name</TableCell>
@@ -54,13 +55,11 @@ function TeachersList() {
                     <CardHeader
                       avatar={
                         <Avatar
-                          alt=""
                           src={teacher.ImageUrl}
                         />
                       }
                       title={teacher.TeacherName + ' ' + teacher.TeacherLastName}
                     />
-                    {/*<TableCell align="right">{row.name}</TableCell>*/}
                     <TableCell align="left">{teacher.Email}</TableCell>
                     <TableCell align="center">{teacher.Phone}</TableCell>
                     <TableCell align="right">{teacher.Experience}</TableCell>
@@ -75,17 +74,18 @@ function TeachersList() {
           </Box>
         </TableContainer>
       </Card>
+      <span style={{margin:"100px"}}></span>
       <div className='student-table'>
-        <Card>
-          <TableContainer component={Paper}>
+        <Card style={{margin:"20px",padding:"5px"}}>
+            <h3 style={{margin:"50px"}}>Student Data : </h3>            
+          <TableContainer component={Paper} >
             <Box sx={{ p: 5 }}>
               <Table className='teacher-table' aria-label="simple table">
                 <TableHead>
                   <TableRow >
                     <TableCell style={{ fontSize: '1.3rem' }}>Full Name</TableCell>
                     <TableCell style={{ fontSize: '1.3rem' }}>Age</TableCell>
-                    <TableCell style={{ fontSize: '1.3rem' }} align="center">Parental Contact</TableCell>
-                    <TableCell style={{ fontSize: '1.3rem' }} align="right">Teacher</TableCell>
+                    <TableCell style={{ fontSize: '1.3rem' }} align="center">Email</TableCell>
                     <TableCell style={{ fontSize: '1.3rem' }} align="center">Starting Date</TableCell>
                   </TableRow>
                 </TableHead>
@@ -95,16 +95,13 @@ function TeachersList() {
                       <CardHeader
                         avatar={
                           <Avatar
-                            alt="Remy Sharp"
                             src={student.ImageUrl}
                           />
                         }
                         title={student.studentName + ' ' + student.studentLastName}
                       />
-                      {/*<TableCell align="right">{row.name}</TableCell>*/}
                       <TableCell align="left">{student.Age}</TableCell>
-                      <TableCell align="center">{student.Phone}</TableCell>
-                      <TableCell align="right">{student.Teacher.TeacherName + ' ' + student.Teacher.TeacherLastName}</TableCell>
+                      <TableCell align="center">{student.Email}</TableCell>
 
                       <TableCell align="center">
                         {moment(student.createdAt).format("MMM Do YY")}
