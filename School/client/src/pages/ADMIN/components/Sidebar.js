@@ -69,7 +69,7 @@ return (
 					marginLeft: "900px",
 					color: "green" }}
 		>
-			Sing&nbsp;Out
+			Sign&nbsp;Out
 		</h1>
 		</Link>
 		

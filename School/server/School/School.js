@@ -83,6 +83,7 @@ var createStudentSchema = mongoose.Schema({
   StudentLastName: { type: String, required: true },
   Age: { type: Number, required: true },
   Phone: { type: Number, required: true },
+  Email: { type: String, unique: true, required: true },
   Password: { type: String, required: true },
   Teacher: {
     type: mongoose.Schema.Types.ObjectId,
@@ -107,6 +108,7 @@ var StudentModel = mongoose.model("student", createStudentSchema)
 var createCheckPoint = mongoose.Schema({
   quizArray: { type: Array, "default": [] },
   name: String,
+  teacherId: String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
@@ -125,8 +127,9 @@ var checkPointModel = mongoose.model("Quiz", createCheckPoint)
 // lecture schema
 var createLecture = mongoose.Schema({
 
-  Lecture: { type: Array, "default": [] },
-  LectureName: String,
+  Lecture: String,
+  LectureName:String,
+  teacherId:String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
@@ -142,7 +145,8 @@ var LectureModel = mongoose.model("Lecture", createLecture)
 // exercice schema 
 var createExercice = mongoose.Schema({
   Exercice: { type: Array, "default": [] },
-  exerciceName: String,
+  name: String,
+  teacherId: String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"

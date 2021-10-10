@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
+import {
+  TextField,
+  Button,
+  Select,
+  InputLabel,
+  MenuItem,
+  Box,
+  FormControl,
+} from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 class AddTeachers extends Component {
   constructor(props) {
@@ -47,7 +57,6 @@ class AddTeachers extends Component {
   }
   // to create teacher
   createTeacher() {
-  
     axios
       .post("http://localhost:3002/teacher", this.state.teacher)
       .then((teacher) => {
@@ -67,124 +76,139 @@ class AddTeachers extends Component {
         // here do somthing else if there is an error
         // the error is beacause the user submit the data and there is an input empty
         // do somthing for this
-        alert("fill in all your information ");
+        console.log(err);
       });
   }
- 
+
   render() {
-  
     return (
-        <>
-        <Sidebar/>
-      <div>
-        <div className="nav-teacher">
-          <span>Add teacher to your database</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-        <div className="create">
-          <div className="create-editor">
-            <h2>Create teacher</h2>
-            <div className="create-teacher-inputs">
-              <label htmlFor="TeacherName"> First Name </label>
-              <input
-                // className="create-body-textarea"
-                name="TeacherName"
-                type="text"
-                placeholder="First Name"
-                onChange={this.handleChange}
-                value={this.state.TeacherName}
-              ></input>
-
-              <label htmlFor="TeacherLastName"> Last Name </label>
-
-              <input
-                // className="create-body-textarea"
-                name="TeacherLastName"
-                type="text"
-                placeholder="Last Name"
-                onChange={this.handleChange}
-                value={this.state.TeacherLastName}
-              ></input>
-              <label htmlFor="ImageUrl"> Teacher image </label>
-
-              <input
-                // className="create-body-textarea"
-                name="ImageUrl"
-                type="text"
-                placeholder="Teacher image"
-                onChange={this.handleChange}
-                value={this.state.ImageUrl}
-              ></input>
-              <label htmlFor="Field"> Teacher Field </label>
-
-              <input
-                // className="create-body-textarea"
-                name="Field"
-                type="text"
-                placeholder="Teacher Field"
-                onChange={this.handleChange}
-                value={this.state.Field}
-              ></input>
-              <label htmlFor="Phone"> Phone Number </label>
-
-              <input
-                // className="create-body-textarea"
-                name="Phone"
-                type="text"
-                placeholder="Phone number"
-                onChange={this.handleChange}
-                value={this.state.Phone}
-              ></input>
-              <label htmlFor="Email"> Email</label>
-
-              <input
-                // className="create-body-textarea"
-                name="Email"
-                type="text"
-                placeholder="Email"
-                onChange={this.handleChange}
-                value={this.state.Email}
-              />
-              <label htmlFor="Password"> Password</label>
-              <input
-                // className="create-body-textarea"
-                name="Password"
-                type="password"
-                placeholder="Enter password"
-                onChange={this.handleChange}
-                value={this.state.Password}
-              />
-              <label> Years of experience</label>
-              <select name="Experience" onChange={this.selectExp.bind(this)}>
-                <option value="" selected hidden>
-                  Choose here
-                </option>
-                <option value="Entry-level">0 - 2 years</option>
-                <option value="Intermediate">2 - 4 years</option>
-                <option value="Senior">More than 4 years</option>
-              </select>
-
-              <br></br>
-              <br></br>
-
-              <button
-                onClick={this.createTeacher.bind(this)}
-                className="create-submit-button-add-teacher"
-                type="submit"
+      <>
+        <Sidebar />
+        <div>
+          <div className="create">
+            <div className="create-editor">
+              <h2
+                style={{
+                  textAlign: "center",
+                  marginTop: "30px",
+                  marginBottom: "50px",
+                }}
               >
-                Save teacher
-              </button>
+                Create teacher
+              </h2>
+              <div className="create-teacher-inputs">
+                <TextField
+                  // className="create-body-textarea"
+                  name="TeacherName"
+                  type="text"
+                  placeholder="First Name"
+                  onChange={this.handleChange}
+                  value={this.state.TeacherName}
+                />
 
-              <br></br>
-              <br></br>
+                <TextField
+                  // className="create-body-textarea"
+                  name="TeacherLastName"
+                  type="text"
+                  placeholder="Last Name"
+                  onChange={this.handleChange}
+                  value={this.state.TeacherLastName}
+                />
 
-              <button onClick={() => this.props.changeView("adminFeed")}>
-                back to feed
-              </button>
+                <TextField
+                  // className="create-body-textarea"
+                  name="ImageUrl"
+                  type="text"
+                  placeholder="Teacher image"
+                  onChange={this.handleChange}
+                  value={this.state.ImageUrl}
+                />
+
+                <TextField
+                  // className="create-body-textarea"
+                  name="Field"
+                  type="text"
+                  placeholder="Teacher Field"
+                  onChange={this.handleChange}
+                  value={this.state.Field}
+                />
+              </div>
+              <div className="create-teacher-inputs2">
+                <TextField
+                  required
+                  name="Phone"
+                  type="text"
+                  placeholder="Phone number"
+                  onChange={this.handleChange}
+                  value={this.state.Phone}
+                />
+
+                <TextField
+                  required
+                  name="Email"
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.handleChange}
+                  value={this.state.Email}
+                />
+                <TextField
+                  required
+                  name="Password"
+                  type="password"
+                  placeholder="Enter password"
+                  onChange={this.handleChange}
+                  value={this.state.Password}
+                />
+                <br />
+
+                <Box
+                  sx={{
+                    minWidth: "120",
+                  }}
+                >
+                  <FormControl style={{ width: "300px" }}>
+                    <InputLabel id="demo-simple-select-label">
+                      Experience
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={this.state.Experience}
+                      label="Experience"
+                      onChange={this.selectExp.bind(this)}
+                    >
+                      <MenuItem value="beginner">0 - 2 years</MenuItem>
+                      <MenuItem value="Medium">2 - 4 years</MenuItem>
+                      <MenuItem value="expert">More than 4 years</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+
+                <br></br>
+                <br></br>
+
+                <Button
+                  onClick={this.createTeacher.bind(this)}
+                  className="create-submit-button-add-teacher"
+                  type="submit"
+                >
+                  Save teacher
+                </Button>
+
+                <br></br>
+                <br></br>
+
+                <Button>
+                  <Link
+                  className="teacherLink"
+                  to="/admin">
+                     Back
+                     </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </>
     );
   }
