@@ -15,16 +15,17 @@ export const Teacher = () => {
 		setteacherId(JSON.parse(teacher))
 	
 	 }, [])
+	 console.log(teacherId)
 
-    useEffect(()=> {
-		axios.get(`http://localhost:3002/find/${teacherId}`)
-		 .then(rst => {
-			 console.log(rst)
-			 setLecture(rst.data[0])
-			 setexercice(rst.data[1])
-			 setcheckPoint(rst.data[2])
-		 })
-	},[teacherId])
+    // useEffect(()=> {
+	// 	axios.get(`http://localhost:3002/find/${teacherId}`)
+	// 	 .then(rst => {
+	// 		 console.log(rst)
+	// 		 setLecture(rst.data[0])
+	// 		 setexercice(rst.data[1])
+	// 		 setcheckPoint(rst.data[2])
+	// 	 })
+	// },[teacherId])
      
 
 return (
