@@ -1,9 +1,11 @@
 import React, { useState,useEffect } from "react";
 import Sidebar from "./components/Sidebar"
 import { TextField, Button } from '@material-ui/core'
+import axios from "axios";
 
 function Exercice() {
   const [Exercice, setExercice] = useState("");
+  const [Exercices,setExercices] = useState([])
   const [teacherId,setteacherId] = useState('')
   const [ExerciceName, setName] = useState('')
   const [bool, setBool] = useState(false)
@@ -16,18 +18,33 @@ function Exercice() {
     setteacherId(JSON.parse(teacher))
 
  }, [])
-
+ 
   const add = () => {
-
+    var array = Exercices 
+    array.push(Exercice)
+    setExercices(Exercices)
+    setExercice('')
   }
    
-  
+ 
   const Submit = () => {
-
+    axios.post(`http://localhost:3002/exercice/${teacherId}`,{
+      Exercice: Exercices,
+      name : ExerciceName
+    })
+     .then(() => {
+       console.log('yes')
+       setBool(false)
+       
+     })
+     .catch(err => {
+       console.log(err)
+     })
   }
 
   const ExerciceFinish = () => {
-
+     setBool(true)
+     add()
   }
 
 

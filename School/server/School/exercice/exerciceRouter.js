@@ -1,5 +1,5 @@
 var exerciceRouter = require('express').Router();
-var exerciceController = require("../exercice/exerciceController")
+var exerciceController = require("./exerciceConroller")
 
 //
 exerciceRouter.route('/exercice/:id')

@@ -14,5 +14,4 @@ exports.comparePass = (passwordFromClient , passwordHashed)=>{
    // return true if the password come from client match the password stored in the data base
    // else it return false  
    return  bcrypt.compare(passwordFromClient,passwordHashed)
-
 }

@@ -5,14 +5,14 @@ var mongoose = require('mongoose');
 exports.createTeacher = (req, res) => {
     // taking the information for the teacher that comes from the client side 
     const teacherData = req.body
-    
+
     // save the information into the data base 
     School.TeacherModel.create(teacherData)
         //if the data is saved without problem 
         .then((data) => {
-          School.TeacherModel.find({},(err,result)=>{
-              res.status(201).send(result)
-        })
+            School.TeacherModel.find({}, (err, result) => {
+                res.status(201).send(result)
+            })
 
             // if there is an error
         })
@@ -40,49 +40,66 @@ exports.getAllStudent = (req, res) => {
 
 
 }
-exports.getAllTeachersAndStudent = (req,res)=>{
-   
-    School.TeacherModel.find({},(err,result)=>{
-       
-        School.StudentModel.find({},(err,result1)=>{
- if(err){
-            res.status(404).send(err)
-        }
-        res.status(200).send([[...result],[...result1]])
-console.log([[...result],[...result1]])
+exports.getAllTeachersAndStudent = (req, res) => {
+
+    School.TeacherModel.find({}, (err, result) => {
+
+        School.StudentModel.find({}, (err, result1) => {
+            if (err) {
+                res.status(404).send(err)
+            }
+            res.status(200).send([[...result], [...result1]])
+            console.log([[...result], [...result1]])
         })
     })
-    
+
 
 }
-exports.deleteTeacher=(req,res)=>{
-let teacherId = req.params.id
-School.TeacherModel.findByIdAndRemove(teacherId , (err,result)=>{
-    if(err)res.status(404).send(err)
-    res.status(201).send("teacher delted")
-   
+exports.deleteTeacher = (req, res) => {
+    let teacherId = req.params.id
+    School.TeacherModel.findByIdAndRemove(teacherId, (err, result) => {
+        if (err) res.status(404).send(err)
+        res.status(201).send("teacher delted")
 
-})    
+
+    })
 }
 
-exports.updateTeacher = (req,res)=>{
-let teacherId = req.params.id
-let dataToUpdate=req.body
-School.TeacherModel.findByIdAndUpdate(teacherId,dataToUpdate,(err,result)=>{
-    if(err)res.status(404).send(err)
-    res.status(201).send("teacher updated")
-    
-})
+exports.updateTeacher = (req, res) => {
+    let teacherId = req.params.id
+    let dataToUpdate = req.body
+    School.TeacherModel.findByIdAndUpdate(teacherId, dataToUpdate, (err, result) => {
+        if (err) res.status(404).send(err)
+        res.status(201).send("teacher updated")
+
+    })
 }
 
 
-exports.findTeacher=(req,res)=>{
-    condition = req.body 
-    
-    School.TeacherModel.findOne(condition,(err,rst)=>{
-        if(err) res.status(403).send(err)
+exports.findTeacher = (req, res) => {
+    condition = req.body
+
+    School.TeacherModel.findOne(condition, (err, rst) => {
+        if (err) res.status(403).send(err)
         res.status(200).send(rst)
     })
+}
+
+
+
+exports.findAllWork = (req,res) => {
+    condition = req.params.id 
+    
+    School.LectureModel.find({teacherId:condition},(err,lecture)=>{
+        School.exerciceModel.find({teacherId:condition},(err,exercice)=>{
+              School.checkPointModel.find({teacherId:condition},(err,checkPoint)=>{
+                     if(err) res.status(500).send(err)
+                     res.status(200).send([[...lecture],[...exercice],[...checkPoint]])
+              })
+        })
+    })
+
+
 }
 
 

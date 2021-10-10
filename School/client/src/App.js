@@ -6,18 +6,16 @@ import {Chekpoint} from "./pages/Students/Checkpoint"
 import {Exercice} from "./pages/Students/Exercice"
 import {Lecture} from "./pages/Students/Lecture"
 import Students from "./pages/Students/Student"
-import { Events } from "./pages/Teacher/Events";
+import { Teacher } from "./pages/Teacher/teacherSpace";
 import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
 import Footer from "./pages/Footer/Footer"
-
 import Quiz from "./pages/Teacher/AddCheckpoint"
 import Exercice1 from "./pages/Teacher/AddExercice"
 import Lecture1 from "./pages/Teacher/AddLecture"
 import AddStudent from "./pages/Teacher/AddStudent"
-import {StudentStastic} from "./pages/Teacher/StatisticsStudent"
-
+import {StudentStastic} from "./pages/Teacher/StatisticsStudent.js"
 import AddTeachers from "./pages/ADMIN/AddTeacher"
 import {FeedBack} from "./pages/ADMIN/FeedBack"
 import SchoolStat from "./pages/ADMIN/SchoolState"
@@ -33,7 +31,7 @@ return (
 	
 	<Router>
 	
-
+	
 	<Switch>
 		<Route path="/" exact component={HOME} />
 		
@@ -42,11 +40,10 @@ return (
 		<Route path="/students/exercice" exact component={Exercice} />
 		<Route path="/students/chekpoint" exact component={Chekpoint} />
 		<Route path="/contact" exact component={Contact} />
-		<Route path="/teacher" exact component={Events} />
+		<Route path="/teacher" exact component={Teacher} />
 	
 		<Route path="/Admin/register" exact component={Register} />
 		<Route path="/Admin/singin" exact component={SingIn} />
-
 		<Route path="/teacher/checkpoint" exact component={Quiz} />
 		<Route path="/teacher/exercice" exact component={Exercice1} />
 		<Route path="/teacher/lecture" exact component={Lecture1} />
