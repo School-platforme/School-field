@@ -21,14 +21,13 @@ export const SingInStudent = () => {
         axios.post("http://localhost:3002/findstudent", {
             User, Password
         }).then(rst => {  
-              
+        
+    
+            localStorage.setItem('student', JSON.stringify(rst.data))
             setPath("/students")
             setError(false)
-            setPassword('')
-            setUser('')
-            console.log(rst.data)
-            var student = JSON.stringify(rst.data)
-            localStorage.setItem('student',student)
+        
+           
         }).catch(() => {
             console.log('err')
             setError(true)
