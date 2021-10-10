@@ -5,40 +5,42 @@ exports.createAdmin = (req, res) => {
     // taking the information of the admin 
     // and use distructing to take the password 
 
-    let { User, Password, Email } = req.body
+    let { User, Password, Email ,ImageUrl} = req.body
     /// hash the password 
     Auth.HashPass(Password).then(Hashed => {
         //save it into the data base  with the hashed password 
-        School.AdminModel.create({ User, Password: Hashed, Email })
+        School.AdminModel.create({ User, Password: Hashed, Email,ImageUrl })
             .then(() => {
-                res.status(201).send("admin Created")
+                res.sendStatus(201)
             })
             //if there is an error 
             .catch((err) => {
-                res.send(404).send(err)
+               res.sendStatus(404)
             })
     })
 
 };
 
 exports.CheckIfThePassRight = (req, res) => {
-    let AdminId = req.params.id
-    let { User, Password, Email } = req.body
-    School.AdminModel.findById(AdminId, (err, result) => {
+   
+    let { User, Password } = req.body
+    
+    School.AdminModel.findOne({User:User}, (err, result) => {
         let hashedPass = result.Password
         let UserNameFromDataBase = result.User
-        let EmailFromDataBase = result.Email
-        if (UserNameFromDataBase === User && EmailFromDataBase === Email) {
+       
+        if (UserNameFromDataBase === User) {
             Auth.comparePass(Password, hashedPass).then(bool => {
-                console.log(bool)
+                
                 if (bool) {
-                    res.status(201).send("welcome your data is match the data from data base ")
+                   
+                    res.status(201).send()
                 } else {
-                    res.status(404).send("check your password ")
+                    res.status(404).send(err)
                 }
             })
-        } else {
-            res.status(404).send("NOT FOUND")
+        } else if (err) {
+            res.status(500).send(err)
         }
 
     })

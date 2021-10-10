@@ -12,11 +12,27 @@ var adminSchema = mongoose.Schema({
   Password: { type: String, required: true },
   Email: { type: String, unique: true, required: true },
   ImageUrl: { type: String, required: true },
+
+}, {
+  timestamps: true
 })
 
+var AdminModel = mongoose.model("ADMIN", adminSchema)
 
 ///admin model 
-var AdminModel = mongoose.model("ADMIN", adminSchema)
+var contactUsSchema = mongoose.Schema({
+  Name: { type: String },
+  Email: { type: String },
+  Subject: { type: String },
+  Message: { type: String },
+
+}, {
+  timestamps: true
+})
+
+/// contact us model 
+var contactUsModel = mongoose.model("contactUs", contactUsSchema)
+
 
 
 
@@ -34,12 +50,25 @@ var createTeacherSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "student"
   }],
-  Cours: [{
 
+  Quiz: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Course"
-
+    ref: "Quiz"
   }]
+  ,
+
+  Lecture: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Lecture"
+  }]
+  ,
+
+  Exercice: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Exercice"
+  }]
+}, {
+  timestamps: true
 });
 //// teacher model 
 var TeacherModel = mongoose.model("teacher", createTeacherSchema)
@@ -51,9 +80,10 @@ var TeacherModel = mongoose.model("teacher", createTeacherSchema)
 var createStudentSchema = mongoose.Schema({
   ImageUrl: { type: String, required: true },
   StudentName: { type: String, required: true },
-  Class: { type: String, required: true },
+  StudentLastName: { type: String, required: true },
   Age: { type: Number, required: true },
-  Level: { type: String, required: true },
+  Phone: { type: Number, required: true },
+  Password: { type: String, required: true },
   Teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
@@ -64,40 +94,88 @@ var createStudentSchema = mongoose.Schema({
     ref: "Result"
   }]
 
+}, {
+  timestamps: true
 })
 var StudentModel = mongoose.model("student", createStudentSchema)
 
 
 
-//this for the teacher to let him create or add lecture or exercice or quiz for the lecture  ***one teacher has many lecture exercice and quiz ***
-var createLectureAndQuizAndExerciceSchema = mongoose.Schema({
-  Lecture: { type: Array, "default": [] },
-  Exercice: { type: Array, "default": [] },
-  Quiz: { type: Array, "default": [] },
+
+
+// checkpoint Schema 
+var createCheckPoint = mongoose.Schema({
+  quizArray: { type: Array, "default": [] },
+  name: String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
   }
-})
+},
+  { timestamps: true }
+)
 
-var CourseModel = mongoose.model("Course", createLectureAndQuizAndExerciceSchema)
+// checkpoint model
+var checkPointModel = mongoose.model("Quiz", createCheckPoint)
 
 
-//this schema for the result of one studenet ***one student has many result*** 
+
+
+
+// lecture schema
+var createLecture = mongoose.Schema({
+
+  Lecture: String,
+  LectureName:String,
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "teacher"
+  }
+}, { timestamps: true })
+
+
+// lecture model
+var LectureModel = mongoose.model("Lecture", createLecture)
+
+
+
+// exercice schema 
+var createExercice = mongoose.Schema({
+  Exercice: { type: Array, "default": [] },
+  exerciceName: String,
+  teacher: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "teacher"
+  }
+
+
+}, { timestamps: true })
+// exercice model
+var exerciceModel = mongoose.model("Exercice", createExercice)
+
+
+
+
+//result Schema 
 var resultSchema = mongoose.Schema({
-  ExResult: { type: Number },
   QzResult: { type: Number },
   Student: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "student"
   }
+}, {
+  timestamps: true
 })
+//result quiz model
 var ResultModel = mongoose.model("Result", resultSchema)
 
 module.exports = {
   AdminModel,
+  contactUsModel,
   TeacherModel,
   StudentModel,
-  CourseModel,
-  ResultModel
+  checkPointModel,
+  LectureModel,
+  ResultModel,
+  exerciceModel
 };

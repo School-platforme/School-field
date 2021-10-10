@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.home,
+.services,
+.reports,
+.contact,
+.events,
+.support {
+  display: flex;
+  margin-left: 250px;
+  font-size: 2rem;
+}
+.Register {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: green;
+  align-items: center;
+}
+.item .textfield {
+  margin: 20px;
+  display: block;
+  border-radius: 45px;
+  font-size: 20px;
+  font-weight: 100;
+  width: 100%;
+}
+.butn Button {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: row;
+}
+.butn {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: center;
+  justify-content: center;
+}
+.LINK {
+  text-decoration: none;
+  color: green;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+
+.image {
+  background-image: url("https://images.theconversation.com/files/418872/original/file-20210901-13-19lgusq.jpg?ixlib=rb-1.1.0&rect=0%2C19%2C1000%2C499&q=45&auto=format&w=668&h=324&fit=crop");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 1400px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  height: 641px;
+}
+.lnk {
+  text-decoration: none;
+  color: green;
+}
+.container .nst {
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: center;
+  justify-content: center;
+}
+
+.block {
+  margin-left: 340px;
+}
+.stat {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+.link1 {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: xx-large;
+}
+.link1:hover {
+  text-decoration: none;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+.contactLink {
+  text-decoration: none;
+  color: black;
+}
+
+.create-teacher-inputs {
+  display: grid;
+  width: 25%;
+  text-align: right;
+  padding-left: 10%;
+  margin-left: 250px;
+}
+.create-teacher-inputs2 {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  padding-right: 30%;
+  margin-left: 1073px;
+  margin-top: -138px;
+}
+
+.teacherLink{
+  text-decoration: none;
+  color: black;
+}
+.teacherLink:hover{
+  text-decoration: underline;
+}
