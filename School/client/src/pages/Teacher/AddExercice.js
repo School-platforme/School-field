@@ -42,21 +42,11 @@ function Exercice() {
     add();
   };
 
-  const exerciceTitle = (
-    <>
-      <TextField
-        onChange={(e) => setName(e.target.value)}
-        label="Quiz Title"
-        multiline
-        style={{ width: "500px" }}
-        rows={2}
-      />
-      <br />
-      <br />
-      <Button onClick={Submit}> Submit</Button>
-    </>
-  );
 
+  const exerciceTitle = <><TextField onChange={e => setName(e.target.value)} label="Exercise Title" multiline style={{ width: "500px" }} rows={2} /><br /><br /><Button onClick={Submit}> Submit</Button></>
+
+
+  
   return (
     <>
       <Sidebar />
@@ -73,6 +63,7 @@ function Exercice() {
                 <TextField
                   onChange={(e) => setExercice(e.target.value)}
                   name="Exercice"
+
                   label="Exercice"
                   multiline
                   style={{ width: "350px" }}
