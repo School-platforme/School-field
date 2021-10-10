@@ -29,7 +29,7 @@
   color: green;
   align-items: center;
 }
-/* .schoolstat {
+.schoolstat {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -37,9 +37,9 @@
   width: 10 0%;
   height: 400px;
   background-color: #fff;
-  margin-top: 8rem;
+  margin-top: 3 rem;
   margin-left: 25%;
-} */
+}
 
 .item .textfield {
   margin: 20px;

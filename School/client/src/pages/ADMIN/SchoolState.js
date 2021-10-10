@@ -38,10 +38,10 @@ export default class SchoolStat extends PureComponent {
     return (
       <>
         <Sidebar />
-        <div className='teacher-stat'>
+        <div className='schoolstat'>
 
           <BarChart
-            className='schoolstat'
+            className='teacher-stat'
             width={700}
             height={300}
             data={this.state.teachers}
@@ -53,17 +53,15 @@ export default class SchoolStat extends PureComponent {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="TeacherName" />
-            <YAxis />
+            <XAxis allowReorder='yes'
+              dataKey="TeacherName" />
+            <YAxis allowDecimals='' />
             <Tooltip />
             <Legend />
             <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
             <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
           </BarChart>
-        </div>
-        <div className='student-stat'>
           <BarChart
-            className='schoolstat'
             width={700}
             height={300}
             data={this.state.students}
@@ -75,8 +73,10 @@ export default class SchoolStat extends PureComponent {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="StudentName" />
-            <YAxis />
+            <XAxis
+              allowReorder='yes'
+              dataKey="StudentName" />
+            <YAxis allowDecimals='' />
             <Tooltip />
             <Legend />
             <Bar dataKey={`Result`} name="Result" fill="#82ca9d" />
