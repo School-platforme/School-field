@@ -42,41 +42,11 @@ function Exercice() {
     add();
   };
 
-<<<<<<< HEAD
+
   const exerciceTitle = <><TextField onChange={e => setName(e.target.value)} label="Exercise Title" multiline style={{ width: "500px" }} rows={2} /><br /><br /><Button onClick={Submit}> Submit</Button></>
 
-  return (
-      <>
-      <Sidebar/>
-    <div className="feed">
-      <div>
-        <ul>
-          <li className="feed-list-item">
-            <div className="feed-list-item-title">Exercise</div>
-            <div className="feed-list-item-byline">
-              <span className="feed-list-item-byline-author">
-                {" "}
-                Add The Exercice
-              </span>
-              <TextField
-                  onChange={e => setExercice(e.target.value)}
-                  name='Exercice'
-=======
-  const exerciceTitle = (
-    <>
-      <TextField
-        onChange={(e) => setName(e.target.value)}
-        label="Quiz Title"
-        multiline
-        style={{ width: "500px" }}
-        rows={2}
-      />
-      <br />
-      <br />
-      <Button onClick={Submit}> Submit</Button>
-    </>
-  );
 
+  
   return (
     <>
       <Sidebar />
@@ -93,7 +63,7 @@ function Exercice() {
                 <TextField
                   onChange={(e) => setExercice(e.target.value)}
                   name="Exercice"
->>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
+
                   label="Exercice"
                   multiline
                   style={{ width: "350px" }}
