@@ -12,7 +12,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
-// import moment from 'moment'
+import moment from 'moment'
 
 import { CardHeader } from '@mui/material';
 
@@ -20,7 +20,7 @@ import { CardHeader } from '@mui/material';
 
 function TeachersList() {
   const [teachers, setTeachers] = useState([])
-  const [student, setStudent] = useState([])
+  const [students, setStudent] = useState([])
 
   useEffect(() => {
     axios.get('http://localhost:3002/teacher')
@@ -36,24 +36,21 @@ function TeachersList() {
     <>
       <Sidebar />
       <Card>
-
         <TableContainer component={Paper}>
           <Box sx={{ p: 5 }}>
             <Table className='teacher-table' aria-label="simple table">
               <TableHead>
                 <TableRow >
-                  <TableCell style={{ fontSize: '1.3rem' }}>NAME</TableCell>
+                  <TableCell style={{ fontSize: '1.3rem' }}>Full Name</TableCell>
                   <TableCell style={{ fontSize: '1.3rem' }} align="left">E-mail address</TableCell>
                   <TableCell style={{ fontSize: '1.3rem' }} align="center">Phone Number</TableCell>
                   <TableCell style={{ fontSize: '1.3rem' }} align="right">Level</TableCell>
-                  <TableCell style={{ fontSize: '1.3rem' }} align="right">Starting Date</TableCell>
-
+                  <TableCell style={{ fontSize: '1.3rem' }} align="center">Starting Date</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {teachers.map((teacher) => (
-                  <TableRow style={{ fontSize: '4rem' }} key={teacher._id}>
-
+                {teachers.map((teacher, key) => (
+                  <TableRow style={{ fontSize: '4rem' }} key={key}>
                     <CardHeader
                       avatar={
                         <Avatar
@@ -63,13 +60,13 @@ function TeachersList() {
                       }
                       title={teacher.TeacherName + ' ' + teacher.TeacherLastName}
                     />
-
-
                     {/*<TableCell align="right">{row.name}</TableCell>*/}
                     <TableCell align="left">{teacher.Email}</TableCell>
                     <TableCell align="center">{teacher.Phone}</TableCell>
                     <TableCell align="right">{teacher.Experience}</TableCell>
-                    <TableCell align="center">{teacher.createdAt}</TableCell>
+                    <TableCell align="center">
+                      {moment(teacher.createdAt).format("MMM Do YY")}
+                    </TableCell>
 
                   </TableRow>
                 ))}
@@ -77,9 +74,51 @@ function TeachersList() {
             </Table>
           </Box>
         </TableContainer>
-
-
       </Card>
+      <div className='student-table'>
+        <Card>
+          <TableContainer component={Paper}>
+            <Box sx={{ p: 5 }}>
+              <Table className='teacher-table' aria-label="simple table">
+                <TableHead>
+                  <TableRow >
+                    <TableCell style={{ fontSize: '1.3rem' }}>Full Name</TableCell>
+                    <TableCell style={{ fontSize: '1.3rem' }}>Age</TableCell>
+                    <TableCell style={{ fontSize: '1.3rem' }} align="center">Parental Contact</TableCell>
+                    <TableCell style={{ fontSize: '1.3rem' }} align="right">Teacher</TableCell>
+                    <TableCell style={{ fontSize: '1.3rem' }} align="center">Starting Date</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {students.map((student, key) => (
+                    <TableRow style={{ fontSize: '4rem' }} key={key}>
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            alt="Remy Sharp"
+                            src={student.ImageUrl}
+                          />
+                        }
+                        title={student.studentName + ' ' + student.studentLastName}
+                      />
+                      {/*<TableCell align="right">{row.name}</TableCell>*/}
+                      <TableCell align="left">{student.Age}</TableCell>
+                      <TableCell align="center">{student.Phone}</TableCell>
+                      <TableCell align="right">{student.Teacher.TeacherName + ' ' + student.Teacher.TeacherLastName}</TableCell>
+
+                      <TableCell align="center">
+                        {moment(student.createdAt).format("MMM Do YY")}
+                      </TableCell>
+
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </TableContainer>
+        </Card>
+
+      </div>
 
     </>
   );
