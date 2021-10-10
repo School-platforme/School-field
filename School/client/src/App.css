@@ -21,15 +21,7 @@
   color: green;
   align-items: center;
 }
-
-.create-editor {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: green;
-  align-items: center;
-}
-/* .schoolstat {
+.schoolstat {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -37,34 +29,18 @@
   width: 10 0%;
   height: 400px;
   background-color: #fff;
-  margin-top: 8rem;
+  margin-top: 3 rem;
   margin-left: 25%;
-} */
+}
 
 .item .textfield {
-  margin: 20px;
-  display: block;
   border-radius: 45px;
-  font-size: 20px;
-  font-weight: 100;
   width: 100%;
-}
-.butn Button {
   margin: 30px;
-  display: flex;
-  flex-direction: row;
   justify-content: row;
-}
-.butn {
   display: flex;
-  align-content: space-around;
-  flex-wrap: wrap;
   flex-direction: center;
-  justify-content: center;
-}
-.LINK {
-  text-decoration: none;
-  color: green;
+}.LINK {
   display: flex;
   flex-direction: center;
   justify-content: center;
@@ -116,4 +92,46 @@
 .contactLink {
   text-decoration: none;
   color: black;
+}
+
+.create-teacher-inputs {
+  display: grid;
+  width: 30%;
+  text-align: right;
+  margin-left: 200px;
+  position: relative;
+  min-height: 300px;
+  margin-top: 3%;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 50px;
+  box-shadow: 0 0 2em #80808066;
+  font-family: "Francois One";
+}
+.create-teacher-inputs2 {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  /* padding-right: 30%; */
+  margin-left: 800px;
+  margin-top: -300px;
+  position: relative;
+  min-height: 450px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 50px 50px 20px 50px;
+  box-shadow: 0 0 2em #80808066;
+  font-family: "Francois One";
+}
+
+.teacherLink {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+.teacherLink:hover {
+  text-decoration: underline;
 }

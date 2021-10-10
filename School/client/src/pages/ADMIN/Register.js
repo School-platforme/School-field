@@ -89,7 +89,7 @@ export const Register = () => {
                 <Button
                     style={{ width: "150px" }}
                     variant="contained"
-                ><Link  className="lnk" to="/home"> BACK HOME</Link> </Button>
+                ><Link  className="lnk" to="/"> BACK HOME</Link> </Button>
                   <Button
                     style={{ width: "150px" }}
                     variant="contained"
