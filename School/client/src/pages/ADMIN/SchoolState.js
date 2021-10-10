@@ -43,7 +43,7 @@ export default class SchoolStat extends PureComponent {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3000/teacher").then((data) => {
+    axios.get("http://localhost:3002/teacher").then((data) => {
       this.setState({
         teachers: data.data[0], //set the state here for all the teacher
         students: data.data[1], //set the state for all the student
@@ -53,37 +53,37 @@ export default class SchoolStat extends PureComponent {
 
   render() {
     // const studentLength = this.state.students.length;
-    console.log("stats teachers", this.state.teachers);
+    console.log("stats teachers", this.state);
 
     return (
-        <>
-        <Sidebar/>
-      <div>
-        <BarChart
-          width={700}
-          height={300}
-          data={this.state.teachers}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="TeacherName" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
-          <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
-        </BarChart>
+      <>
+        <Sidebar />
         <div>
-          <button onClick={() => this.props.changeView("adminFeed")}>
-            back to feed{" "}
-          </button>
+          <BarChart
+            width={700}
+            height={300}
+            data={this.state.teachers}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="TeacherName" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
+            <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
+          </BarChart>
+          {/* <div>
+            <button onClick={() => this.props.changeView("adminFeed")}>
+              back to feed{" "}
+            </button>
+          </div> */}
         </div>
-      </div>
       </>
     );
   }

@@ -74,7 +74,7 @@ export const SingInTeacher = () => {
                         className="lnk"
                         to="/home">
                         BACK HOME
-                    </Link>
+                     </Link>
                 </Button>
                 <Button style={{ width: "150px" }}
                     variant="contained"
