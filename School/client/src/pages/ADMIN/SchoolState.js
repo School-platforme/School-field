@@ -75,7 +75,7 @@ export default class SchoolStat extends PureComponent {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis
               allowReorder='yes'
-              dataKey="StudentName" />
+               dataKey="StudentName" />
             <YAxis allowDecimals='' />
             <Tooltip />
             <Legend />

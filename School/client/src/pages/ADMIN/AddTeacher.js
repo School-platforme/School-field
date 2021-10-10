@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
-import { TextField, Button, Select, FormControl, InputLabel, MenuItem } from '@material-ui/core'
-import { Link } from "react-router-dom";
-// import { Box } from "@mui/system";
+import {
+  TextField,
+  Button,
+  Select,
+  InputLabel,
+  MenuItem,
+  Box,
+  FormControl,
+} from "@material-ui/core";
 
-
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
 class AddTeachers extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +26,7 @@ class AddTeachers extends Component {
       Field: "",
       Phone: "",
       Experience: "Entry-level",
+      bool: false,
       teacher: {},
     };
 
@@ -51,7 +59,6 @@ class AddTeachers extends Component {
   }
   // to create teacher
   createTeacher() {
-
     axios
       .post("http://localhost:3002/teacher", this.state.teacher)
       .then((teacher) => {
@@ -65,143 +72,143 @@ class AddTeachers extends Component {
           Field: "",
           Phone: "",
           Experience: "",
+          bool: true,
         });
       })
       .catch((err) => {
         // here do somthing else if there is an error
         // the error is beacause the user submit the data and there is an TextField empty
         // do somthing for this
-        alert("fill in all your information ");
+        console.log(err);
       });
   }
 
   render() {
+    const alertModel = (
+      <Stack>
+        <Alert
+          style={{ color: "white", backgroundColor: "#87d593" }}
+          severity="success"
+        >
+          Teacher is already creaded
+        </Alert>
+      </Stack>
+    );
 
     return (
       <>
         <Sidebar />
         <div>
-          <div className="nav-teacher">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
           <div className="create">
             <div className="create-editor">
-              <h2>Create teacher</h2>
-              <div className="create-teacher-inputs" >
+              <h2
+                style={{
+                  textAlign: "center",
+                  marginTop: "30px",
+                  marginBottom: "50px",
+                  fontSize: "50px",
+                  fontFamily: "Francois One",
+                }}
+              >
+                Create teacher
+              </h2>
+              <div className="create-teacher-inputs">
                 <TextField
-                  style={{ width: "300px" }}
+                  // className="create-body-textarea"
                   name="TeacherName"
                   type="text"
-                  label="First Name"
+                  placeholder="First Name"
                   onChange={this.handleChange}
                   value={this.state.TeacherName}
-                  required
-                >
-                </TextField>
-                <br />
-                <br />
+                />
 
                 <TextField
-                  style={{ width: "300px" }}
+                  // className="create-body-textarea"
                   name="TeacherLastName"
                   type="text"
-                  label="Last Name"
+                  placeholder="Last Name"
                   onChange={this.handleChange}
                   value={this.state.TeacherLastName}
-                  required
-                ></TextField>
-                <br />
-                <br />
-                <TextField
-                  style={{ width: "300px" }}
+                />
 
+                <TextField
+                  // className="create-body-textarea"
                   name="ImageUrl"
                   type="text"
+                  placeholder="Teacher image"
                   onChange={this.handleChange}
                   value={this.state.ImageUrl}
-                  required
-                  label='Teacher Image'
-                ></TextField>
-                <br />
-                <br />
-                <TextField
-                  style={{ width: "300px" }}
+                />
 
+                <TextField
+                  // className="create-body-textarea"
                   name="Field"
                   type="text"
                   placeholder="Teacher Field"
                   onChange={this.handleChange}
                   value={this.state.Field}
-                  required
-                  label='Teacher Field'
-                ></TextField>
-                <br />
-                <br />
+                />
+              </div>
+              <div className="create-teacher-inputs2">
                 <TextField
-                  style={{ width: "300px" }}
-
+                  required
                   name="Phone"
                   type="text"
                   placeholder="Phone number"
                   onChange={this.handleChange}
                   value={this.state.Phone}
-                  lable='Phone number'
-                  required
-                ></TextField>
-                <br />
-                <br />
+                />
+
                 <TextField
-                  style={{ width: "300px" }}
+                  required
                   name="Email"
                   type="text"
                   placeholder="Email"
                   onChange={this.handleChange}
                   value={this.state.Email}
-                  label='Email'
-                  required
                 />
-                <br />
-                <br />
                 <TextField
-                  style={{ width: "300px" }}
-                  label="Password"
+                  required
                   name="Password"
                   type="password"
-                  required
                   placeholder="Enter password"
                   onChange={this.handleChange}
                   value={this.state.Password}
                 />
-                <br></br>
-                <br></br>
-                <FormControl style={{ width: '300px' }}>
-                  <InputLabel id="demo-simple-select-label">Years of Experience</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                <br />
 
-                    onChange={this.selectExp.bind(this)}
-                  >
-                    <MenuItem value='Entry-level'>0 - 2 years</MenuItem>
-                    <MenuItem value='Intermediate'>2 - 4 years</MenuItem>
-                    <MenuItem value='Senior'>More than 4 years</MenuItem>
-                  </Select>
-                </FormControl>
-
-                <br></br>
-                <br></br>
-
+                <Box
+                  sx={{
+                    minWidth: "120",
+                  }}
+                >
+                  <FormControl style={{ width: "300px" }}>
+                    <InputLabel id="demo-simple-select-label">
+                      Experience
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={this.state.Experience}
+                      label="Experience"
+                      onChange={this.selectExp.bind(this)}
+                    >
+                      <MenuItem value="beginner">0 - 2 years</MenuItem>
+                      <MenuItem value="Medium">2 - 4 years</MenuItem>
+                      <MenuItem value="expert">More than 4 years</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+                <br />
+                {this.state.bool ? alertModel : ""}
+                <br />
                 <Button
-                  style={{ width: "150px" }}
                   onClick={this.createTeacher.bind(this)}
-                  className="create-submit-button-add-teacher"
+                  className="teacherLink"
                   type="submit"
-                  variant="contained"
-
                 >
                   Save teacher
                 </Button>
-
               </div>
             </div>
           </div>

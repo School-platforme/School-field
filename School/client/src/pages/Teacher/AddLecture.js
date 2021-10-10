@@ -1,14 +1,35 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Sidebar from "./components/Sidebar"
+import { TextField, Button } from '@material-ui/core'
+import axios from "axios";
+
 
 function Lecture() {
-  const [lecture, setLecture] = useState("");
+  const [Lecture, setLecture] = useState("");
+  const [teacherId,setteacherId] = useState('')
+  const [LectureName,setLectureName] = useState('')
 
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    console.log(lecture);
-    setLecture("");
-  };
+    
+ 
+
+  useEffect(() => {
+      
+    var teacher = localStorage.getItem('teacherId')
+    setteacherId(JSON.parse(teacher))
+
+ }, [])
+  
+   const Submit = ()=> {
+     axios.post(`http://localhost:3002/addLecture/${teacherId}`,{
+       Lecture,
+       LectureName
+     })
+       .then(rst => {
+         setLecture('')
+         setLectureName('')
+       })
+   }
+
 
   return (
       <>
@@ -20,20 +41,33 @@ function Lecture() {
             <div className="feed-list-item-title">Lecture</div>
             <div className="feed-list-item-byline">
               <span className="feed-list-item-byline-author">
-                {" "}
                 Add The lecture
               </span>
-              <form onSubmit={HandleSubmit}>
-                <label>Course</label>
-                <input
-                  className="inputLecure"
-                  type="text"
-                  value={lecture}
-                  placeholder="Add your lecture here"
-                  onChange={(e) => setLecture(e.target.value)}
+              <br/>
+              <br/>
+              <TextField
+                  value={LectureName}
+                  onChange={e => setLectureName(e.target.value)}
+                  name='LectureName'
+                  label="lectureName"
+                  multiline
+                  style={{ width: "200px" }}
+                  rows={1}
                 />
-                <input className="btn" type="submit" value="submit" />
-              </form>
+                <br/>
+                <br/>
+              <TextField
+                  value={Lecture}
+                  onChange={e => setLecture(e.target.value)}
+                  name='Lecture'
+                  label="lecture"
+                  multiline
+                  style={{ width: "500px" }}
+                  rows={15}
+                />
+                <br/>
+                <br/>
+                <Button onClick={Submit} >Submit</Button>
             </div>
           </li>
         </ul>
