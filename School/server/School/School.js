@@ -84,6 +84,7 @@ var createStudentSchema = mongoose.Schema({
   Age: { type: Number, required: true },
   Phone: { type: Number, required: true },
   Password: { type: String, required: true },
+  teacherId:String,
   Teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
