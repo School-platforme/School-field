@@ -5,7 +5,7 @@ var AdminController = require("../Admin/AdminController")
 AdminRoute.route('/admin')
     .post(AdminController.createAdmin)
 
-AdminRoute.route('/admin/:id')
+AdminRoute.route('/admin/check')
     .post(AdminController.CheckIfThePassRight)
 
 

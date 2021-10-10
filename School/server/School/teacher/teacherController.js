@@ -49,7 +49,7 @@ exports.getAllTeachersAndStudent = (req,res)=>{
             res.status(404).send(err)
         }
         res.status(200).send([[...result],[...result1]])
-
+console.log([[...result],[...result1]])
         })
     })
     
