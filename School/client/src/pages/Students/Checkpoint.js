@@ -5,6 +5,7 @@ import axios from "axios";
 
 export const Chekpoint = () => {
     const [checkPoint , setChekpoint] = useState([])
+ 
 
     useEffect(()=>{
      // here you need to provide this path with spesific id for now juste test try to render the quiz in this page                            
