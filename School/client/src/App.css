@@ -135,3 +135,19 @@
 .teacherLink:hover {
   text-decoration: underline;
 }
+
+.feedback {
+  display: grid;
+  width: 75%;
+  text-align: left;
+  margin-left: 200px;
+  margin-top: 80px; 
+  position: relative;
+  min-height: 200px;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 0 2em #80808066;
+  font-family: "Francois One";
+}

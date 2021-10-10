@@ -48,7 +48,7 @@ function Exercice() {
   }
 
 
-  const exerciceTitle = <><TextField onChange={e => setName(e.target.value)} label="Quiz Title" multiline style={{ width: "500px" }} rows={2} /><br /><br /><Button onClick={Submit}> Submit</Button></>
+  const exerciceTitle = <><TextField onChange={e => setName(e.target.value)} label="Exercise Title" multiline style={{ width: "500px" }} rows={2} /><br /><br /><Button onClick={Submit}> Submit</Button></>
 
   return (
       <>
@@ -57,7 +57,7 @@ function Exercice() {
       <div>
         <ul>
           <li className="feed-list-item">
-            <div className="feed-list-item-title">Exerice</div>
+            <div className="feed-list-item-title">Exercise</div>
             <div className="feed-list-item-byline">
               <span className="feed-list-item-byline-author">
                 {" "}
