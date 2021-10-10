@@ -69,7 +69,7 @@ return (
 			<SidebarLabel>{item.title}</SidebarLabel>
 			</DropdownLink>
 		);
-		})}
+		})} 
 	</>
 );
 };

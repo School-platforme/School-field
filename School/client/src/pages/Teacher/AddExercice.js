@@ -46,9 +46,9 @@ function Exercice() {
     <>
       <TextField
         onChange={(e) => setName(e.target.value)}
-        label="Quiz Title"
+        label="Exercise Title"
         multiline
-        style={{ width: "500px" }}
+        style={{ width: "300px" }}
         rows={2}
       />
       <br />
@@ -60,7 +60,7 @@ function Exercice() {
   return (
     <>
       <Sidebar />
-      <div className="feed">
+      <div className="feed1">
         <div>
           <ul>
             <li className="feed-list-item">
@@ -76,7 +76,7 @@ function Exercice() {
                   label="Exercice"
                   multiline
                   style={{ width: "350px" }}
-                  rows={12}
+                  rows={10}
                   value={Exercice}
                 />
                 <br />

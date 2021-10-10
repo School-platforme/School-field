@@ -4,6 +4,7 @@ var exerciceController = require("./exerciceConroller")
 //
 exerciceRouter.route('/exercice/:id')
     .post(exerciceController.createExercice)
+    .get(exerciceController.findExercice)
 
 
 

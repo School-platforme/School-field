@@ -77,7 +77,7 @@ class AddTeachers extends Component {
       })
       .catch((err) => {
         // here do somthing else if there is an error
-        // the error is beacause the user submit the data and there is an input empty
+        // the error is beacause the user submit the data and there is an TextField empty
         // do somthing for this
         console.log(err);
       });

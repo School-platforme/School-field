@@ -78,7 +78,7 @@ export const SingInStudent = () => {
       {bool ? error : ""}
       <div className="butn">
         <Button style={{ width: "150px" }} variant="contained">
-          <Link className="lnk" to={path}>
+          <Link className="lnk" to={"/"}>
             BACK HOME
           </Link>
         </Button>
