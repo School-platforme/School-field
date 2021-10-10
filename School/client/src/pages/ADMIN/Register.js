@@ -19,6 +19,9 @@ export const Register = () => {
   );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
   let post = () => {
     axios
       .post("http://localhost:3002/admin", {
@@ -35,6 +38,7 @@ export const Register = () => {
         setError(true);
       });
   };
+<<<<<<< HEAD
 =======
     let post = () => {
         console.log({User, Password, Email, ImageUrl})
@@ -47,6 +51,8 @@ export const Register = () => {
             setError(true)
         })
 >>>>>>> 27b130d7c3138e98e4f9fc65592f00ad67447e75
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
 
   return (
     <>

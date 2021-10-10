@@ -9,7 +9,7 @@ import Stack from "@mui/material/Stack";
 import { json } from "body-parser";
 
 export const SingInStudent = () => {
-<<<<<<< HEAD
+
   const [User, setUser] = useState("");
   const [Password, setPassword] = useState("");
   const [path, setPath] = useState("/student/singin");
@@ -21,7 +21,7 @@ export const SingInStudent = () => {
       </Stack>
     </div>
   );
-=======
+
     const [User, setUser] = useState("")
     const [Password, setPassword] = useState("")
     const [path, setPath] = useState("/student/singin")
@@ -49,7 +49,7 @@ export const SingInStudent = () => {
     return (
         <>
             <div className="Register">
-                <h1>SING IN FOR STUDENT</h1>
+                <h1>SIGN IN FOR STUDENT</h1>
                 <div className="item">
                     <br />
                     <br />
@@ -80,7 +80,6 @@ export const SingInStudent = () => {
                 
                 </div>
                 <br />
->>>>>>> 27b130d7c3138e98e4f9fc65592f00ad67447e75
 
   let check = () => {
     axios
@@ -102,6 +101,9 @@ export const SingInStudent = () => {
         setError(true);
       });
   };
+=======
+  
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
 
   return (
     <>

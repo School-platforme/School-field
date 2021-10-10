@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
 import { IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -9,6 +12,7 @@ import EditIcon from "@mui/icons-material/Edit";
 function TeachersList() {
   const [teachers, setTeachers] = useState([]);
   const [student, setStudent] = useState([]);
+<<<<<<< HEAD
 =======
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -38,6 +42,8 @@ function TeachersList() {
       })
   }, [])
 >>>>>>> 27b130d7c3138e98e4f9fc65592f00ad67447e75
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
 
   useEffect(() => {
     axios.get("http://localhost:3002/teacher").then((rst) => {
@@ -46,11 +52,14 @@ function TeachersList() {
     });
   }, []);
 
-console.log(students)
+console.log(student)
   return (
     <>
       <Sidebar />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
       <div className="teacher-container">
         {teachers.map((teacher, key) => {
           return (
@@ -82,6 +91,7 @@ console.log(students)
 
         <div></div>
       </div>
+<<<<<<< HEAD
 =======
     <h1 style={{textAlign:"center" ,marginBottom:"100px",marginTop:"30px"}} > Lists Of Students && Teacher </h1>
       <Card style={{margin:"20px",padding:"5px"}}>
@@ -168,6 +178,8 @@ console.log(students)
       </div>
 
 >>>>>>> 27b130d7c3138e98e4f9fc65592f00ad67447e75
+=======
+>>>>>>> 26203f8cbac98b00adfad94185b56dbb2babeada
     </>
   );
 }
