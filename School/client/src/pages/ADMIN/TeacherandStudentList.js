@@ -12,7 +12,9 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
 import Avatar from '@material-ui/core/Avatar';
+// import moment from 'moment'
 
+import { CardHeader } from '@mui/material';
 
 
 
@@ -33,78 +35,59 @@ function TeachersList() {
   return (
     <>
       <Sidebar />
-      <div className="teacher-container">
-        {teachers.map((teacher, key) => {
-          return (
-            <div key={key} className="teacher-card">
-              {/* <h4>
-                <img src={teacher.ImageUrl} style={{ width: 100 }} alt="" />
-              </h4>
-              <b>
-                {teacher.TeacherName} {teacher.TeacherLastName}
-              </b>
-              <p>{teacher.Field}</p>
-              <p>{teacher.Experience}</p>
-              <p> Number of Students : {teacher.Students.length}</p>
+      <Card>
 
-              <button className="promote-btn">Edit</button>
-              <button
-                id={teacher._id}
+        <TableContainer component={Paper}>
+          <Box sx={{ p: 5 }}>
+            <Table className='teacher-table' aria-label="simple table">
+              <TableHead>
+                <TableRow >
+                  <TableCell style={{ fontSize: '1.3rem' }}>NAME</TableCell>
+                  <TableCell style={{ fontSize: '1.3rem' }} align="left">E-mail address</TableCell>
+                  <TableCell style={{ fontSize: '1.3rem' }} align="center">Phone Number</TableCell>
+                  <TableCell style={{ fontSize: '1.3rem' }} align="right">Level</TableCell>
+                  <TableCell style={{ fontSize: '1.3rem' }} align="right">Starting Date</TableCell>
 
-                className="fire-btn"
-              >
-                Kick out{" "}
-              </button> */}
-              <div>
-                <Card>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {teachers.map((teacher) => (
+                  <TableRow style={{ fontSize: '4rem' }} key={teacher._id}>
 
-                  <TableContainer component={Paper}>
-                    <Box sx={{ p: 5 }}>
-                      <Table className='hi' aria-label="simple table">
-                        <TableHead>
-                          <TableRow >
-                            <TableCell style={{ fontSize: '1.3rem' }}>NAME</TableCell>
-                            <TableCell style={{ fontSize: '1.3rem' }} align="left">EMAIL</TableCell>
-                            <TableCell style={{ fontSize: '1.3rem' }} align="left">PHONE</TableCell>
-                            <TableCell style={{ fontSize: '1.3rem' }} align="center">ROLE</TableCell>
-                            <TableCell style={{ fontSize: '1.3rem' }} align="right">LEVEL</TableCell>
-                          </TableRow>
-                        </TableHead>
-                        <TableBody>
-                          {teachers.map((teacher, key) => (
-                            <TableRow style={{ fontSize: '4rem' }} key={teacher.name}>
-
-                              <TableCell align="left" component="th" scope="row">
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                                {teacher.name}
-                              </TableCell>
+                    <CardHeader
+                      avatar={
+                        <Avatar
+                          alt=""
+                          src={teacher.ImageUrl}
+                        />
+                      }
+                      title={teacher.TeacherName + ' ' + teacher.TeacherLastName}
+                    />
 
 
-                              {/*<TableCell align="right">{row.name}</TableCell>*/}
-                              <TableCell align="left">{teacher.email}</TableCell>
-                              <TableCell align="center">{teacher.role}</TableCell>
-                              <TableCell align="right">{teacher.settings}</TableCell>
-                            </TableRow>
-                          ))}
-                        </TableBody>
-                      </Table>
-                    </Box>
-                  </TableContainer>
+                    {/*<TableCell align="right">{row.name}</TableCell>*/}
+                    <TableCell align="left">{teacher.Email}</TableCell>
+                    <TableCell align="center">{teacher.Phone}</TableCell>
+                    <TableCell align="right">{teacher.Experience}</TableCell>
+                    <TableCell align="center">{teacher.createdAt}</TableCell>
+
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </Box>
+        </TableContainer>
 
 
-                </Card>
-              </div>
-            </div>
-          );
-        })}
+      </Card>
 
-        <div>
-
-        </div>
-      </div>
     </>
-
   );
 }
+
+
+
+
+
 
 export default TeachersList;
