@@ -13,7 +13,7 @@ export const Chekpoint = () => {
     useEffect(()=>{
        var student = JSON.parse(localStorage.getItem('student'))
        
-       axios.get(`http://localhost:3002/checkpoint/${student.teacherId}`)
+       axios.get(`http://localhost:3002/checkpoint/${"6161f87dfb961838b3552ae1"}`)
             .then(rst => {
                 setChekpoint(rst.data)
             })
@@ -24,7 +24,7 @@ export const Chekpoint = () => {
      console.log(checkPoint)
 
 
-    // render chekpoint data  here 
+    
     return (
         <>
         <Sidebar/>
