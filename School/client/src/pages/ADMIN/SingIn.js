@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import { RiStackFill } from "react-icons/ri";
 
 export const SingIn = () => {
   const [User, setUser] = useState("");
@@ -30,9 +31,14 @@ export const SingIn = () => {
         User,
         Password,
       })
-      .then(() => {
+      .then(result => {
+       
+        if(result.data){
         setPath("/admin");
         setError(false);
+        localStorage.setItem('admin',result.data)
+      }
+       
       })
       .catch(() => {
         setError(true);

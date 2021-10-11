@@ -34,7 +34,7 @@ exports.CheckIfThePassRight = (req, res) => {
                 
                 if (bool) {
                    
-                    res.status(201).send()
+                    res.status(201).send(result)
                 } else {
                     res.status(404).send(err)
                 }
