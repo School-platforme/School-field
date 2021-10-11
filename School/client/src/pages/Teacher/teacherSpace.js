@@ -1,4 +1,3 @@
-import { Card } from "@material-ui/core";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
@@ -12,7 +11,7 @@ export const Teacher = () => {
 
   useEffect(() => {
     var teacher = localStorage.getItem("teacherId");
-    setteacherId(JSON.stringify(teacher));
+    setteacherId(JSON.parse(teacher));
   }, []);
 
   console.log(teacherId)
@@ -26,7 +25,7 @@ export const Teacher = () => {
       setcheckPoint(rst.data[2]);
     });
   }, [teacherId]);
-
+  console.log(exercices)
   return (
     <>
       <Sidebar
@@ -34,36 +33,48 @@ export const Teacher = () => {
       <div>
         <h1>We need a component that represents the teacher signed in </h1>
       </div>
-      <div className="events">
+      <br></br>
+
+      <div >
+
+        {/* add details about the teacher */}
         <h1>teacher space</h1>
-        <div className='feedback'>
+        <div >
           {Lectures.map((lecture) => {
             return (
-              <Card >
-                <h3>{lecture.LectureName}</h3>
+              <div >
+                <span>{lecture.LectureName}</span>
                 <h5>{lecture.createdAt}</h5>
-              </Card>
+              </div>
             )
           })}
 
         </div>
-        <div className='feedback'>
+        <br></br>
+        <br></br>
+
+        <div >
           {exercices.map((exercise) => {
             return (
-              <Card>
+              <div >
+
                 <h3>{exercise.name}</h3>
                 <h5>{exercise.createdAt}</h5>
-              </Card>
+              </div>
             )
           })}
         </div>
-        <div className='feedback'>
+        <br></br>
+        <br></br>
+
+        <div >
           {checkPoints.map((checkPoint) => {
             return (
-              <Card>
-                <h3>'{checkPoint.name}'</h3>
+              <div >
+
+                <h3>{checkPoint.name}</h3>
                 <h5>{checkPoint.createdAt}</h5>
-              </Card>
+              </div>
             )
           })}
         </div>
