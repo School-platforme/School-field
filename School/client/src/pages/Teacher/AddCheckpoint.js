@@ -66,7 +66,7 @@ function Quiz() {
         onChange={(e) => setName(e.target.value)}
         label="Quiz Title"
         multiline
-        style={{ width: "500px" }}
+        style={{ width: "370px" }}
         rows={2}
       />
       <br />
