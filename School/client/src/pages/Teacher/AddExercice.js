@@ -63,7 +63,7 @@ function Exercice() {
     
     <>
     
-    { !teacherId? <Redirect push to ='/' /> : <>
+   
       <Sidebar />
       <div className="feed1">
         <div>
@@ -95,8 +95,8 @@ function Exercice() {
             </li>
           </ul>
         </div>
-      </div></>
-}
+      </div>
+
     </>
     
   );

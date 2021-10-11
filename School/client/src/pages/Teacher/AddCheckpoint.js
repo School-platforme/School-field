@@ -77,7 +77,7 @@ function Quiz() {
 
   return (
     <>
-     { !teacherId? <Redirect push to ='/' /> : <>
+    
       <Sidebar />
       <div className="feed">
         <div>
@@ -144,7 +144,7 @@ function Quiz() {
           </ul>
         </div>
       </div>
-     </>}
+  
     </>
   );
 }
