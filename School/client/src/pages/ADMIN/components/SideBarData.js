@@ -20,8 +20,8 @@ export const SidebarData = [
 		icon: <IoIcons.IoIosPaper />,
 		iconClosed: <RiIcons.RiArrowDownSFill />,
 		iconOpened: <RiIcons.RiArrowUpSFill />,
-
-		subNav: [
+	},
+	
 			{
 				title: "Add Teacher",
 				path: "/admin/addteacher",
@@ -40,8 +40,8 @@ export const SidebarData = [
 				icon: <IoIcons.IoIosPaper />,
 			},
 
-		],
-	},
+		
+
 	{
 		title: "FeedBack",
 		path: "/admin/feedback",

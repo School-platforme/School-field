@@ -4,7 +4,7 @@ var School = require("../School")
 exports.createAdmin = (req, res) => {
     // taking the information of the admin 
     // and use distructing to take the password 
-
+console.log(req.body)
     let { User, Password, Email ,ImageUrl} = req.body
     /// hash the password 
     Auth.HashPass(Password).then(Hashed => {
@@ -34,7 +34,7 @@ exports.CheckIfThePassRight = (req, res) => {
                 
                 if (bool) {
                    
-                    res.status(201).send()
+                    res.status(201).send(result)
                 } else {
                     res.status(404).send(err)
                 }

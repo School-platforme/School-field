@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import { RiStackFill } from "react-icons/ri";
 
 export const SingIn = () => {
   const [User, setUser] = useState("");
@@ -21,18 +22,23 @@ export const SingIn = () => {
   );
 
   let check = () => {
-    if (User == undefined || Password == undefined) {
-      setError(true);
-      return;
-    }
+    // if (User == undefined || Password == undefined) {
+    //   setError(true);
+    //   return;
+    // }
     axios
       .post("http://localhost:3002/admin/check", {
         User,
         Password,
       })
-      .then(() => {
-        setPath("/Admin");
+      .then(result => {
+       
+        if(result.data){
+        setPath("/admin");
         setError(false);
+        localStorage.setItem('admin',result.data)
+      }
+       
       })
       .catch(() => {
         setError(true);
@@ -43,7 +49,7 @@ export const SingIn = () => {
     <>
       {/* <admin data ={data}/> && false */}
       <div className="Register">
-        <h1>Sign In For Admin </h1>
+        {/* <h1>Sign In For Admin </h1> */}
         <div className="item">
           <br />
           <br />
@@ -52,7 +58,7 @@ export const SingIn = () => {
             onChange={(e) => setUser(e.target.value)}
             style={{ width: "300px" }}
             required
-            label="USER NAME"
+            label="Username"
             value={User}
           />
 
@@ -63,14 +69,14 @@ export const SingIn = () => {
             onChange={(e) => setPassword(e.target.value)}
             style={{ width: "300px" }}
             required
-            label="password"
+            label="Password"
             type="password"
           />
           <br />
           <br />
           <br />
           <Link className="LINK" to="/Admin/register">
-            REGISTER ?
+            Register ?
           </Link>
         </div>
         <br />
@@ -84,7 +90,7 @@ export const SingIn = () => {
         </Button>
         <Button style={{ width: "150px" }} variant="contained">
           <Link onClick={check} className="lnk" to={path}>
-            SIGN IN
+            Sign in
           </Link>
         </Button>
       </div>

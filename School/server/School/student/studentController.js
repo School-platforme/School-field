@@ -4,18 +4,21 @@ var School = require("../School")
 exports.createStudent = function (req, res) {
     // taking the information of the student thatt comes from the client side 
     const studentData = req.body
-    console.log(req.body)
+   
     // taking the id of that specific teacher 
-  console.log(studentData)
+ 
     const teacherId = req.params.id
+    console.log(studentData)
+    console.log(teacherId)
+
     //save the information of the student into the data base 
-    School.StudentModel.create(studentData)
+    School.StudentModel.create(studentData) 
         .then(data => {       
             // after saving the data of the student 
             // use the id of the teacher and update the array of student in the teacher schema with the id that the mongoose generated 
             // when we save the data of the student    
            
-            return School.TeacherModel.findByIdAndUpdate(teacherId, {
+            return School.TeacherModel.findByIdAndUpdate(JSON.parse(teacherId), {
                 $push: {
                     Students: data
                 }

@@ -23,7 +23,7 @@ export const SidebarData = [
 		iconClosed: <RiIcons.RiArrowDownSFill />,
 		iconOpened: <RiIcons.RiArrowUpSFill />,
 
-		subNav: [
+	},	
 			{
 				title: "Add Student",
 				path: "/teacher/addstudent",
@@ -44,19 +44,10 @@ export const SidebarData = [
 				path: "/teacher/checkpoint",
 				icon: <IoIcons.IoIosPaper />,
 			},
-			{
-				title: "Student statistics",
-				path: "/teacher/studentstatistic",
-				icon: <IoIcons.IoIosPaper />,
-			},
-			{
-				title: "add somthing here",
-				path: "/teacher/somthing",
-				icon: <IoIcons.IoIosPaper />,
-			},
-		],
-	}
-	,
+		
+		
+	
+	
 	{
 		title: "Contact",
 		path: "/contact",
