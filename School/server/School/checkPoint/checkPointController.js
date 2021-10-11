@@ -50,9 +50,12 @@ exports.getCheckponit = (req, res) => {
 
 
 exports.allCheckpoint = (req,res) => {
-    School.checkPointModel.find({}, (err,rst)=>{
+    console.log(req.body.name+"dazdada")
+    School.checkPointModel.findOne({name:req.body.name}, (err,rst)=>{
            if(err) res.status(500).send(err)
+           console.log(rst + "  eazeaze")
            res.status(200).send(rst)
+           
 
     })
 }

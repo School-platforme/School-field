@@ -14,8 +14,7 @@ export const SidebarData = [
 
 
 	},
-
-	{
+{
 		title: "Teacher",
 		path: "/teacher",
 		icon: <FaIcons.FaEnvelopeOpenText />,
