@@ -14,7 +14,7 @@ body {
   ); */
   height: 100%;
 
-  background-image: url("/home/ahmed/Desktop/usr/school-field/School/client/src/images/e8rDgu.jpg");
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v996-026-kroiri0r.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=4577c6079475aabe21bb30ef2ce85b71");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -290,3 +290,23 @@ body {
 /* .spcPic {
   background-image: url("");
 } */
+.container2 {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  margin-left: 15%;
+  position: relative;
+  height: 100px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 0px 20px 50px;
+  box-shadow: 0 0 20em #80808066;
+  font-family: "Francois One";
+  margin-top: 4%;
+}
+.block{
+
+  display: inline;
+}

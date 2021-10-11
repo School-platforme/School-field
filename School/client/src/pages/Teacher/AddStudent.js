@@ -76,12 +76,12 @@ class AddStudent extends Component {
   render() {
     return (
       <>
-        {!this.state.teacherId ? <Redirect push to='/' /> : <>
-          <Sidebar />
-          <div>
-            <div className="create">
-              <div className="create-editor">
-                {/* <h2
+    
+        <Sidebar />
+        <div>
+          <div className="create">
+            <div className="create-editor">
+              {/* <h2
                 style={{
                   textAlign: "center",
                   marginTop: "20px",
@@ -148,8 +148,8 @@ class AddStudent extends Component {
               </div>
             </div>
           </div>
-        </>
-        }
+        
+  
       </>
     );
   }

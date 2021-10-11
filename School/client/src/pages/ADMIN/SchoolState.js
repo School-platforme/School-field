@@ -38,7 +38,7 @@ export default class SchoolStat extends PureComponent {
     return (
       <>
         <Sidebar />
-        <div className='schoolstat'>
+        <div className='stat'>
 
           <BarChart
             className='teacher-stat'
@@ -46,9 +46,9 @@ export default class SchoolStat extends PureComponent {
             height={300}
             data={this.state.teachers}
             margin={{
-              top: 5,
+              top: 10,
               right: 30,
-              left: 20,
+              left: 30,
               bottom: 5,
             }}
           >
@@ -61,7 +61,7 @@ export default class SchoolStat extends PureComponent {
             <Bar dataKey={`Cours.length`} name="Cours" fill="#82ca9d" />
             <Bar dataKey={`Students.length`} name="Students" fill="#CAB81E" />
           </BarChart>
-          <BarChart
+          {/* <BarChart
             width={700}
             height={300}
             data={this.state.students}
@@ -81,7 +81,7 @@ export default class SchoolStat extends PureComponent {
             <Legend />
             <Bar dataKey={`Result`} name="Result" fill="#82ca9d" />
             <Bar dataKey={`Teacher.TeacherName`} name="Teacher" fill="#CAB81E" />
-          </BarChart>
+          </BarChart> */}
 
         </div>
 

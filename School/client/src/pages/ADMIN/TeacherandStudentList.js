@@ -43,8 +43,9 @@ function TeachersList() {
         }}
       >
         {" "}
-        Lists Of Teachers&& Students {" "}
+        Teachers & Students {" "}
       </h1>
+
       <Card style={{ margin: "20px", padding: "5px" }}>
         <h3 style={{ margin: "50px" }}>Teacher Data : </h3>
         <TableContainer component={Paper}>
