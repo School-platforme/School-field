@@ -45,7 +45,7 @@ export const SingInStudent = () => {
   return (
     <>
       <div className="Register">
-        <h1>SIGN IN FOR STUDENT</h1>
+        {/* <h1>Sign in for students</h1> */}
         <div className="item">
           <br />
           <br />
@@ -79,12 +79,12 @@ export const SingInStudent = () => {
       <div className="butn">
         <Button style={{ width: "150px" }} variant="contained">
           <Link className="lnk" to={"/"}>
-            BACK HOME
+            Back home
           </Link>
         </Button>
         <Button style={{ width: "150px" }} variant="contained">
           <Link onClick={check} className="lnk" to={path}>
-            SIGN IN
+            Sign in
           </Link>
         </Button>
       </div>
