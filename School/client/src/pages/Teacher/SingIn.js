@@ -27,6 +27,7 @@ export const SingInTeacher = () => {
         Password,
       })
       .then((rst) => {
+        console.log(rst.data)
         if(rst.data){
         localStorage.setItem("teacherId", JSON.stringify(rst.data._id));
         localStorage.setItem("teacherName", JSON.stringify(rst.data.TeacherName))
