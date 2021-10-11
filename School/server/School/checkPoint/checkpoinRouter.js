@@ -9,8 +9,8 @@ checkPointRouter.route('/checkpoint/:id')
     
 
 
-checkPointRouter.route('Checkpoint')
-    .get(checkPointController.allCheckpoint)    
+checkPointRouter.route('/Checkpoint')
+    .post(checkPointController.allCheckpoint)    
 
 
 

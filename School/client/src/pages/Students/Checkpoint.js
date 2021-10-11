@@ -34,14 +34,20 @@ export const Chekpoint = () => {
        {checkPoint.map((e,i)=>{
            return (
                <>
-               <h3 className="block"><Link
+               <h3 className="block">
+                   
+                <Link
                onClick={e=>{
               
-                    localStorage.setItem("checkname",e.target.className)                
+                    localStorage.setItem("checkname",e.target.className) 
+                                   
                 }}
                className={e.name}  
                 to="/checkpoint/do"
-               >{e.name} </Link></h3>
+               >
+                   
+                   
+                   {e.name} </Link></h3>
                <h6 className="block">{moment(e.createdAt).format("MMM Do YY")}</h6>
                </>
            )

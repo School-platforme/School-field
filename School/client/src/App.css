@@ -13,8 +13,8 @@ body {
     rgb(47, 102, 139) 50%
   ); */
   height: 100%;
-  /* background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v996-026-kroiri0r.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=4577c6079475aabe21bb30ef2ce85b71"); */
-  background-color: rgb(248, 241, 232);
+
+  background-image: url("https://images.theconversation.com/files/418872/original/file-20210901-13-19lgusq.jpg?ixlib=rb-1.1.0&rect=0,19,1000,499&q=45&auto=format&w=668&h=324&fit=crop");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -320,11 +320,19 @@ body {
   margin-left: 33%;
   position: relative;
   height: 500px;
+}
+.container3 {
+ 
+  width: 30%;
+  text-align: left;
+  margin-left: 15%;
+  position: relative;
+  height: 175px;
   list-style: none;
   border: 1px solid #77777769;
   background-color: #fdfdfd;
   border-radius: 4px;
-  padding: 10px 50px 20px 50px;
+  padding: 20px 0px 20px 50px;
   box-shadow: 0 0 20em #80808066;
   font-family: "Francois One";
   margin-top: 4%;
