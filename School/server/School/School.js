@@ -85,7 +85,7 @@ var createStudentSchema = mongoose.Schema({
   Phone: { type: Number, required: true },
   Email: { type: String, unique: true, required: true },
   Password: { type: String, required: true },
-  teacherId:String,
+  teacherId: String,
   Teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
@@ -96,9 +96,10 @@ var createStudentSchema = mongoose.Schema({
     ref: "Result"
   }]
 
-}, {
-  timestamps: true
-})
+},
+  {
+    timestamps: true
+  })
 var StudentModel = mongoose.model("student", createStudentSchema)
 
 
@@ -115,7 +116,9 @@ var createCheckPoint = mongoose.Schema({
     ref: "teacher"
   }
 },
-  { timestamps: true }
+  {
+    timestamps: true
+  }
 )
 
 // checkpoint model
@@ -129,8 +132,8 @@ var checkPointModel = mongoose.model("Quiz", createCheckPoint)
 var createLecture = mongoose.Schema({
 
   Lecture: String,
-  LectureName:String,
-  teacherId:String,
+  LectureName: String,
+  teacherId: String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "teacher"
