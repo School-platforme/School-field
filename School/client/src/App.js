@@ -10,33 +10,46 @@ import { Teacher } from "./pages/Teacher/teacherSpace";
 import Contact from "./pages/ContactUs/ContactUs";
 import { Register } from "./pages/ADMIN/Register";
 import { SingIn } from "./pages/ADMIN/SingIn";
-import Quiz from "./pages/Teacher/AddCheckpoint";
-import Exercice1 from "./pages/Teacher/AddExercice";
-import Lecture1 from "./pages/Teacher/AddLecture";
-import AddStudent from "./pages/Teacher/AddStudent";
+import Footer from "./pages/Footer/Footer"
+import Quiz from "./pages/Teacher/AddCheckpoint"
+import Exercice1 from "./pages/Teacher/AddExercice"
+import Lecture1 from "./pages/Teacher/AddLecture"
+import AddStudent from "./pages/Teacher/AddStudent"
 
-import AddTeachers from "./pages/ADMIN/AddTeacher";
-import { FeedBack } from "./pages/ADMIN/FeedBack";
-import SchoolStat from "./pages/ADMIN/SchoolState";
-import TeachersList from "./pages/ADMIN/TeacherandStudentList";
-import { AdminPage } from "./pages/ADMIN/Admin";
-
-import { SingInTeacher } from "./pages/Teacher/SingIn";
-import { SingInStudent } from "./pages/Students/SingInStudent";
+import AddTeachers from "./pages/ADMIN/AddTeacher"
+import {FeedBack} from "./pages/ADMIN/FeedBack"
+import SchoolStat from "./pages/ADMIN/SchoolState"
+import TeachersList from "./pages/ADMIN/TeacherandStudentList"
+import {AdminPage} from "./pages/ADMIN/Admin"
+import { Check } from "./pages/Students/ChekpointDo";
+import {SingInTeacher} from './pages/Teacher/SingIn'
+import {SingInStudent} from "./pages/Students/SingInStudent"
 
 function App() {
-  return (
-    <>
-      <Router>
-        <Switch>
-          <Route path="/" exact component={HOME} />
-
-          <Route path="/students" exact component={Students} />
-          <Route path="/students/lecture" exact component={Lecture} />
-          <Route path="/students/exercice" exact component={Exercice} />
-          <Route path="/students/chekpoint" exact component={Chekpoint} />
-          <Route path="/contact" exact component={Contact} />
-          <Route path="/teacher" exact component={Teacher} />
+return (
+	<>
+	
+	<Router>
+	
+	
+	<Switch>
+		<Route path="/" exact component={HOME} />
+		
+		<Route path="/students" exact component={Students} />
+		<Route path="/students/lecture" exact component={Lecture} />
+		<Route path="/students/exercice" exact component={Exercice} />
+		<Route path="/students/chekpoint" exact component={Chekpoint} />
+		<Route path="/contact" exact component={Contact} />
+		<Route path="/teacher" exact component={Teacher} />
+	
+		<Route path="/Admin/register" exact component={Register} />
+		<Route path="/Admin/singin" exact component={SingIn} />
+		<Route path="/teacher/checkpoint" exact component={Quiz} />
+		<Route path="/teacher/exercice" exact component={Exercice1} />
+		<Route path="/teacher/lecture" exact component={Lecture1} />
+		<Route path="/teacher/addstudent" exact component={AddStudent} />
+		
+		<Route path="/checkpoint/do" exact component={Check} />
 
           <Route path="/Admin/register" exact component={Register} />
           <Route path="/Admin/singin" exact component={SingIn} />

@@ -3,11 +3,10 @@ var School = require("../School")
 
 
 exports.getResult = (req, res) => {
-
-
-
-
-
+    let studentId = req.params.id
+    School.StudentModel.findOne({_id:studentId}, (result)=>{
+       console.log(result)   
+    })
 
 }
 

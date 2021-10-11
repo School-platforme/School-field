@@ -290,3 +290,23 @@ body {
 /* .spcPic {
   background-image: url("");
 } */
+.container2 {
+  display: grid;
+  width: 30%;
+  text-align: left;
+  margin-left: 15%;
+  position: relative;
+  height: 100px;
+  list-style: none;
+  border: 1px solid #77777769;
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 20px 0px 20px 50px;
+  box-shadow: 0 0 20em #80808066;
+  font-family: "Francois One";
+  margin-top: 4%;
+}
+.block{
+
+  display: inline;
+}
