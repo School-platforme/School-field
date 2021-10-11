@@ -25,6 +25,7 @@ export const Exercice = () => {
             <Sidebar />
             <div className="services">
                 <h1>Exercise Space</h1>
+                <h2> add exercise</h2>
             </div>
         </>
     );

@@ -14,7 +14,7 @@ body {
   ); */
   height: 100%;
 
-  background-image: url("https://images.theconversation.com/files/418872/original/file-20210901-13-19lgusq.jpg?ixlib=rb-1.1.0&rect=0,19,1000,499&q=45&auto=format&w=668&h=324&fit=crop");
+  /* background-image: url("https://images.theconversation.com/files/418872/original/file-20210901-13-19lgusq.jpg?ixlib=rb-1.1.0&rect=0,19,1000,499&q=45&auto=format&w=668&h=324&fit=crop"); */
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -322,7 +322,6 @@ body {
   height: 500px;
 }
 .container3 {
- 
   width: 30%;
   text-align: left;
   margin-left: 15%;
