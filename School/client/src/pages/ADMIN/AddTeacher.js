@@ -148,8 +148,8 @@ class AddTeachers extends Component {
                   onChange={this.handleChange}
                   value={this.state.Field}
                 />
-              </div>
-              <div className="create-teacher-inputs2">
+                {/* </div> */}
+                {/* <div className="create-teacher-inputs2"> */}
                 <TextField
                   required
                   name="Phone"

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
 import { TextField, Button } from "@material-ui/core";
-
+import { Redirect } from "react-router";
 class AddStudent extends Component {
   constructor(props) {
     super(props);
@@ -75,77 +75,56 @@ class AddStudent extends Component {
     return (
       <>
         <Sidebar />
-        <div>
-          <div className="create">
-            <div className="create-editor">
-              {/* <h2
-                style={{
-                  textAlign: "center",
-                  marginTop: "20px",
-                  color: "white",
-                  fontFamily: "Francois One",
-                }}
-              >
-                Create student
-              </h2> */}
-              <div className="create-teacher-inputs">
-                <TextField
-                  name="StudentName"
-                  type="text"
-                  label="First Name"
-                  onChange={this.handleChange}
-                />
+        <div className="create-teacher-inputs">
+          <TextField
+            name="StudentName"
+            type="text"
+            label="First Name"
+            onChange={this.handleChange}
+          />
 
-                <TextField
-                  name="StudentLastName"
-                  type="text"
-                  label="Last Name"
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  name="Email"
-                  type="text"
-                  label="Email"
-                  onChange={this.handleChange}
-                />
+          <TextField
+            name="StudentLastName"
+            type="text"
+            label="Last Name"
+            onChange={this.handleChange}
+          />
+          <TextField
+            name="Email"
+            type="text"
+            label="Email"
+            onChange={this.handleChange}
+          />
 
-                <TextField
-                  name="ImageUrl"
-                  type="text"
-                  label="Image"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="create-teacher-inputs2">
-                <TextField
-                  name="Phone"
-                  type="text"
-                  label="Phone number"
-                  onChange={this.handleChange}
-                />
+          <TextField
+            name="ImageUrl"
+            type="text"
+            label="Image"
+            onChange={this.handleChange}
+          />
+          {/* </div> */}
+          {/* <div className="create-teacher-inputs2"> */}
+          <TextField
+            name="Phone"
+            type="text"
+            label="Phone number"
+            onChange={this.handleChange}
+          />
 
-                <TextField
-                  name="Age"
-                  label="Age"
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  name="Password"
-                  type="password"
-                  label="Password"
-                  onChange={this.handleChange}
-                />
-                <br></br>
-                <br></br>
+          <TextField name="Age" label="Age" onChange={this.handleChange} />
+          <TextField
+            name="Password"
+            type="password"
+            label="Password"
+            onChange={this.handleChange}
+          />
+          <br></br>
+          <br></br>
 
-                <Button onClick={this.createStudent.bind(this)}>
-                  Save student
-                </Button>
-              </div>
-            </div>
-          </div>
+          <Button onClick={this.createStudent.bind(this)}>Save student</Button>
         </div>
       </>
+      //  }
     );
   }
 }

@@ -45,4 +45,12 @@ exports.findExercice = (req,res) => {
     })
 }
 
+exports.deleteExercice = (req,res)=>{
+    condition = {name : req.params.id}
+    School.exerciceModel.deleteOne(condition,(err,rst)=>{
+        if(err) res.status(403).send(err)
+        res.status(200).send(rst)
+    })
+}
+
 

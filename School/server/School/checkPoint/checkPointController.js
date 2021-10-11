@@ -35,7 +35,7 @@ exports.getCheckponit = (req, res) => {
     // taking the id of specific teacher
     var teacherId = req.params.id.replace(' "','')
     
-console.log({teacherId: JSON.parse(teacherId)})
+
     
     School.checkPointModel.find({teacherId: JSON.parse(teacherId)},(err,rst)=> {
         if(err) res.status(500).send(err)
@@ -46,18 +46,6 @@ console.log({teacherId: JSON.parse(teacherId)})
 
 }
 
-// still it's finished yet 
-exports.updateCheckpoint = (req,res)=>{
-    let name = req.body.name
-    let quizArray = req.body.quizArray
-    let teacherId = req.params.id 
-    School.TeacherModel.findById(teacherId,(err,{Quiz})=>{
-    let quizId =  JSON.parse(JSON.stringify(Quiz))
-   console.log(quizId)       
-    })
-
-
-}
 
 
 
@@ -67,4 +55,13 @@ exports.allCheckpoint = (req,res) => {
            res.status(200).send(rst)
 
     })
+}
+
+exports.deleteCheckpoint = (req,res) => {
+   var condition = {name : req.params.id}
+   School.checkPointModel.deleteOne(condition,(err,rst)=>{
+        if(err) res.status(403).send(200)
+        res.status(200).send(rst)
+   })
+
 }

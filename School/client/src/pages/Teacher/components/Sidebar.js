@@ -8,7 +8,7 @@ import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
 const Nav = styled.div`
-  background: transparent;
+  background: black;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -25,7 +25,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: transparent;
+  background: black;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -63,7 +63,7 @@ const Sidebar = () => {
             to="/teacher/singin"
             style={{ width: "200px", textDecoration: "none" }}
           >
-            <h1
+            {/* <h1
               style={{
                 textAlign: "center",
                 marginLeft: "1300px",
@@ -71,8 +71,8 @@ const Sidebar = () => {
                 fontFamily: "Francois One",
               }}
             >
-              Sign&nbsp;Out
-            </h1>
+              Sign&nbsp;out
+            </h1> */}
           </Link>
         </Nav>
         <SidebarNav sidebar={sidebar}>
