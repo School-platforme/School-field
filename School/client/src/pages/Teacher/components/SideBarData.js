@@ -44,16 +44,7 @@ export const SidebarData = [
 				path: "/teacher/checkpoint",
 				icon: <IoIcons.IoIosPaper />,
 			},
-			{
-				title: "Student statistics",
-				path: "/teacher/studentstatistic",
-				icon: <IoIcons.IoIosPaper />,
-			},
-			{
-				title: "add somthing here",
-				path: "/teacher/somthing",
-				icon: <IoIcons.IoIosPaper />,
-			},
+		
 		
 	
 	

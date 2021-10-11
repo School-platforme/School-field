@@ -27,9 +27,12 @@ export const SingInTeacher = () => {
         Password,
       })
       .then((rst) => {
+        if(rst.data){
         localStorage.setItem("teacherId", JSON.stringify(rst.data._id));
+        localStorage.setItem("teacherName", JSON.stringify(rst.data.TeacherName))
         setPath("/teacher");
         setError(false);
+        }
       })
       .catch(() => {
         setError(true);
