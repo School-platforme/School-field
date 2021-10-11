@@ -26,6 +26,7 @@ export const Exercice = () => {
             <div className="services">
                 <h1>Exercise Space</h1>
                 <h2> add exercise</h2>
+                <h3>add more exercises</h3>
             </div>
         </>
     );
