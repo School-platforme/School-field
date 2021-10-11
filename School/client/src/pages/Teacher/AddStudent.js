@@ -79,9 +79,16 @@ class AddStudent extends Component {
         <div>
           <div className="create">
             <div className="create-editor">
-              <h2 style={{ textAlign: "center", marginTop: "20px" }}>
+              {/* <h2
+                style={{
+                  textAlign: "center",
+                  marginTop: "20px",
+                  color: "white",
+                  fontFamily: "Francois One",
+                }}
+              >
                 Create student
-              </h2>
+              </h2> */}
               <div className="create-teacher-inputs">
                 <TextField
                   name="StudentName"
