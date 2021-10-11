@@ -57,7 +57,6 @@ return (
           <Route path="/teacher/exercice" exact component={Exercice1} />
           <Route path="/teacher/lecture" exact component={Lecture1} />
           <Route path="/teacher/addstudent" exact component={AddStudent} />
-        
 
           <Route path="/admin/addteacher" exact component={AddTeachers} />
           <Route path="/admin/feedback" exact component={FeedBack} />
@@ -68,10 +67,7 @@ return (
           <Route path="/teacher/singin" exact component={SingInTeacher} />
           <Route path="/student/singin" exact component={SingInStudent} />
         </Switch>
-        <br />
-        <br />
-
-        <br />
+     
       </Router>
     </>
   );

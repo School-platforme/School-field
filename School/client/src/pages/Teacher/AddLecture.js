@@ -30,7 +30,7 @@ function Lecture() {
     <>
     
       <Sidebar />
-      <div className="feed">
+      <div className="feed1">
         <div>
           <div className="feed-list-item-title"></div>
           <div className="feed-list-item-byline">

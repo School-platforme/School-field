@@ -31,14 +31,12 @@ export const SingIn = () => {
         User,
         Password,
       })
-      .then(result => {
-       
-        if(result.data){
-        setPath("/admin");
-        setError(false);
-        localStorage.setItem('admin',result.data)
-      }
-       
+      .then((result) => {
+        if (result.data) {
+          setPath("/admin");
+          setError(false);
+          localStorage.setItem("admin", result.data);
+        }
       })
       .catch(() => {
         setError(true);
@@ -81,14 +79,22 @@ export const SingIn = () => {
         </div>
         <br />
       </div>
+
       {bool ? error : ""}
       <div className="butn">
-        <Button style={{ width: "150px" }} variant="contained">
+        <Button
+          style={{ width: "150px", backgroundColor: "black", color: "white" }}
+          variant="contained"
+        >
           <Link className="lnk" to="/">
             Back Home
           </Link>
         </Button>
-        <Button style={{ width: "150px" }} variant="contained">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button
+          style={{ width: "150px", backgroundColor: "black", color: "white" }}
+          variant="contained"
+        >
           <Link onClick={check} className="lnk" to={path}>
             Sign in
           </Link>
