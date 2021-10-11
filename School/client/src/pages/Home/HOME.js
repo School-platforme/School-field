@@ -74,21 +74,21 @@ const ImageMarked = styled("span")(({ theme }) => ({
 export const HOME = () => {
   return (
     <>
-      <br />
+    
 
       <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          minWidth: 300,
-          width: "100%",
-          marginTop: "95px",
+          // marginTop: "155px",
+          Width: "100%",
         }}
       >
         <ImageButton
           focusRipple
           style={{
-            width: "33.3333333%",
+            width: "33.33333%",
+            height: "730px",
           }}
         >
           <ImageSrc
@@ -120,11 +120,12 @@ export const HOME = () => {
           focusRipple
           style={{
             width: "33.3333333%",
+            height: "730px",
           }}
         >
           <ImageSrc
             style={{
-              backgroundImage: `url("https://i.cbc.ca/1.5433493.1579546014!/fileImage/httpImage/oakridge-secondary-school.jpg")`,
+              backgroundImage: `url("https://www.iae-bordeaux.fr/application/files/8315/9412/2280/Article_Master_Management_Administration_Entreprises_960x540.jpg")`,
             }}
           />
           <ImageBackdrop className="MuiImageBackdrop-root" />
@@ -151,11 +152,12 @@ export const HOME = () => {
           focusRipple
           style={{
             width: "33.3333333%",
+            height: "730px",
           }}
         >
           <ImageSrc
             style={{
-              backgroundImage: `url("https://impacttutors.co.uk/blog/wp-content/uploads/2018/05/secondary-school-image-final-2.jpg")`,
+              backgroundImage: `url("https://www.teachaway.com/sites/default/files/styles/header_image_1200/public/2020-04/shutterstock_1283704207.png?itok=lmxKa3qt")`,
             }}
           />
           <ImageBackdrop className="MuiImageBackdrop-root" />
@@ -179,11 +181,7 @@ export const HOME = () => {
           </Image>
         </ImageButton>
       </Box>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+  
     </>
   );
 };

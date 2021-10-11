@@ -79,12 +79,13 @@ export const SingInStudent = () => {
       </div>
       {bool ? error : ""}
       <div className="butn">
-        <Button style={{ width: "150px" }} variant="contained">
+        <Button style={{ width: "150px", backgroundColor: "black", color: "white"  }} variant="contained">
           <Link className="lnk" to={"/"}>
             Back home
           </Link>
         </Button>
-        <Button style={{ width: "150px" }} variant="contained">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button style={{ width: "150px", backgroundColor: "black", color: "white"  }} variant="contained">
           <Link onClick={check} className="lnk" to={path}>
             Sign in
           </Link>
