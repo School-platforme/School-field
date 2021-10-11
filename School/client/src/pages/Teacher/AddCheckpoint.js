@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import { TextField, Button } from "@material-ui/core";
-
+import { Redirect } from "react-router";
 import axios from "axios";
 
 function Quiz() {
@@ -66,7 +66,7 @@ function Quiz() {
         onChange={(e) => setName(e.target.value)}
         label="Quiz Title"
         multiline
-        style={{ width: "500px" }}
+        style={{ width: "370px" }}
         rows={2}
       />
       <br />
@@ -77,6 +77,7 @@ function Quiz() {
 
   return (
     <>
+     { !teacherId? <Redirect push to ='/' /> : <>
       <Sidebar />
       <div className="feed">
         <div>
@@ -143,6 +144,7 @@ function Quiz() {
           </ul>
         </div>
       </div>
+     </>}
     </>
   );
 }

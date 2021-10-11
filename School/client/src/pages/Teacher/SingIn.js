@@ -35,6 +35,7 @@ export const SingInTeacher = () => {
         setError(false);
         }
       })
+
       .catch(() => {
         setError(true);
       });
@@ -43,7 +44,7 @@ export const SingInTeacher = () => {
   return (
     <>
       <div className="Register">
-        <h1>SIGN IN FOR TEACHER</h1>
+        {/* <h1>SIGN IN FOR TEACHER</h1> */}
         <div className="item">
           <br />
           <br />
@@ -62,7 +63,7 @@ export const SingInTeacher = () => {
             onChange={(e) => setPassword(e.target.value)}
             style={{ width: "300px" }}
             required
-            label="password"
+            label="Password"
             type="password"
           />
           <br />
@@ -72,15 +73,16 @@ export const SingInTeacher = () => {
         <br />
       </div>
       {bool ? error : ""}
+
       <div className="butn">
         <Button style={{ width: "150px" }} variant="contained">
           <Link className="lnk" to="/">
-            BACK HOME
+            Back home
           </Link>
         </Button>
         <Button style={{ width: "150px" }} variant="contained">
           <Link onClick={check} className="lnk" to={path}>
-            SIGN IN
+            Sign in
           </Link>
         </Button>
       </div>

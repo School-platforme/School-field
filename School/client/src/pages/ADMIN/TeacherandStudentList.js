@@ -34,16 +34,16 @@ function TeachersList() {
     <>
       <Sidebar />
 
-
       <h1
         style={{
           textAlign: "center",
           marginBottom: "100px",
           marginTop: "30px",
+          fontFamily: "Francois One",
         }}
       >
         {" "}
-        Lists Of Students && Teacher{" "}
+        Lists Of Teachers&& Students {" "}
       </h1>
       <Card style={{ margin: "20px", padding: "5px" }}>
         <h3 style={{ margin: "50px" }}>Teacher Data : </h3>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
+import { Redirect } from "react-router";
 
 function Lecture() {
   const [Lecture, setLecture] = useState("");
@@ -27,6 +28,7 @@ function Lecture() {
 
   return (
     <>
+     { !teacherId? <Redirect push to ='/' /> : <>
       <Sidebar />
       <div className="feed">
         <div>
@@ -61,6 +63,9 @@ function Lecture() {
           </div>
         </div>
       </div>
+     </>
+     
+     }
     </>
   );
 }
