@@ -118,39 +118,7 @@ export const Teacher = () => {
           </TableContainer>
         </Card>
       </div>
-      <div className='feedback'>
-        <h3 style={{ margin: "50px" }}>CheckPoints : </h3>
-        <TableContainer component={Paper}>
-          <Box sx={{ p: 5 }}>
-            <Table className="teacher-table" aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell style={{ fontSize: "1.3rem" }}>
-                    CheckPoint title
-                  </TableCell>
-                  <TableCell style={{ fontSize: "1.3rem" }} align="center">CheckPoint</TableCell>
-                  <TableCell style={{ fontSize: "1.3rem" }} align="right">
-                    CheckPoint Date
-                  </TableCell>
 
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {checkPoints.map((checkpoint, key) => (
-                  <TableRow style={{ fontSize: "4rem" }} key={key}>
-                    <TableCell align="left">{checkpoint.name}</TableCell>
-
-
-                    <TableCell align="right">
-                      {moment(checkpoint.createdAt).format("MMM Do YY")}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Box>
-        </TableContainer>
-      </div>
 
     </>
   );
