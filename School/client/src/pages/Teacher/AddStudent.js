@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Sidebar from "./components/Sidebar";
 import { TextField, Button } from "@material-ui/core";
-
+import { Redirect } from "react-router";
 class AddStudent extends Component {
   constructor(props) {
     super(props);
@@ -74,6 +74,7 @@ class AddStudent extends Component {
   render() {
     return (
       <>
+       { !this.state.teacherId? <Redirect push to ='/' /> : <>
         <Sidebar />
         <div>
           <div className="create">
@@ -138,6 +139,8 @@ class AddStudent extends Component {
             </div>
           </div>
         </div>
+       </>
+       }
       </>
     );
   }
