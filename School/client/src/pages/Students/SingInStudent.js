@@ -27,13 +27,14 @@ export const SingInStudent = () => {
         User,
         Password,
       })
-      .then((rst) => {
+      .then(rst => {
+        console.log(rst)
         if(rst.data){
         setPath("/students");
         setError(false);
-        setPassword("");
-        setUser("");
+      
         var student = JSON.stringify(rst.data);
+        console.log(student)
         localStorage.setItem("student", student);
         }
       })
