@@ -48,11 +48,11 @@ class AddStudent extends Component {
   }
   // to create teacher
   createStudent() {
-    console.log(this.state.student);
+    ;
     axios
       .post(
         `http://localhost:3002/student/${this.state.teacherId}`,
-        this.state.student
+        this.state
       )
       .then((student) => {
         console.log(student);
@@ -73,7 +73,7 @@ class AddStudent extends Component {
       });
   }
 
-  render() {
+  render() { {console.log(this.state)}
     return (
       <>
     
