@@ -16,7 +16,7 @@ class AddStudent extends Component {
       Phone: "",
       Email: "",
       student: {},
-      teacherId: localStorage.getItem("teacherId"),
+      teacherId: localStorage.getItem('teacherId'),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -65,6 +65,8 @@ class AddStudent extends Component {
           ImageUrl: "",
           Phone: "",
         });
+      }).then(() => {
+        alert('student created')
       })
       .catch((err) => {
         console.log(err);
@@ -89,63 +91,64 @@ class AddStudent extends Component {
               >
                 Create student
               </h2> */}
-              <div className="create-teacher-inputs">
-                <TextField
-                  name="StudentName"
-                  type="text"
-                  label="First Name"
-                  onChange={this.handleChange}
-                />
+                <div className="create-teacher-inputs">
+                  <TextField
+                    name="StudentName"
+                    type="text"
+                    label="First Name"
+                    onChange={this.handleChange}
+                  />
 
-                <TextField
-                  name="StudentLastName"
-                  type="text"
-                  label="Last Name"
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  name="Email"
-                  type="text"
-                  label="Email"
-                  onChange={this.handleChange}
-                />
+                  <TextField
+                    name="StudentLastName"
+                    type="text"
+                    label="Last Name"
+                    onChange={this.handleChange}
+                  />
+                  <TextField
+                    name="Email"
+                    type="text"
+                    label="Email"
+                    onChange={this.handleChange}
+                  />
 
-                <TextField
-                  name="ImageUrl"
-                  type="text"
-                  label="Image"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="create-teacher-inputs2">
-                <TextField
-                  name="Phone"
-                  type="text"
-                  label="Phone number"
-                  onChange={this.handleChange}
-                />
+                  <TextField
+                    name="ImageUrl"
+                    type="text"
+                    label="Image"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="create-teacher-inputs2">
+                  <TextField
+                    name="Phone"
+                    type="text"
+                    label="Phone number"
+                    onChange={this.handleChange}
+                  />
 
-                <TextField
-                  name="Age"
-                  label="Age"
-                  onChange={this.handleChange}
-                />
-                <TextField
-                  name="Password"
-                  type="password"
-                  label="Password"
-                  onChange={this.handleChange}
-                />
-                <br></br>
-                <br></br>
+                  <TextField
+                    name="Age"
+                    label="Age"
+                    onChange={this.handleChange}
+                  />
+                  <TextField
+                    name="Password"
+                    type="password"
+                    label="Password"
+                    onChange={this.handleChange}
+                  />
+                  <br></br>
+                  <br></br>
 
-                <Button onClick={this.createStudent.bind(this)}>
-                  Save student
-                </Button>
+                  <Button onClick={this.createStudent.bind(this)}>
+                    Save student
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        
   
       </>
     );

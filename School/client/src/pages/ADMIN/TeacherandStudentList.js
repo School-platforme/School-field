@@ -113,12 +113,14 @@ function TeachersList() {
                   </TableRow>
                 </TableHead>
                 <TableBody>
+                  {console.log(students)}
                   {students.map((student, key) => (
                     <TableRow style={{ fontSize: "4rem" }} key={key}>
                       <CardHeader
                         avatar={<Avatar src={student.ImageUrl} />}
                         title={
-                          student.studentName + " " + student.studentLastName
+
+                          student.StudentLastName + " " + student.StudentName
                         }
                       />
                       <TableCell align="left">{student.Age}</TableCell>

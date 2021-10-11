@@ -175,7 +175,7 @@ class AddTeachers extends Component {
                   onChange={this.handleChange}
                   value={this.state.Password}
                 />
-                <br />
+                <br /> 
 
                 <Box
                   sx={{
