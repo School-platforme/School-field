@@ -27,11 +27,15 @@ export const SingInTeacher = () => {
         Password,
       })
       .then((rst) => {
-        if(rst.data){
-        localStorage.setItem("teacherId", JSON.stringify(rst.data._id));
-        localStorage.setItem("teacherName", JSON.stringify(rst.data.TeacherName))
-        setPath("/teacher");
-        setError(false);
+        console.log(rst.data);
+        if (rst.data) {
+          localStorage.setItem("teacherId", JSON.stringify(rst.data._id));
+          localStorage.setItem(
+            "teacherName",
+            JSON.stringify(rst.data.TeacherName)
+          );
+          setPath("/teacher");
+          setError(false);
         }
       })
 
@@ -74,12 +78,19 @@ export const SingInTeacher = () => {
       {bool ? error : ""}
 
       <div className="butn">
-        <Button style={{ width: "150px" }} variant="contained">
+        <Button
+          style={{ width: "150px", backgroundColor: "black", color: "white" }}
+          variant="contained"
+        >
           <Link className="lnk" to="/">
             Back home
           </Link>
         </Button>
-        <Button style={{ width: "150px" }} variant="contained">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button
+          style={{ width: "150px", backgroundColor: "black", color: "white" }}
+          variant="contained"
+        >
           <Link onClick={check} className="lnk" to={path}>
             Sign in
           </Link>

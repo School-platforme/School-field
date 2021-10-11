@@ -28,9 +28,9 @@ function Lecture() {
 
   return (
     <>
-     { !teacherId? <Redirect push to ='/' /> : <>
+    
       <Sidebar />
-      <div className="feed">
+      <div className="feed1">
         <div>
           <div className="feed-list-item-title"></div>
           <div className="feed-list-item-byline">
@@ -65,8 +65,7 @@ function Lecture() {
       </div>
      </>
      
-     }
-    </>
+  
   );
 }
 
