@@ -8,7 +8,7 @@ import SubMenu from "./SubMenu";
 import { IconContext } from "react-icons/lib";
 
 const Nav = styled.div`
-  background: #15171c;
+  background: transparent;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -25,7 +25,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #15171c;
+  background: transparent;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -53,21 +53,22 @@ const Sidebar = () => {
           <NavIcon to="#">
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-          <h1
+          {/* <h1
             style={{ textAlign: "center", marginLeft: "200px", color: "green" }}
           >
             SchoolField
-          </h1>
+          </h1> */}
 
           <Link
             to="/teacher/singin"
-            style={{ width: "250px", textDecoration: "none" }}
+            style={{ width: "200px", textDecoration: "none" }}
           >
             <h1
               style={{
                 textAlign: "center",
-                marginLeft: "900px",
-                color: "green",
+                marginLeft: "1300px",
+                color: "white",
+                fontFamily: "Francois One",
               }}
             >
               Sign&nbsp;Out

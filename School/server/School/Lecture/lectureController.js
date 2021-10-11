@@ -46,3 +46,11 @@ exports.findLecture = (req,res) => {
         res.status(200).send(rst)
     })
 }
+
+exports.deleteLecture = (req,res)=>{
+    condition = {LectureName : req.params.id}
+    School.LectureModel.deleteOne(condition,(err,rst)=>{
+        if(err) res.status(403).send(err)
+        res.status(200).send(rst)
+    })
+}
