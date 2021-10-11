@@ -74,7 +74,7 @@ class AddStudent extends Component {
   render() {
     return (
       <>
-       { !this.state.teacherId? <Redirect push to ='/' /> : <>
+        {/* { !this.state.teacherId? <Redirect push to ='/' /> : <> */}
         <Sidebar />
         <div>
           <div className="create">
@@ -146,9 +146,8 @@ class AddStudent extends Component {
             </div>
           </div>
         </div>
-       </>
-       }
       </>
+      //  }
     );
   }
 }

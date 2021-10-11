@@ -13,8 +13,7 @@ body {
     rgb(47, 102, 139) 50%
   ); */
   height: 100%;
-
-  background-image: url("/home/ahmed/Desktop/usr/school-field/School/client/src/images/e8rDgu.jpg");
+  background-image: url("D:/RBK hack Reactor/GreenField project/school-field/School/client/src/images/e8rDgu.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
