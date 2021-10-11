@@ -76,7 +76,6 @@ class AddStudent extends Component {
   render() { {console.log(this.state)}
     return (
       <>
-    
         <Sidebar />
         <div>
           <div className="create">
@@ -151,6 +150,7 @@ class AddStudent extends Component {
         
   
       </>
+      //  }
     );
   }
 }

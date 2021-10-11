@@ -5,47 +5,47 @@ import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
 
 export const SidebarData = [
-	{
-		title: "HOME",
-		path: "/",
-		icon: <AiIcons.AiFillHome />,
-		iconClosed: <RiIcons.RiArrowDownSFill />,
-		iconOpened: <RiIcons.RiArrowUpSFill />,
+  {
+    title: "HOME",
+    path: "/",
+    icon: <AiIcons.AiFillHome />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: "Admin Page",
+    path: "/admin",
+    icon: <IoIcons.IoIosPaper />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
 
+  {
+    title: "Add Teacher",
+    path: "/admin/addteacher",
+    icon: <IoIcons.IoIosPaper />,
+    cName: "sub-nav",
+  },
+  {
+    title: "Lists",
+    path: "/admin/teacherlist",
+    icon: <IoIcons.IoIosPaper />,
+    cName: "sub-nav",
+  },
+  {
+    title: "School statistics",
+    path: "/admin/schoolstate",
+    icon: <IoIcons.IoIosPaper />,
+  },
+  {
+    title: "Sign out",
+    path: "/",
+    icon: <IoIcons.IoIosPaper />,
+  },
 
-	},
-	{
-		title: "Admin Page",
-		path: "/admin",
-		icon: <IoIcons.IoIosPaper />,
-		iconClosed: <RiIcons.RiArrowDownSFill />,
-		iconOpened: <RiIcons.RiArrowUpSFill />,
-	},
-	
-			{
-				title: "Add Teacher",
-				path: "/admin/addteacher",
-				icon: <IoIcons.IoIosPaper />,
-				cName: "sub-nav",
-			},
-			{
-				title: "Lists",
-				path: "/admin/teacherlist",
-				icon: <IoIcons.IoIosPaper />,
-				cName: "sub-nav",
-			},
-			{
-				title: "School statistics",
-				path: "/admin/schoolstate",
-				icon: <IoIcons.IoIosPaper />,
-			},
-
-		
-
-	{
-		title: "FeedBack",
-		path: "/admin/feedback",
-		icon: <FaIcons.FaPhone />,
-	},
-
+  {
+    title: "FeedBack",
+    path: "/admin/feedback",
+    icon: <FaIcons.FaPhone />,
+  },
 ];
