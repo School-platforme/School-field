@@ -6,6 +6,7 @@ import { Redirect } from "react-router-dom";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Stack from "@mui/material/Stack";
+import { RiStackFill } from "react-icons/ri";
 
 export const SingIn = () => {
   const [User, setUser] = useState("");
@@ -21,18 +22,23 @@ export const SingIn = () => {
   );
 
   let check = () => {
-    if (User == undefined || Password == undefined) {
-      setError(true);
-      return;
-    }
+    // if (User == undefined || Password == undefined) {
+    //   setError(true);
+    //   return;
+    // }
     axios
       .post("http://localhost:3002/admin/check", {
         User,
         Password,
       })
-      .then(() => {
-        setPath("/Admin");
+      .then(result => {
+       
+        if(result.data){
+        setPath("/admin");
         setError(false);
+        localStorage.setItem('admin',result.data)
+      }
+       
       })
       .catch(() => {
         setError(true);

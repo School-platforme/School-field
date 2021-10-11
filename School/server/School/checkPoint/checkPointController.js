@@ -35,7 +35,7 @@ exports.getCheckponit = (req, res) => {
     // taking the id of specific teacher
     var teacherId = req.params.id.replace(' "','')
     
-console.log({teacherId: JSON.parse(teacherId)})
+
     
     School.checkPointModel.find({teacherId: JSON.parse(teacherId)},(err,rst)=> {
         if(err) res.status(500).send(err)

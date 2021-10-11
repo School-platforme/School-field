@@ -78,10 +78,10 @@ exports.updateTeacher = (req, res) => {
 
 exports.findTeacher = (req, res) => {
     condition = req.body
-
+   console.log('cc')
     School.TeacherModel.findOne(condition, (err, rst) => {
         if (err) res.status(403).send(err)
-        res.status(200).send(rst)
+        res.status(201).send(rst)
     })
 }
 

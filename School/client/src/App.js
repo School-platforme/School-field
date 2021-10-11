@@ -21,7 +21,7 @@ import {FeedBack} from "./pages/ADMIN/FeedBack"
 import SchoolStat from "./pages/ADMIN/SchoolState"
 import TeachersList from "./pages/ADMIN/TeacherandStudentList"
 import {AdminPage} from "./pages/ADMIN/Admin"
-
+import { Check } from "./pages/Students/ChekpointDo";
 import {SingInTeacher} from './pages/Teacher/SingIn'
 import {SingInStudent} from "./pages/Students/SingInStudent"
 
@@ -49,6 +49,7 @@ return (
 		<Route path="/teacher/lecture" exact component={Lecture1} />
 		<Route path="/teacher/addstudent" exact component={AddStudent} />
 		<Route path="/teacher/studentstatistic" exact component={StudentStastic} />
+		<Route path="/checkpoint/do" exact component={Check} />
 
 		<Route path="/admin/addteacher" exact component={AddTeachers} />
 		<Route path="/admin/feedback" exact component={FeedBack} />
