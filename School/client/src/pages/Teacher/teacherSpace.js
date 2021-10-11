@@ -1,7 +1,22 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 
 import Sidebar from "./components/Sidebar";
+import Exercice from "./AddExercice";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
+import Box from "@material-ui/core/Box";
+import Avatar from "@material-ui/core/Avatar";
+import { CardHeader } from "@mui/material";
+
+
 
 export const Teacher = () => {
   const [teacherId, setteacherId] = useState("");
@@ -25,61 +40,121 @@ export const Teacher = () => {
       setcheckPoint(rst.data[2]);
     });
   }, [teacherId]);
-  console.log(exercices)
+  console.log(exercices, checkPoints, Lectures)
   return (
     <>
       <Sidebar
       />
-      <div>
-        <h1>We need a component that represents the teacher signed in </h1>
+
+      {/* <Card style={{ margin: "100px", padding: "5px" }}> */}
+      {/* <h3 style={{ margin: "50px" }}>Teacher Data : </h3> */}
+      <div className="feedback">
+      <TableContainer component={Paper}>
+        <Box sx={{ p: 5 }}>
+          <Table className="z" aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell style={{ fontSize: "1.3rem" }}>
+                  Lecture's title
+                </TableCell>
+                <TableCell style={{ fontSize: "1.3rem" }}>
+                  Lecture
+                </TableCell>
+                <TableCell style={{ fontSize: "1.3rem" }} align="center">
+                  Lecture Date
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {Lectures.map((lecture, key) => (
+                <TableRow style={{ fontSize: "4rem" }} key={key}>
+                  <TableCell align="left">{lecture.LectureName}</TableCell>
+                  <TableCell align="left">{lecture.Lecture}</TableCell>
+                  <TableCell align="center">
+                    {moment(lecture.createdAt).format("MMM Do YY")}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Box>
+      </TableContainer>
       </div>
-      <br></br>
+      {/* </Card> */}
+      <span style={{ margin: "100px" }}></span>
+      <div className="feedback">
+        <Card style={{ margin: "20px", padding: "5px" }}>
+          {/* <h3 style={{ margin: "50px" }}>Exercises : </h3> */}
+          <TableContainer component={Paper}>
+            <Box sx={{ p: 5 }}>
+              <Table className="teacher-table" aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell style={{ fontSize: "1.3rem" }}>
+                      Exercise title
+                    </TableCell>
+                    <TableCell style={{ fontSize: "1.3rem" }} align="center">Exercise</TableCell>
+                    <TableCell style={{ fontSize: "1.3rem" }} align="right">
+                      Exercise Date
+                    </TableCell>
 
-      <div >
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {exercices.map((exercise, key) => (
+                    <TableRow style={{ fontSize: "4rem" }} key={key}>
+                      <TableCell align="left">{exercise.name}</TableCell>
+                      <TableCell align="center">{exercise.Exercice[0]}</TableCell>
 
-        {/* add details about the teacher */}
-        <h1>teacher space</h1>
-        <div >
-          {Lectures.map((lecture) => {
-            return (
-              <div >
-                <span>{lecture.LectureName}</span>
-                <h5>{lecture.createdAt}</h5>
-              </div>
-            )
-          })}
 
-        </div>
-        <br></br>
-        <br></br>
-
-        <div >
-          {exercices.map((exercise) => {
-            return (
-              <div >
-
-                <h3>{exercise.name}</h3>
-                <h5>{exercise.createdAt}</h5>
-              </div>
-            )
-          })}
-        </div>
-        <br></br>
-        <br></br>
-
-        <div >
-          {checkPoints.map((checkPoint) => {
-            return (
-              <div >
-
-                <h3>{checkPoint.name}</h3>
-                <h5>{checkPoint.createdAt}</h5>
-              </div>
-            )
-          })}
-        </div>
-
+                      <TableCell align="right">
+                        {moment(exercise.createdAt).format("MMM Do YY")}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </TableContainer>
+        </Card>
       </div>
+      {/* <div className='feedback'>
+        <Card style={{ margin: "20px", padding: "5px" }}>
+          <h3 style={{ margin: "50px" }}>CheckPoints : </h3>
+          <TableContainer component={Paper}>
+            <Box sx={{ p: 5 }}>
+              <Table className="teacher-table" aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell style={{ fontSize: "1.3rem" }}>
+                      CheckPoint title
+                    </TableCell>
+                    <TableCell style={{ fontSize: "1.3rem" }} align="center">CheckPoint</TableCell>
+                    <TableCell style={{ fontSize: "1.3rem" }} align="right">
+                      CheckPoint Date
+                    </TableCell>
+
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {exercices.map((exercise, key) => (
+                    <TableRow style={{ fontSize: "4rem" }} key={key}>
+                      <TableCell align="left">{exercise.name}</TableCell>
+                      <TableCell align="center">{exercise.Exercice[0]}</TableCell>
+
+
+                      <TableCell align="right">
+                        {moment(exercise.createdAt).format("MMM Do YY")}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </TableContainer>
+        </Card>
+      </div> */}
+
     </>
   );
 };
