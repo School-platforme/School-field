@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
+import ReactMarkdown from 'react-markdown'
+
+
 
 export const Lecture = () => {
   const [lecture, setLecture] = useState([]);
@@ -22,7 +25,9 @@ export const Lecture = () => {
     <>
       <Sidebar />
       <div className="services">
-        <h1>Lecture Space</h1>
+      <ReactMarkdown>
+          
+      </ReactMarkdown>
       </div>
     </>
   );

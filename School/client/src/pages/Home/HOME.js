@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
+import Footer from "../Footer/Footer";
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: "relative",
@@ -76,7 +77,13 @@ export const HOME = () => {
       <br />
 
       <Box
-        sx={{ display: "flex", flexWrap: "wrap", minWidth: 300, width: "100%" }}
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          minWidth: 300,
+          width: "100%",
+          marginTop: "95px",
+        }}
       >
         <ImageButton
           focusRipple
@@ -172,6 +179,11 @@ export const HOME = () => {
           </Image>
         </ImageButton>
       </Box>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };

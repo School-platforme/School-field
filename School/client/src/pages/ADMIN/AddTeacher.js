@@ -101,7 +101,7 @@ class AddTeachers extends Component {
         <div>
           <div className="create">
             <div className="create-editor">
-              <h2
+              {/* <h2
                 style={{
                   textAlign: "center",
                   marginTop: "30px",
@@ -111,7 +111,7 @@ class AddTeachers extends Component {
                 }}
               >
                 Create teacher
-              </h2>
+              </h2> */}
               <div className="create-teacher-inputs">
                 <TextField
                   // className="create-body-textarea"

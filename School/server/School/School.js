@@ -149,7 +149,7 @@ var LectureModel = mongoose.model("Lecture", createLecture)
 // exercice schema 
 var createExercice = mongoose.Schema({
   Exercice: { type: Array, "default": [] },
-  name: String,
+  name: {type:String, unique:true },
   teacherId: String,
   teacher: {
     type: mongoose.Schema.Types.ObjectId,

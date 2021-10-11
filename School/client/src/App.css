@@ -4,7 +4,22 @@
   padding: 0;
 }
 body {
-  background-color: rgb(149, 223, 149);
+  /* background-color: rgb(227, 236, 227); */
+  /* background: linear-gradient(
+    to bottom,
+    rgb(47, 102, 139) 0%,
+    rgb(240, 245, 210) 50%,
+    rgb(255, 255, 255) 50%,
+    rgb(47, 102, 139) 50%
+  ); */
+  height: 100%;
+
+  background-image: url("/home/ahmed/Desktop/usr/school-field/School/client/src/images/e8rDgu.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .home,
 .services,
@@ -17,12 +32,21 @@ body {
   font-size: 2rem;
 }
 .Register {
+  background-color: transparent;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: green;
+  color: rgb(0, 0, 0);
   align-items: center;
+  font-family: "Francois One";
+  list-style: none;
+  border: 1px solid #00000069;
+  width: 23%;
+  border-radius: 4px;
+  padding: 10px 10px;
+  box-shadow: 0 0 20em #f0f0f166;
+  margin-left: 38%;
 }
 .schoolstat {
   -webkit-box-sizing: border-box;
@@ -63,7 +87,7 @@ body {
 }
 .lnk {
   text-decoration: none;
-  color: green;
+  color: rgb(0, 0, 0);
 }
 .container .nst {
   display: flex;
@@ -189,7 +213,7 @@ body {
   /* padding-right: 30%; */
   margin-left: 33%;
   position: relative;
-  height: 500px;
+  height: 700px;
   list-style: none;
   border: 1px solid #77777769;
   background-color: #fdfdfd;
@@ -202,6 +226,7 @@ body {
 
 .butn {
   margin-left: 40%;
+  display: inline-block;
 }
 
 .feed1 {
@@ -242,3 +267,26 @@ body {
 .block {
   margin-left: 10px;
 }
+
+/* .elyes {
+  background-color: aqua;
+  width: 600px;
+}
+.elyes1 {
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+}
+.elyesBox1 {
+  background-color: black;
+  color: #fdfdfd;
+  border: 2px solid rgb(119, 16, 16);
+  height: 140px;
+  width: 100%;
+  flex-direction: column;
+}
+ */
+
+/* .spcPic {
+  background-image: url("");
+} */

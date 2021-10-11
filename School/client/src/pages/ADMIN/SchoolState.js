@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import Card from '@material-ui/core/Card';
+
 
 export default class SchoolStat extends PureComponent {
   // static jsfiddleUrl = "https://jsfiddle.net/alidingling/30763kr7/";

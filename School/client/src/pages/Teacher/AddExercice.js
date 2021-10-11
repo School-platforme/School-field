@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import { TextField, Button } from "@material-ui/core";
 import axios from "axios";
+import { Redirect } from "react-router";
 
 function Exercice() {
   const [Exercice, setExercice] = useState("");
@@ -13,6 +14,7 @@ function Exercice() {
   useEffect(() => {
     var teacher = localStorage.getItem("teacherId");
     setteacherId(JSON.parse(teacher));
+   
   }, []);
 
   const add = () => {
@@ -29,7 +31,7 @@ function Exercice() {
         name: ExerciceName,
       })
       .then(() => {
-        console.log("yes");
+       
         setBool(false);
       })
       .catch((err) => {
@@ -58,7 +60,10 @@ function Exercice() {
   );
 
   return (
+    
     <>
+    
+    { !teacherId? <Redirect push to ='/' /> : <>
       <Sidebar />
       <div className="feed1">
         <div>
@@ -90,8 +95,10 @@ function Exercice() {
             </li>
           </ul>
         </div>
-      </div>
+      </div></>
+}
     </>
+    
   );
 }
 
